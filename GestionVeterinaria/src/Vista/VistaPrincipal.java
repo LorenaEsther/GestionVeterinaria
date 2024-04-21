@@ -61,8 +61,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PerritoPrincipal.gif"))); // NOI18N
+        jLabel2.setText("AS");
         jDesktopPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 650));
 
+        jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
+
+        jMenu1.setBackground(new java.awt.Color(135, 204, 204));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mantenimiento (2).png"))); // NOI18N
         jMenu1.setText("Mantenimiento");
 
         jMenuItem1.setText("Clientes");
@@ -82,13 +87,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flujo-de-trabajo (2).png"))); // NOI18N
         jMenu2.setText("Procesos");
 
-        jMenuItem4.setText("Procesos del Servicio");
+        jMenuItem4.setText("Procesos del Citas");
         jMenu2.add(jMenuItem4);
 
         jMenuBar1.add(jMenu2);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/negocio (2).png"))); // NOI18N
         jMenu5.setText("Cuenta de Resultados");
 
         jMenuItem5.setText("Cuenta de Servicios");
@@ -96,6 +103,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reporte (1).png"))); // NOI18N
         jMenu6.setText("Reportes");
 
         jMenuItem8.setText("Reporte de Procesos Servicios");
@@ -103,6 +111,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu6);
 
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ayudar.png"))); // NOI18N
         jMenu7.setText("Ayuda");
 
         jMenuItem10.setText("Guia de usuario");
@@ -110,6 +119,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu7);
 
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/anonimo.png"))); // NOI18N
         jMenu8.setText("Autores");
 
         jMenuItem9.setText("Creadores del programa");
