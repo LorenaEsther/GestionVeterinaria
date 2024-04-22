@@ -29,25 +29,25 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        dspEscritorio = new javax.swing.JDesktopPane();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        itemClientes = new javax.swing.JMenuItem();
+        itemMascotas = new javax.swing.JMenuItem();
+        itemTipos = new javax.swing.JMenuItem();
+        itemCitas = new javax.swing.JMenuItem();
+        itemServicios = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        itemProcesos = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        itemCuenta = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        itemReporte = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        itemGuia = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        itemCreadores = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -57,12 +57,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane1.setBackground(new java.awt.Color(204, 255, 255));
-        jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        dspEscritorio.setBackground(new java.awt.Color(204, 255, 255));
+        dspEscritorio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PerritoPrincipal.gif"))); // NOI18N
         jLabel2.setText("AS");
-        jDesktopPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 650));
+        dspEscritorio.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 650));
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
 
@@ -70,60 +70,60 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mantenimiento (2).png"))); // NOI18N
         jMenu1.setText("Mantenimiento");
 
-        jMenuItem1.setText("Clientes");
-        jMenu1.add(jMenuItem1);
+        itemClientes.setText("Clientes");
+        jMenu1.add(itemClientes);
 
-        jMenuItem2.setText("Mascotas");
-        jMenu1.add(jMenuItem2);
+        itemMascotas.setText("Mascotas");
+        jMenu1.add(itemMascotas);
 
-        jMenuItem3.setText("Tipo de Mascota");
-        jMenu1.add(jMenuItem3);
+        itemTipos.setText("Tipo de Mascota");
+        jMenu1.add(itemTipos);
 
-        jMenuItem6.setText("Citas");
-        jMenu1.add(jMenuItem6);
+        itemCitas.setText("Citas");
+        jMenu1.add(itemCitas);
 
-        jMenuItem7.setText("Servicios");
-        jMenu1.add(jMenuItem7);
+        itemServicios.setText("Servicios");
+        jMenu1.add(itemServicios);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flujo-de-trabajo (2).png"))); // NOI18N
         jMenu2.setText("Procesos");
 
-        jMenuItem4.setText("Procesos del Citas");
-        jMenu2.add(jMenuItem4);
+        itemProcesos.setText("Procesos del Citas");
+        jMenu2.add(itemProcesos);
 
         jMenuBar1.add(jMenu2);
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/negocio (2).png"))); // NOI18N
         jMenu5.setText("Cuenta de Resultados");
 
-        jMenuItem5.setText("Cuenta de Servicios");
-        jMenu5.add(jMenuItem5);
+        itemCuenta.setText("Cuenta de Servicios");
+        jMenu5.add(itemCuenta);
 
         jMenuBar1.add(jMenu5);
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reporte (1).png"))); // NOI18N
         jMenu6.setText("Reportes");
 
-        jMenuItem8.setText("Reporte de Procesos Servicios");
-        jMenu6.add(jMenuItem8);
+        itemReporte.setText("Reporte de Procesos Servicios");
+        jMenu6.add(itemReporte);
 
         jMenuBar1.add(jMenu6);
 
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ayudar.png"))); // NOI18N
         jMenu7.setText("Ayuda");
 
-        jMenuItem10.setText("Guia de usuario");
-        jMenu7.add(jMenuItem10);
+        itemGuia.setText("Guia de usuario");
+        jMenu7.add(itemGuia);
 
         jMenuBar1.add(jMenu7);
 
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/anonimo.png"))); // NOI18N
         jMenu8.setText("Autores");
 
-        jMenuItem9.setText("Creadores del programa");
-        jMenu8.add(jMenuItem9);
+        itemCreadores.setText("Creadores del programa");
+        jMenu8.add(itemCreadores);
 
         jMenuBar1.add(jMenu8);
 
@@ -133,12 +133,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(dspEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dspEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -181,7 +181,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    public javax.swing.JDesktopPane dspEscritorio;
+    public javax.swing.JMenuItem itemCitas;
+    public javax.swing.JMenuItem itemClientes;
+    public javax.swing.JMenuItem itemCreadores;
+    public javax.swing.JMenuItem itemCuenta;
+    public javax.swing.JMenuItem itemGuia;
+    public javax.swing.JMenuItem itemMascotas;
+    public javax.swing.JMenuItem itemProcesos;
+    public javax.swing.JMenuItem itemReporte;
+    public javax.swing.JMenuItem itemServicios;
+    public javax.swing.JMenuItem itemTipos;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -193,15 +203,5 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
