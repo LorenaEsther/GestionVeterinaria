@@ -31,14 +31,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         dspEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        itemHistorial = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         itemClientes = new javax.swing.JMenuItem();
         itemMascotas = new javax.swing.JMenuItem();
         itemTipos = new javax.swing.JMenuItem();
         itemCitas = new javax.swing.JMenuItem();
         itemServicios = new javax.swing.JMenuItem();
         itemEmpleados = new javax.swing.JMenuItem();
-        ItemHistorial = new javax.swing.JMenuItem();
+        itemHistorial = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         itemProcesos = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -73,18 +73,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
 
-        itemHistorial.setBackground(new java.awt.Color(135, 204, 204));
-        itemHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mantenimiento (2).png"))); // NOI18N
-        itemHistorial.setText("Mantenimiento");
+        jMenu1.setBackground(new java.awt.Color(135, 204, 204));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mantenimiento (2).png"))); // NOI18N
+        jMenu1.setText("Mantenimiento");
 
         itemClientes.setText("Clientes");
-        itemHistorial.add(itemClientes);
+        jMenu1.add(itemClientes);
 
         itemMascotas.setText("Mascotas");
-        itemHistorial.add(itemMascotas);
+        jMenu1.add(itemMascotas);
 
         itemTipos.setText("Tipo de Mascota");
-        itemHistorial.add(itemTipos);
+        jMenu1.add(itemTipos);
 
         itemCitas.setText("Citas");
         itemCitas.addActionListener(new java.awt.event.ActionListener() {
@@ -92,23 +92,23 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 itemCitasActionPerformed(evt);
             }
         });
-        itemHistorial.add(itemCitas);
+        jMenu1.add(itemCitas);
 
         itemServicios.setText("Servicios");
-        itemHistorial.add(itemServicios);
+        jMenu1.add(itemServicios);
 
         itemEmpleados.setText("Empleados");
-        itemHistorial.add(itemEmpleados);
+        jMenu1.add(itemEmpleados);
 
-        ItemHistorial.setText("Historial Clinico");
-        ItemHistorial.addActionListener(new java.awt.event.ActionListener() {
+        itemHistorial.setText("Historial Clinico");
+        itemHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItemHistorialActionPerformed(evt);
+                itemHistorialActionPerformed(evt);
             }
         });
-        itemHistorial.add(ItemHistorial);
+        jMenu1.add(itemHistorial);
 
-        jMenuBar1.add(itemHistorial);
+        jMenuBar1.add(jMenu1);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flujo-de-trabajo (2).png"))); // NOI18N
         jMenu2.setText("Procesos");
@@ -172,9 +172,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemCitasActionPerformed
 
-    private void ItemHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemHistorialActionPerformed
+    private void itemHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemHistorialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ItemHistorialActionPerformed
+    }//GEN-LAST:event_itemHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,7 +212,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JMenuItem ItemHistorial;
     public javax.swing.JDesktopPane dspEscritorio;
     public javax.swing.JMenuItem itemCitas;
     public javax.swing.JMenuItem itemClientes;
@@ -220,12 +219,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem itemCuenta;
     public javax.swing.JMenuItem itemEmpleados;
     public javax.swing.JMenuItem itemGuia;
-    private javax.swing.JMenu itemHistorial;
+    public javax.swing.JMenuItem itemHistorial;
     public javax.swing.JMenuItem itemMascotas;
     public javax.swing.JMenuItem itemProcesos;
     public javax.swing.JMenuItem itemReporte;
     public javax.swing.JMenuItem itemServicios;
     public javax.swing.JMenuItem itemTipos;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
