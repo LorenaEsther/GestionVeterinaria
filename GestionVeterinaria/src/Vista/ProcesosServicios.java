@@ -71,6 +71,7 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(102, 255, 102));
+        setClosable(true);
 
         jPanel1.setBackground(new java.awt.Color(135, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -305,7 +306,7 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 70, 70));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 9, 103, 29));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boleta", "Factura" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);

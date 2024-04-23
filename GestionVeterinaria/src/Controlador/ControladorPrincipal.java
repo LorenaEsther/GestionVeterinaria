@@ -24,6 +24,8 @@ public class ControladorPrincipal implements ActionListener{
         vp.itemReporte.addActionListener(this);
         vp.itemGuia.addActionListener(this);
         vp.itemCreadores.addActionListener(this);
+        vp.itemEmpleados.addActionListener(this);
+        vp.ItemHistorial.addActionListener(this);
     }
     
     
@@ -65,9 +67,23 @@ public class ControladorPrincipal implements ActionListener{
            VistaReportesServicios vreporte = new VistaReportesServicios();
            vreporte.setTitle("Reporte de Servicios");
            MostrarForma(vreporte);
+        //EMPELADOS
+        if(e.getSource() == vprin.itemEmpleados){
+           VistaEmpelado vempleados = new VistaEmpelado();
+           vempleados.setTitle("Registro de Empleados");
+           MostrarForma(vempleados);
+           } 
+        //HISTORIAL
+        if(e.getSource() == vprin.ItemHistorial){
+           VistaHistorialClinico vhistorial = new VistaHistorialClinico();
+           vhistorial.setTitle("Registro de Historiales Clinicos");
+           MostrarForma(vhistorial);
+           
+           
         }
 
        
     }    
     
+}
 }

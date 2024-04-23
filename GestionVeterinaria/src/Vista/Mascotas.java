@@ -47,6 +47,9 @@ public class Mascotas extends javax.swing.JInternalFrame {
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -85,7 +88,7 @@ public class Mascotas extends javax.swing.JInternalFrame {
         jLabel4.setText("Peso");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 162, -1, -1));
 
-        jLabel5.setText("Tipo de Mascota");
+        jLabel5.setText("Especie");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 211, -1, -1));
 
         jLabel6.setText("Raza");
@@ -107,6 +110,18 @@ public class Mascotas extends javax.swing.JInternalFrame {
         jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 110, -1));
         jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 110, -1));
         jPanel2.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 110, 20));
+
+        jButton8.setBackground(new java.awt.Color(135, 204, 204));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, 20));
+
+        jButton9.setBackground(new java.awt.Color(135, 204, 204));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, 20));
+
+        jButton10.setBackground(new java.awt.Color(135, 204, 204));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 320));
 
@@ -207,9 +222,12 @@ public class Mascotas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

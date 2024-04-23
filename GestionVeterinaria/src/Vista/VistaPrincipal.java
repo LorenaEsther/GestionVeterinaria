@@ -30,14 +30,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         dspEscritorio = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        itemHistorial = new javax.swing.JMenu();
         itemClientes = new javax.swing.JMenuItem();
         itemMascotas = new javax.swing.JMenuItem();
         itemTipos = new javax.swing.JMenuItem();
         itemCitas = new javax.swing.JMenuItem();
         itemServicios = new javax.swing.JMenuItem();
+        itemEmpleados = new javax.swing.JMenuItem();
+        ItemHistorial = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         itemProcesos = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -59,48 +60,55 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         dspEscritorio.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel1.setText("Vive la vida, no dejas que la vida te viva");
-
-        dspEscritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout dspEscritorioLayout = new javax.swing.GroupLayout(dspEscritorio);
         dspEscritorio.setLayout(dspEscritorioLayout);
         dspEscritorioLayout.setHorizontalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dspEscritorioLayout.createSequentialGroup()
-                .addContainerGap(468, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(338, 338, 338))
+            .addGap(0, 1080, Short.MAX_VALUE)
         );
         dspEscritorioLayout.setVerticalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dspEscritorioLayout.createSequentialGroup()
-                .addGap(0, 556, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 647, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
 
-        jMenu1.setBackground(new java.awt.Color(135, 204, 204));
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mantenimiento (2).png"))); // NOI18N
-        jMenu1.setText("Mantenimiento");
+        itemHistorial.setBackground(new java.awt.Color(135, 204, 204));
+        itemHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mantenimiento (2).png"))); // NOI18N
+        itemHistorial.setText("Mantenimiento");
 
         itemClientes.setText("Clientes");
-        jMenu1.add(itemClientes);
+        itemHistorial.add(itemClientes);
 
         itemMascotas.setText("Mascotas");
-        jMenu1.add(itemMascotas);
+        itemHistorial.add(itemMascotas);
 
         itemTipos.setText("Tipo de Mascota");
-        jMenu1.add(itemTipos);
+        itemHistorial.add(itemTipos);
 
         itemCitas.setText("Citas");
-        jMenu1.add(itemCitas);
+        itemCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCitasActionPerformed(evt);
+            }
+        });
+        itemHistorial.add(itemCitas);
 
         itemServicios.setText("Servicios");
-        jMenu1.add(itemServicios);
+        itemHistorial.add(itemServicios);
 
-        jMenuBar1.add(jMenu1);
+        itemEmpleados.setText("Empleados");
+        itemHistorial.add(itemEmpleados);
+
+        ItemHistorial.setText("Historial Clinico");
+        ItemHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemHistorialActionPerformed(evt);
+            }
+        });
+        itemHistorial.add(ItemHistorial);
+
+        jMenuBar1.add(itemHistorial);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flujo-de-trabajo (2).png"))); // NOI18N
         jMenu2.setText("Procesos");
@@ -148,7 +156,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dspEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(dspEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,6 +167,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itemCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemCitasActionPerformed
+
+    private void ItemHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemHistorialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ItemHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,19 +212,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem ItemHistorial;
     public javax.swing.JDesktopPane dspEscritorio;
     public javax.swing.JMenuItem itemCitas;
     public javax.swing.JMenuItem itemClientes;
     public javax.swing.JMenuItem itemCreadores;
     public javax.swing.JMenuItem itemCuenta;
+    public javax.swing.JMenuItem itemEmpleados;
     public javax.swing.JMenuItem itemGuia;
+    private javax.swing.JMenu itemHistorial;
     public javax.swing.JMenuItem itemMascotas;
     public javax.swing.JMenuItem itemProcesos;
     public javax.swing.JMenuItem itemReporte;
     public javax.swing.JMenuItem itemServicios;
     public javax.swing.JMenuItem itemTipos;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
