@@ -30,7 +30,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         dspEscritorio = new javax.swing.JDesktopPane();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         itemClientes = new javax.swing.JMenuItem();
@@ -58,11 +58,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         dspEscritorio.setBackground(new java.awt.Color(204, 255, 255));
-        dspEscritorio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PerritoPrincipal.gif"))); // NOI18N
-        jLabel2.setText("AS");
-        dspEscritorio.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 650));
+        jLabel1.setText("Vive la vida, no dejas que la vida te viva");
+
+        dspEscritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout dspEscritorioLayout = new javax.swing.GroupLayout(dspEscritorio);
+        dspEscritorio.setLayout(dspEscritorioLayout);
+        dspEscritorioLayout.setHorizontalGroup(
+            dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dspEscritorioLayout.createSequentialGroup()
+                .addContainerGap(468, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(338, 338, 338))
+        );
+        dspEscritorioLayout.setVerticalGroup(
+            dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dspEscritorioLayout.createSequentialGroup()
+                .addGap(0, 556, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
 
@@ -138,8 +153,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(dspEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(dspEscritorio)
+                .addContainerGap())
         );
 
         pack();
@@ -192,7 +207,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem itemReporte;
     public javax.swing.JMenuItem itemServicios;
     public javax.swing.JMenuItem itemTipos;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
