@@ -4,10 +4,7 @@
  */
 package Controlador;
 
-/**
- *
- * @author FABRIZIO
- */
+
 public class ControladorClientes {
     
 }

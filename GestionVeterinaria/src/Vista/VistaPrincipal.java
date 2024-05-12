@@ -68,7 +68,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         );
         dspEscritorioLayout.setVerticalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 647, Short.MAX_VALUE)
+            .addGap(0, 653, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
@@ -160,9 +160,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(dspEscritorio)
-                .addContainerGap())
+            .addComponent(dspEscritorio)
         );
 
         pack();

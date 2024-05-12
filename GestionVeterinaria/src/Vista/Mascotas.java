@@ -83,7 +83,7 @@ public class Mascotas extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 82, -1, -1));
 
         jLabel3.setText("Edad");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 133, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         jLabel4.setText("Peso");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 162, -1, -1));
