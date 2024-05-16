@@ -6,7 +6,7 @@ import Vista.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 public class ProcesosVistaGestion {
-    public static void LimpiarEntradas(VistaGestionCita gc){
+    public static void LimpiarEntradas(VistaGestionCitas gc){
         gc.txtIdCita.setText("");
         gc.dateChooser1.setDate(null);
         gc.txtHora.setText("");
