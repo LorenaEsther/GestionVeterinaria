@@ -8,12 +8,12 @@ package Vista;
  *
  * @author Marco Antonio
  */
-public class Clientes extends javax.swing.JInternalFrame {
+public class VistaClientes extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Clientes
      */
-    public Clientes() {
+    public VistaClientes() {
         initComponents();
     }
 

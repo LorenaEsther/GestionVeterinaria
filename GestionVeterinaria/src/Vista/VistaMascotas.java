@@ -8,12 +8,12 @@ package Vista;
  *
  * @author Marco Antonio
  */
-public class Mascotas extends javax.swing.JInternalFrame {
+public class VistaMascotas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Mascotas
      */
-    public Mascotas() {
+    public VistaMascotas() {
         initComponents();
     }
 

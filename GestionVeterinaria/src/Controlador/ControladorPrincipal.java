@@ -39,27 +39,27 @@ public class ControladorPrincipal implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vprin.itemClientes){
-           Clientes vcliente = new Clientes();
+           VistaClientes vcliente = new VistaClientes();
            vcliente.setTitle("Clientes Registrados");
            MostrarForma(vcliente);           
         }        
         if(e.getSource() == vprin.itemMascotas){
-           Mascotas vmascotas = new Mascotas();
+           VistaMascotas vmascotas = new VistaMascotas();
            vmascotas.setTitle("Mascotas Registradas");
            MostrarForma(vmascotas);
         }
         if(e.getSource() == vprin.itemCuenta){
-           CuentaSeervicios vcuenta = new CuentaSeervicios();
+           VistaServicios vcuenta = new VistaServicios();
            vcuenta.setTitle("Cuenta de Servicios");
            MostrarForma(vcuenta);
         }
         if(e.getSource() == vprin.itemCitas){
-           Citas vcitas = new Citas();
+           VistaCitas vcitas = new VistaCitas();
            vcitas.setTitle("Citas");
            MostrarForma(vcitas);
         }
         if(e.getSource() == vprin.itemProcesos){
-           ProcesosServicios vprocesos = new ProcesosServicios();
+           VistaGestionCitas vprocesos = new VistaGestionCitas();
            vprocesos.setTitle("Procesos de Servicios");
            MostrarForma(vprocesos);
         }

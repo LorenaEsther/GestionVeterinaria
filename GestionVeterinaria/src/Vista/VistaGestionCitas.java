@@ -8,12 +8,12 @@ package Vista;
  *
  * @author Marco Antonio
  */
-public class ProcesosServicios extends javax.swing.JInternalFrame {
+public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ProcesosServicios
      */
-    public ProcesosServicios() {
+    public VistaGestionCitas() {
         initComponents();
     }
 
