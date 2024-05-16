@@ -8,12 +8,12 @@ package Vista;
  *
  * @author Marco Antonio
  */
-public class Citas extends javax.swing.JInternalFrame {
+public class VistaCitas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Citas
      */
-    public Citas() {
+    public VistaCitas() {
         initComponents();
     }
 

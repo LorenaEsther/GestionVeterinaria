@@ -76,6 +76,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Codigo");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Nombre");
 
         jLabel3.setText("DNI");
@@ -209,9 +210,9 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 630, 250));
 
-        jTextField10.setBackground(new java.awt.Color(255, 204, 51));
-        jTextField10.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar por DNI"));
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, -1));
+        jTextField10.setBackground(new java.awt.Color(255, 231, 160));
+        jTextField10.setBorder(javax.swing.BorderFactory.createTitledBorder("DNI"));
+        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, 50));
 
         jButton1.setBackground(new java.awt.Color(135, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-archivo (2).png"))); // NOI18N
@@ -261,16 +262,23 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perro-salchicha-imagen-animada-0059.gif"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 150, 90));
 
+        jButton5.setBackground(new java.awt.Color(57, 109, 255));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("ORDENAR");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, 40));
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 90, 50));
 
+        jComboBox1.setBackground(new java.awt.Color(153, 204, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellido", "Fecha Ini.", "Salario" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 130, 40));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 140, 50));
 
+        jButton6.setBackground(new java.awt.Color(255, 204, 51));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("BUSCAR");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, 40));
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 80, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

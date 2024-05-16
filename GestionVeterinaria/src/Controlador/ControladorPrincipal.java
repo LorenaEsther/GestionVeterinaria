@@ -19,7 +19,7 @@ public class ControladorPrincipal implements ActionListener{
         vp.itemTipos.addActionListener(this);
         vp.itemCitas.addActionListener(this);
         vp.itemServicios.addActionListener(this);
-        vp.itemProcesos.addActionListener(this);
+        vp.itemGestionCitas.addActionListener(this);
         vp.itemCuenta.addActionListener(this);
         vp.itemReporte.addActionListener(this);
         vp.itemGuia.addActionListener(this);
@@ -54,12 +54,12 @@ public class ControladorPrincipal implements ActionListener{
            MostrarForma(vcuenta);
         }
         if(e.getSource() == vprin.itemCitas){
-           Citas vcitas = new Citas();
+           VistaCitas vcitas = new VistaCitas();
            vcitas.setTitle("Citas");
            MostrarForma(vcitas);
         }
-        if(e.getSource() == vprin.itemProcesos){
-           ProcesosServicios vprocesos = new ProcesosServicios();
+        if(e.getSource() == vprin.itemGestionCitas){
+           VistaGestionCita vprocesos = new VistaGestionCita();
            vprocesos.setTitle("Procesos de Servicios");
            MostrarForma(vprocesos);
         }
@@ -79,8 +79,11 @@ public class ControladorPrincipal implements ActionListener{
            VistaHistorialClinico vhistorial = new VistaHistorialClinico();
            vhistorial.setTitle("Registro de Historiales Clinicos");
            MostrarForma(vhistorial);
-           
-           
+           }
+        if(e.getSource() == vprin.itemServicios){
+           VistaServicios vservicios = new VistaServicios();
+           vservicios.setTitle("Registro de Servicios");
+           MostrarForma(vservicios);
         }
 
        

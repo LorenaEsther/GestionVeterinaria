@@ -110,9 +110,9 @@
             <Property name="text" type="java.lang.String" value="Procesos"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="itemProcesos">
+            <MenuItem class="javax.swing.JMenuItem" name="itemGestionCitas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Procesos del Citas"/>
+                <Property name="text" type="java.lang.String" value="Gestion Citas"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

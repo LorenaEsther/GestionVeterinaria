@@ -8,12 +8,12 @@ package Vista;
  *
  * @author Marco Antonio
  */
-public class ProcesosServicios extends javax.swing.JInternalFrame {
+public class VistaGestionCita extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ProcesosServicios
      */
-    public ProcesosServicios() {
+    public VistaGestionCita() {
         initComponents();
     }
 
@@ -60,22 +60,21 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        btnEliminar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        dateChooser1 = new com.toedter.calendar.JDateChooser();
+        btnEditar = new javax.swing.JButton();
+        txtIdCita = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtHora = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jButton10 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbxTipo = new javax.swing.JComboBox<>();
+        jButton11 = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 255, 102));
         setClosable(true);
@@ -88,7 +87,7 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/impresora.png"))); // NOI18N
         jButton5.setText("Imprimir");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 280, 200, 60));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 280, 200, 70));
 
         jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,7 +103,7 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 640, 170));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 670, 170));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Empleado"));
 
@@ -131,12 +130,13 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)))
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 6, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(14, 14, 14))
         );
 
@@ -205,19 +205,19 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jLabel10.setText("Total S/");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 100, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 580, 80, 30));
 
         jTextField6.setBackground(new java.awt.Color(135, 204, 204));
         jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(255, 255, 255));
         jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 570, 150, 40));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 570, 150, 40));
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 240, 20));
 
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 240, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, 240, 10));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Servicio"));
 
@@ -266,8 +266,8 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 30, 330));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel13.setText("Nuevo");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
+        jLabel13.setText("Consultar");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel14.setText("Guardar");
@@ -279,69 +279,69 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("ID Cita");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 29));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, 29));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel16.setText("Editar");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 240, -1, -1));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(662, 16, 65, 29));
 
-        jButton1.setBackground(new java.awt.Color(135, 204, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-archivo (2).png"))); // NOI18N
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 70, 70));
-
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Fecha");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 15, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(135, 204, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrar (2).png"))); // NOI18N
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 70, 70));
+        btnEliminar.setBackground(new java.awt.Color(135, 204, 204));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrar (2).png"))); // NOI18N
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 70, 70));
 
-        jLabel4.setText("Comprabante");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 15, -1, -1));
+        btnGuardar.setBackground(new java.awt.Color(135, 204, 204));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
+        btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 70, 70));
+        jPanel1.add(dateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 135, 29));
 
-        jButton3.setBackground(new java.awt.Color(135, 204, 204));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 70, 70));
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 9, 135, 29));
-
-        jButton4.setBackground(new java.awt.Color(135, 204, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 70, 70));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 9, 103, 29));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boleta", "Factura" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 9, 137, 29));
+        btnEditar.setBackground(new java.awt.Color(135, 204, 204));
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
+        btnEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 70, 70));
+        jPanel1.add(txtIdCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 103, 29));
 
         jLabel12.setText("Hora");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 110, 30));
+        jPanel1.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 110, 30));
 
-        jTextField9.setBackground(new java.awt.Color(255, 204, 0));
+        jTextField9.setBackground(new java.awt.Color(255, 231, 160));
         jTextField9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTextField9.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar ID Cita"));
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 400, 100, 40));
+        jTextField9.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
+        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 450, 130, 50));
 
+        jButton10.setBackground(new java.awt.Color(57, 109, 255));
         jButton10.setText("ORDENAR");
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 450, 100, 40));
+        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 100, 50));
 
+        jComboBox2.setBackground(new java.awt.Color(153, 204, 255));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Cita", "Fecha", "Tipo de Urgencia" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 500, 130, 40));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, 130, 50));
 
         jLabel17.setText("Tipo de Urgencia");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alta priporidad", "Moderada prioridad", "Baja prioridad", " ", " " }));
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 120, 30));
+        cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alta priporidad", "Moderada prioridad", "Baja prioridad", " ", " " }));
+        jPanel1.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 120, 30));
+
+        jButton11.setBackground(new java.awt.Color(255, 204, 51));
+        jButton11.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("BUSCAR");
+        jButton11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 450, 100, 50));
+
+        btnConsultar.setBackground(new java.awt.Color(135, 204, 204));
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cv (4).png"))); // NOI18N
+        btnConsultar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 80, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -361,26 +361,22 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnConsultar;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JComboBox<String> cbxTipo;
+    public com.toedter.calendar.JDateChooser dateChooser1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -392,13 +388,12 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -408,14 +403,14 @@ public class ProcesosServicios extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    public javax.swing.JTextField txtHora;
+    public javax.swing.JTextField txtIdCita;
     // End of variables declaration//GEN-END:variables
 }

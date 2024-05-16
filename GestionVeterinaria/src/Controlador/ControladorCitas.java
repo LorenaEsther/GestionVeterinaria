@@ -1,13 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Controlador;
 
-/**
- *
- * @author FABRIZIO
- */
-public class ControladorCitas {
+package Controlador;
+import Modelo.*;
+import Vista.*;
+import Procesos.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class ControladorCitas implements ActionListener{
+     VistaGestionCita vista;
+     ArregloCitas Citas;
+     Citas ct;
+
+    public ControladorCitas(VistaGestionCita gc) {
+        vista=gc;
+        
+        
+        
+        
+        
+        
+    }
+     
+     
+     
+    
+    
+    
+    
+    
+    
+    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
+    
+    
     
 }

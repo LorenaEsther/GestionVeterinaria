@@ -40,7 +40,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         itemEmpleados = new javax.swing.JMenuItem();
         itemHistorial = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        itemProcesos = new javax.swing.JMenuItem();
+        itemGestionCitas = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         itemCuenta = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -113,8 +113,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flujo-de-trabajo (2).png"))); // NOI18N
         jMenu2.setText("Procesos");
 
-        itemProcesos.setText("Procesos del Citas");
-        jMenu2.add(itemProcesos);
+        itemGestionCitas.setText("Gestion Citas");
+        jMenu2.add(itemGestionCitas);
 
         jMenuBar1.add(jMenu2);
 
@@ -216,10 +216,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem itemCreadores;
     public javax.swing.JMenuItem itemCuenta;
     public javax.swing.JMenuItem itemEmpleados;
+    public javax.swing.JMenuItem itemGestionCitas;
     public javax.swing.JMenuItem itemGuia;
     public javax.swing.JMenuItem itemHistorial;
     public javax.swing.JMenuItem itemMascotas;
-    public javax.swing.JMenuItem itemProcesos;
     public javax.swing.JMenuItem itemReporte;
     public javax.swing.JMenuItem itemServicios;
     public javax.swing.JMenuItem itemTipos;
