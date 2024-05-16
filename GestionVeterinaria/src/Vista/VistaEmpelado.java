@@ -134,7 +134,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
                         .addComponent(jLabel10)
                         .addGap(24, 24, 24)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextField9)
                         .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)))
@@ -194,7 +194,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 430, 340));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 470, 340));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -209,7 +209,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 810, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 770, 250));
 
         jTextField10.setBackground(new java.awt.Color(255, 204, 51));
         jTextField10.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar por DNI"));
@@ -254,11 +254,11 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 30, 200));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 30, 200));
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 670, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 640, 10));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perro-salchicha-imagen-animada-0059.gif"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 150, 90));
