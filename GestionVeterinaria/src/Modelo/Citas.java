@@ -10,11 +10,11 @@ public class Citas {
     private Date fecha;
     private String hora;
     private String urgencia;
-    private double serviID;
-    private double precServi;
+    private double PrecioTotal ;
+    
     
     public Object[] Registro(int num){
-        Object fila[]={ num, idCita,fecha,hora,urgencia,serviID,precServi};
+        Object fila[]={ num, idCita,fecha,hora,urgencia};
         return fila;
     }
 
@@ -60,21 +60,17 @@ public class Citas {
         this.urgencia = urgencia;
     }
 
-    public double getServiID() {
-        return serviID;
+    public double getPrecioTotal() {
+        return PrecioTotal;
     }
 
-    public void setServiID(double serviID) {
-        this.serviID = serviID;
+    public void setPrecioTotal(double PrecioTotal) {
+        this.PrecioTotal = PrecioTotal;
     }
+    
+    
 
-    public double getPrecServi() {
-        return precServi;
-    }
-
-    public void setPrecServi(double precServi) {
-        this.precServi = precServi;
-    }
+    
 
 
     

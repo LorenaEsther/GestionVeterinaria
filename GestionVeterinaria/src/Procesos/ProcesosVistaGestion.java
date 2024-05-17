@@ -8,9 +8,10 @@ import javax.swing.table.DefaultTableModel;
 public class ProcesosVistaGestion {
     public static void LimpiarEntradas(VistaGestionCitas gc){
         gc.txtIdCita.setText("");
-        gc.dateChooser1.setDate(null);
+        gc.jDateChooser1.setDate(null);
         gc.txtHora.setText("");
         gc.cbxTipo.setSelectedIndex(0);
+        
         
         
         gc.txtIdCita.requestFocus();
