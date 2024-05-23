@@ -30,6 +30,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         dspEscritorio = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         itemClientes = new javax.swing.JMenuItem();
@@ -60,15 +61,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         dspEscritorio.setBackground(new java.awt.Color(204, 255, 255));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PerritoOficial.gif"))); // NOI18N
+
+        dspEscritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout dspEscritorioLayout = new javax.swing.GroupLayout(dspEscritorio);
         dspEscritorio.setLayout(dspEscritorioLayout);
         dspEscritorioLayout.setHorizontalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dspEscritorioLayout.setVerticalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 653, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
@@ -223,6 +228,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem itemReporte;
     public javax.swing.JMenuItem itemServicios;
     public javax.swing.JMenuItem itemTipos;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
