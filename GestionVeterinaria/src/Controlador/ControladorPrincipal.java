@@ -79,9 +79,15 @@ public class ControladorPrincipal implements ActionListener{
            VistaHistorialClinico vhistorial = new VistaHistorialClinico();
            vhistorial.setTitle("Registro de Historiales Clinicos");
            MostrarForma(vhistorial);
-           
-           
-        }
+           }  
+        //SERVICIOS
+        if(e.getSource() == vprin.itemServicios){
+           ListaServicios vLservicios = new ListaServicios();
+           vLservicios.setTitle("Registro de Servicios");
+           MostrarForma(vLservicios);
+           }
+       
+        
 
        
     }    

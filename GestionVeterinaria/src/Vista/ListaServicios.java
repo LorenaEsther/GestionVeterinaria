@@ -29,10 +29,10 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtCod = new javax.swing.JTextField();
+        txtNom = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblServ = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -45,10 +45,10 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        areaDet = new javax.swing.JTextArea();
+        txtPre = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
+        cbxBuscar = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(135, 204, 204));
@@ -62,10 +62,10 @@ public class ListaServicios extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Codigo");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 110, 30));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 110, 30));
+        jPanel1.add(txtCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 110, 30));
+        jPanel1.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 110, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblServ.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -76,7 +76,7 @@ public class ListaServicios extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblServ);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 560, 260));
 
@@ -121,18 +121,18 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jLabel9.setText("Precio");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 50, 20));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        areaDet.setColumns(20);
+        areaDet.setRows(5);
+        jScrollPane2.setViewportView(areaDet);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 270, 100));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 170, 30));
+        jPanel1.add(txtPre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 170, 30));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar Servicio"));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 130, 40));
+        txtBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar Servicio"));
+        jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 130, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Servicio", "Precio", " " }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 150, 40));
+        cbxBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Servicio", "Precio", " " }));
+        jPanel1.add(cbxBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 150, 40));
 
         jButton5.setText("BUSCAR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -164,12 +164,13 @@ public class ListaServicios extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea areaDet;
+    public javax.swing.JComboBox<String> cbxBuscar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -182,11 +183,10 @@ public class ListaServicios extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    public javax.swing.JTable tblServ;
+    public javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtCod;
+    public javax.swing.JTextField txtNom;
+    public javax.swing.JTextField txtPre;
     // End of variables declaration//GEN-END:variables
 }
