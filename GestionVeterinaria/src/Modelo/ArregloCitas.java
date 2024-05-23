@@ -1,6 +1,6 @@
 
 package Modelo;
-
+import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import java.io.*;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -30,15 +30,25 @@ public class ArregloCitas implements Serializable{
         }
         cantCitas--;
     }//fin
-    
     public void GuardarEnArchivo(){
-        try {
-            FileOutputStream fos= new FileOutputStream("ListaCitas.bin");
-            ObjectOutputStream oos= new ObjectOutputStream(fos);
+        try{
+            FileOutputStream fos =  new FileOutputStream("ListaEmpleados.bin");
+            ObjectOutputStream oos  = new ObjectOutputStream(fos);
             oos.writeObject(ListaCitas);
             oos.close();
-        } catch (Exception ex) {
-            JOptionPane.showConfirmDialog(null, "ERROR no se puede guarda..."+ex);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null,"ERROR no se puede guardar.."+ex);
+        }
+    }
+    
+    public void RecuperarDeArchivo(){
+        try{
+            FileInputStream fis =  new FileInputStream("ListaEmpleados.bin");
+            ObjectInputStream ois  = new ObjectInputStream(fis);
+            ListaCitas = (Citas[])ois.readObject();
+            ois.close();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null,"ERROR no se puede recuperar.."+ex);
         }
     }
     
@@ -70,9 +80,13 @@ public class ArregloCitas implements Serializable{
         
         
     }//FIN DEL METODO
-
+    
     
     //GETTERS AND SETTERS
+    
+    
+    
+    
     public Citas[] getListaCitas() {return ListaCitas;}
     public void setListaCitas(Citas[] ListaCitas) {this.ListaCitas = ListaCitas; }
     public static int getCantCitas() {return cantCitas; }

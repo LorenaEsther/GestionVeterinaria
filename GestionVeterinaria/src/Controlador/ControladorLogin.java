@@ -5,28 +5,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import Vista.*;
+import java.util.ArrayList;
+
 
 public class ControladorLogin implements ActionListener {
     VistaLogin vista;
-    
+    ArrayList<String[]> credencialesYNombres;
+
     public ControladorLogin(VistaLogin fl) {
         vista = fl;
         vista.setTitle("Login de la Veterinaria");
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
         vista.btnIngresar.addActionListener(this);
+
+        // Inicializar el ArrayList con las credenciales y nombres de los veterinarios
+        credencialesYNombres = new ArrayList<>();
+        credencialesYNombres.add(new String[]{"VT001", "marco", "Dr. Marco Flores"});
+        credencialesYNombres.add(new String[]{"VT002", "lorena", "Dra. Lorena"});
+        credencialesYNombres.add(new String[]{"VT003", "fabricio", "Sra. Fabricio"});
+        credencialesYNombres.add(new String[]{"VT003", "juan", "Dr. Juan"});
+        // Puedes agregar más credenciales y nombres según sea necesario
+
+        // Ordenar el ArrayList por código de veterinario usando el algoritmo de selección
+        ordenarPorSeleccion();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String veterinario = vista.txtCodigo.getText();
-        String contraseña = vista.txtContraseña.getText();
+        String codigoVeterinario = vista.txtCodigo.getText();
+        String contrasenia = vista.txtContraseña.getText();
 
-        if (veterinario.isEmpty() || contraseña.isEmpty()) {
+        if (codigoVeterinario.isEmpty() || contrasenia.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Se identificaron campos vacíos");
         } else {
-            if (veterinario.equals("VT001FR") && contraseña.equals("soyguapo")) {
-                JOptionPane.showMessageDialog(null, "Bienvenido");
+            int posicion = busquedaBinaria(codigoVeterinario, contrasenia);
+            if (posicion != -1) {
+                String nombreVeterinario = credencialesYNombres.get(posicion)[2];
+                JOptionPane.showMessageDialog(null, "Bienvenido " + nombreVeterinario);
                 VistaPrincipal vistaPrincipal = new VistaPrincipal();
                 ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vistaPrincipal);
                 vistaPrincipal.setVisible(true);
@@ -36,6 +52,42 @@ public class ControladorLogin implements ActionListener {
             }
         }
     }
+
+    private void ordenarPorSeleccion() {
+        int n = credencialesYNombres.size();
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (credencialesYNombres.get(j)[0].compareTo(credencialesYNombres.get(minIndex)[0]) < 0) {
+                    minIndex = j;
+                }
+            }
+            String[] temp = credencialesYNombres.get(minIndex);
+            credencialesYNombres.set(minIndex, credencialesYNombres.get(i));
+            credencialesYNombres.set(i, temp);
+        }
+    }
+
+    private int busquedaBinaria(String codigoVeterinario, String passw) {
+        int izquierda = 0;
+        int derecha = credencialesYNombres.size() - 1;
+
+        while (izquierda <= derecha) {
+            int medio = izquierda + (derecha - izquierda) / 2;
+            String[] credencial = credencialesYNombres.get(medio);
+
+            int comparacionCodigo = credencial[0].compareTo(codigoVeterinario);
+            int comparacionContrasenia = credencial[1].compareTo(passw);
+
+            if (comparacionCodigo == 0 && comparacionContrasenia == 0) {
+                return medio; // Credenciales encontradas
+            } else if (comparacionCodigo < 0 || (comparacionCodigo == 0 && comparacionContrasenia < 0)) {
+                izquierda = medio + 1;
+            } else {
+                derecha = medio - 1;
+            }
+        }
+
+        return -1; // Credenciales no encontradas
+    }
 }
-
-

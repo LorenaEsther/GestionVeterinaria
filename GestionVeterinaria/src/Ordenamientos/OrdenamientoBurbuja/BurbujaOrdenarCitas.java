@@ -1,7 +1,7 @@
 
 package Ordenamientos.OrdenamientoBurbuja;
 import java.io.*;
-import modelo.*;
+import Modelo.*;
 import Modelo.ArregloCitas;
 import Modelo.Citas;
 

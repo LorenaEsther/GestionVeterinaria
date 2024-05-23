@@ -62,17 +62,17 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        btnElimianr = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         txtIdCita = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtHora = new javax.swing.JTextField();
         btnBuscarBinaria = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbxOrdenar = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         cbxTipo = new javax.swing.JComboBox<>();
-        jButton11 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        btnOrdenar = new javax.swing.JButton();
+        rbtnASC = new javax.swing.JRadioButton();
+        rbtnDESC = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaResumen = new javax.swing.JTextArea();
 
@@ -295,10 +295,10 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         JdateChooser.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 70, 70));
         JdateChooser.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 135, 29));
 
-        btnElimianr.setBackground(new java.awt.Color(135, 204, 204));
-        btnElimianr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
-        btnElimianr.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        JdateChooser.add(btnElimianr, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 10, 70, 70));
+        btnEditar.setBackground(new java.awt.Color(135, 204, 204));
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
+        btnEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JdateChooser.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 10, 70, 70));
         JdateChooser.add(txtIdCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 103, 29));
 
         jLabel12.setText("Hora");
@@ -315,10 +315,10 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         });
         JdateChooser.add(btnBuscarBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 150, 50));
 
-        jComboBox2.setBackground(new java.awt.Color(153, 204, 255));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Cita", "Fecha", "Tipo de Urgencia" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createTitledBorder("Ordenar por"));
-        JdateChooser.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 150, 50));
+        cbxOrdenar.setBackground(new java.awt.Color(153, 204, 255));
+        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Cita", "Fecha", "Tipo de Urgencia" }));
+        cbxOrdenar.setBorder(javax.swing.BorderFactory.createTitledBorder("Ordenar por"));
+        JdateChooser.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 150, 50));
 
         jLabel17.setText("Tipo de Urgencia");
         JdateChooser.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, -1, -1));
@@ -326,18 +326,18 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALTA PRIORIDAD", "MODERADA PRIORIDAD", "BAJA PRIORIDAD", " ", " " }));
         JdateChooser.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 140, 30));
 
-        jButton11.setBackground(new java.awt.Color(57, 109, 255));
-        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton11.setText("ORDENAR");
-        JdateChooser.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 130, 50));
+        btnOrdenar.setBackground(new java.awt.Color(57, 109, 255));
+        btnOrdenar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnOrdenar.setText("ORDENAR");
+        JdateChooser.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 130, 50));
 
-        jRadioButton1.setBackground(new java.awt.Color(135, 204, 204));
-        jRadioButton1.setText("ASC");
-        JdateChooser.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, -1, -1));
+        rbtnASC.setBackground(new java.awt.Color(135, 204, 204));
+        rbtnASC.setText("ASC");
+        JdateChooser.add(rbtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(135, 204, 204));
-        jRadioButton2.setText("DESC");
-        JdateChooser.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, -1, -1));
+        rbtnDESC.setBackground(new java.awt.Color(135, 204, 204));
+        rbtnDESC.setText("DESC");
+        JdateChooser.add(rbtnDESC, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, -1, -1));
 
         txtaResumen.setColumns(20);
         txtaResumen.setRows(5);
@@ -371,17 +371,17 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel JdateChooser;
     public javax.swing.JButton btnBuscarBinaria;
-    public javax.swing.JButton btnElimianr;
+    public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnOrdenar;
+    public javax.swing.JComboBox<String> cbxOrdenar;
     public javax.swing.JComboBox<String> cbxTipo;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox2;
     public com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -399,8 +399,6 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
@@ -413,6 +411,8 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    public javax.swing.JRadioButton rbtnASC;
+    public javax.swing.JRadioButton rbtnDESC;
     public javax.swing.JTable tblCitas;
     public javax.swing.JTextField txtHora;
     public javax.swing.JTextField txtIdCita;
