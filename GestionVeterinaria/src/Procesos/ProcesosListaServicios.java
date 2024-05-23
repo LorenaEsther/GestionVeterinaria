@@ -17,7 +17,7 @@ public class ProcesosListaServicios {
         ls.txtCod.requestFocus();
     }//fin del metodo
     
-    public static Servicio LeerCitas(ListaServicios ls){
+    public static Servicio LeerServicio(ListaServicios ls){
         Servicio se =new Servicio();
         se.setCodServi(ls.txtCod.getText());
         se.setNomServi(ls.txtNom.getText());
@@ -26,12 +26,12 @@ public class ProcesosListaServicios {
         return se;
         
     }
-    public static void PresentarGestionDeCitas(VistaGestionCitas vg){
-        vg.setTitle("Gestion de Registro de Citas");
-        vg.cbxTipo.removeAllItems();
-        vg.cbxTipo.addItem("ALTA PRIORIDAD");
-        vg.cbxTipo.addItem("MODERADA PRIORIDAD");
-        vg.cbxTipo.addItem("BAJA PRIORIDAD");
+    public static void PresentarGestionDeServicios(ListaServicios ls){
+        ls.setTitle("Gestion de Registro de Servicios");
+        ls.cbxBuscar.removeAllItems();
+        ls.cbxBuscar.addItem("ALTA PRIORIDAD");
+        ls.cbxBuscar.addItem("MODERADA PRIORIDAD");
+        ls.cbxBuscar.addItem("BAJA PRIORIDAD");
     }//Fin del metodo
     public static void MostrarEnTabla(ListaServicios ls,Servicio[] a){
         String titulos []={"Num","Codigo","Servicio","Precio"};
