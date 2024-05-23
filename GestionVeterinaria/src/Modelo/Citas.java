@@ -2,7 +2,7 @@
 package Modelo;
 
 import java.util.Date;
-
+import java.io.*;
 
 public class Citas {
     
@@ -20,7 +20,7 @@ public class Citas {
 
   
     @Override
-    public String toString() {
+    public String toString() {//*********************************************
         return "IdCita     :"+idCita+
                "fecha     :"+fecha+
                 "hora     :"+hora+

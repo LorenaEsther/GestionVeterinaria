@@ -2,10 +2,9 @@
 package Busquedas.BusquedaBinaria;
 
 import Modelo.*;
-
-
 public class BusquedaBinariaCitas {
-    public int BuscarPorCodigoCita(Citas[] vector, String codigobuscar){
+    
+    public static int BuscarPorCodigoCita(Citas[] vector, String codigobuscar){
         int n=ArregloCitas.getCantCitas();
         int inferior=0,superior=n-1;
         while (inferior<=superior) {

@@ -49,12 +49,11 @@ public class ArregloCitas implements Serializable{
         }
         
     }
-    public void MostratResunen(JTextArea txa){
+    public void MostrarResumen(JTextArea txa){
         double suma=0;
-        
         int c1=0,c2=0,c3=0;
         for(int i=0;i<cantCitas;i++){
-            suma=suma +ListaCitas[i].getPrecioTotal(); //PRECIO TOTAL (Como atriubuto de la calse cita)................
+            suma=suma +ListaCitas[i].getPrecioTotal(); //PRECIO TOTAL (Como atriubuto de la clase cita)................
             switch (ListaCitas[i].getUrgencia()){ //SOLO CONTARA EL TIPO DE URGENCIA DEPENDIENDO LO QUE SE SELECIONE
                 case "ALTA PRIORIDAD": c1++;break;
                 case "MODERADA PRIORIDAD" : c2++;break;
