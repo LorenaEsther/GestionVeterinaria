@@ -11,7 +11,7 @@ public class Empleado implements Serializable {
     private String apellidos;
     private String sexo;
     private String dni;
-    private int horasLaborables;
+    private String modalidad;
     private LocalDate fechaContratacion;
     private String telefono;
     private String cargo;
@@ -21,7 +21,7 @@ public class Empleado implements Serializable {
     }
     
     public Object[] Registro (int num) {
-        Object[] fila = {num, codigo,nombre, apellidos, sexo, dni, horasLaborables, fechaContratacion, telefono, cargo, salario};
+        Object[] fila = {num, codigo,nombre, apellidos, sexo, dni, modalidad, fechaContratacion, telefono, cargo, salario};
         return fila;
     }
 
@@ -65,12 +65,12 @@ public class Empleado implements Serializable {
         this.dni = dni;
     }
 
-    public int getHorasLaborables() {
-        return horasLaborables;
+    public String getModalidad() {
+        return modalidad;
     }
 
-    public void setHorasLaborables(int horasLaborables) {
-        this.horasLaborables = horasLaborables;
+    public void setModalidad(String horasLaborables) {
+        this.modalidad = horasLaborables;
     }
 
     public LocalDate getFechaContratacion() {

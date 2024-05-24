@@ -84,9 +84,10 @@ public class ControladorPrincipal implements ActionListener{
         //EMPELADOS
         if(e.getSource() == vprin.itemEmpleados){
            VistaEmpelado vempleados = new VistaEmpelado();
-           vempleados.setTitle("Registro de Empleados");
+           vempleados.setTitle("Registro de Empleados con Listas Enlazadas");
            MostrarForma(vempleados);
            PresentarFramePrincipal.Centrar(vempleados,vprin.dspEscritorio);
+           ControladorEmpleado controladorEmpleado = new ControladorEmpleado(vempleados);
            } 
         //HISTORIAL
         if(e.getSource() == vprin.itemHistorial){
