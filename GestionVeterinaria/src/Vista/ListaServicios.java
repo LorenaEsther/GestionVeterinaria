@@ -132,6 +132,11 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 130, 40));
 
         cbxBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Servicio", "Precio", " " }));
+        cbxBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxBuscarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cbxBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 150, 40));
 
         btnBuscar.setText("BUSCAR");
@@ -162,14 +167,18 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void cbxBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxBuscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextArea areaDet;
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnNuevo;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnNuevo;
     public javax.swing.JComboBox<String> cbxBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

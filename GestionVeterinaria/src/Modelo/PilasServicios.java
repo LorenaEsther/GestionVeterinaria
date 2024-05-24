@@ -1,5 +1,5 @@
 
-package EstructurasListas;
+package Modelo;
 
 import java.io.Serializable;
 import Procesos.Mensajes;
@@ -49,6 +49,27 @@ public class PilasServicios implements Serializable{
         if(encontrado==false) Mensajes.MostrarTexto("Codigo "+codbuscado+" no existe en la pila");
         else Mensajes.MostrarTexto("DATO ENCONTRADO!!!! \n\n"+pila.get(posicion).toString());
     }  
+    //metodo que busca un servicio y retorna su posicion
+    public int BuscarPosicion(String codbuscado){
+        boolean encontrado=false;
+        int posicion=-1;
+        for(int i=0;i<pila.size();i++){
+            if(codbuscado.equalsIgnoreCase(pila.get(i).getCodServi())){
+                posicion=i;
+                encontrado=true;
+                break;
+            }
+        }
+        return posicion;
+    }
+    //metodo que actualiza un servicio
+    public void Actualizar(Servicio nuevo, String codbuscado){
+        int posicion = this.BuscarPosicion(codbuscado);
+        pila.get(posicion).setNomServi(nuevo.getNomServi());
+        pila.get(posicion).setDetallServi(nuevo.getDetallServi());
+        pila.get(posicion).setPreciServi(nuevo.getPreciServi());
+       
+    }
    //getter y setter
     public LinkedList<Servicio> getPila() {     return pila;    }
     public void setPila(LinkedList<Servicio> pila) {   this.pila = pila;    }

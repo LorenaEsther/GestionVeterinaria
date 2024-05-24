@@ -1,6 +1,5 @@
 package Procesos;
 
-import EstructurasListas.*;
 import Modelo.*;
 import Vista.*;
 import javax.swing.JTable;
@@ -29,16 +28,17 @@ public class ProcesosListaServicios {
     public static void PresentarGestionDeServicios(ListaServicios ls){
         ls.setTitle("Gestion de Registro de Servicios");
         ls.cbxBuscar.removeAllItems();
-        ls.cbxBuscar.addItem("ALTA PRIORIDAD");
-        ls.cbxBuscar.addItem("MODERADA PRIORIDAD");
-        ls.cbxBuscar.addItem("BAJA PRIORIDAD");
+        ls.cbxBuscar.addItem("CODIGO");
+        ls.cbxBuscar.addItem("SERVICIO");
+        ls.cbxBuscar.addItem("PRECIO");
     }//Fin del metodo
-    public static void MostrarEnTabla(ListaServicios ls,Servicio[] a){
+    public static void MostrarEnTabla(ListaServicios ls,PilasServicios pila){
         String titulos []={"Num","Codigo","Servicio","Precio"};
         DefaultTableModel mt= new DefaultTableModel(null,titulos);
         ls.tblServ.setModel(mt);
-        for (int i=0; i<ArregloCitas.getCantCitas();i++){
-            mt.addRow(a[i].Registro(i+1));
+        for(int i=0;i<pila.getPila().size();i++){
+            Servicio ser = pila.getPila().get(i);
+            mt.addRow(ser.Registro(i+1));
         }
     }
     

@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import Modelo.Servicio;
-import EstructurasListas.PilasServicios;
+import Modelo.PilasServicios;
 
 public class DatosServicios {
     public static void GuardarEnArchivo(PilasServicios Lista){
