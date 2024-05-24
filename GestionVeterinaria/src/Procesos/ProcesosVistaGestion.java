@@ -3,7 +3,7 @@ package Procesos;
 
 import Modelo.*;
 import Vista.*;
-import javax.swing.JTable;
+
 import javax.swing.table.DefaultTableModel;
 public class ProcesosVistaGestion {
     public static void LimpiarEntradas(VistaGestionCitas gc){
@@ -13,7 +13,7 @@ public class ProcesosVistaGestion {
         gc.cbxTipo.setSelectedIndex(0);
         gc.txtPrecioTotal.setText("");
         
-        gc.txtIdCita.requestFocus();
+        gc.txtIdCita.requestFocus();//COLOCA EL CURSOR EN EL TEXTFIELD
     }//fin del metodo
     public static Citas LeerCitas(VistaGestionCitas vg){
         Citas ct =new Citas();
@@ -37,7 +37,7 @@ public class ProcesosVistaGestion {
         DefaultTableModel mt= new DefaultTableModel(null,titulos);
         vg.tblCitas.setModel(mt);
         for (int i=0; i<ArregloCitas.getCantCitas();i++){
-            mt.addRow(a[i].Registro(i+1));
+            mt.addRow(a[i].Registro(i+1));                          
         }
     }
     

@@ -1,10 +1,13 @@
 
 package Controlador;
 
+import Procesos.PresentarFramePrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.*;
+import Vista.VistaPrincipal;
 import javax.swing.JInternalFrame;
+
 
 public class ControladorPrincipal implements ActionListener{
 
@@ -12,7 +15,7 @@ public class ControladorPrincipal implements ActionListener{
     
     public ControladorPrincipal(VistaPrincipal vp){
         this.vprin=vp;
-        vp.setTitle("Programa princial - Venta de Productos");
+        vp.setTitle("SITEMA DE VETERINARIA-2024");
         vp.setVisible(true);
         vp.itemClientes.addActionListener(this);
         vp.itemMascotas.addActionListener(this);
@@ -41,50 +44,63 @@ public class ControladorPrincipal implements ActionListener{
         if(e.getSource()== vprin.itemClientes){
            VistaClientes vcliente = new VistaClientes();
            vcliente.setTitle("Clientes Registrados");
-           MostrarForma(vcliente);           
+           MostrarForma(vcliente);
+           
+           
         }        
         if(e.getSource() == vprin.itemMascotas){
            VistaMascotas vmascotas = new VistaMascotas();
            vmascotas.setTitle("Mascotas Registradas");
            MostrarForma(vmascotas);
+           PresentarFramePrincipal.Centrar(vmascotas,vprin.dspEscritorio);
         }
         if(e.getSource() == vprin.itemCuenta){
            VistaServicios vcuenta = new VistaServicios();
            vcuenta.setTitle("Cuenta de Servicios");
            MostrarForma(vcuenta);
+           PresentarFramePrincipal.Centrar(vcuenta,vprin.dspEscritorio);
+           
         }
         if(e.getSource() == vprin.itemCitas){
            VistaCitas vcitas = new VistaCitas();
            vcitas.setTitle("Citas");
            MostrarForma(vcitas);
+           PresentarFramePrincipal.Centrar(vcitas,vprin.dspEscritorio);
+            
         }
         if(e.getSource() == vprin.itemProcesos){
            VistaGestionCitas vprocesos = new VistaGestionCitas();
            vprocesos.setTitle("Procesos de Servicios");
            MostrarForma(vprocesos);
+           PresentarFramePrincipal.Centrar(vprocesos,vprin.dspEscritorio);
+           ControladorCitas cc = new ControladorCitas(vprocesos);//DEBE HABER CODUGO
         }
         if(e.getSource() == vprin.itemReporte){
            VistaReportesServicios vreporte = new VistaReportesServicios();
            vreporte.setTitle("Reporte de Servicios");
            MostrarForma(vreporte);
+           PresentarFramePrincipal.Centrar(vreporte,vprin.dspEscritorio);
         }
         //EMPELADOS
         if(e.getSource() == vprin.itemEmpleados){
            VistaEmpelado vempleados = new VistaEmpelado();
            vempleados.setTitle("Registro de Empleados");
            MostrarForma(vempleados);
+           PresentarFramePrincipal.Centrar(vempleados,vprin.dspEscritorio);
            } 
         //HISTORIAL
         if(e.getSource() == vprin.itemHistorial){
            VistaHistorialClinico vhistorial = new VistaHistorialClinico();
            vhistorial.setTitle("Registro de Historiales Clinicos");
            MostrarForma(vhistorial);
+           PresentarFramePrincipal.Centrar(vhistorial,vprin.dspEscritorio);
            }  
         //SERVICIOS
         if(e.getSource() == vprin.itemServicios){
            ListaServicios vLservicios = new ListaServicios();
            vLservicios.setTitle("Registro de Servicios");
            MostrarForma(vLservicios);
+           PresentarFramePrincipal.Centrar(vLservicios,vprin.dspEscritorio);
            }
        
         

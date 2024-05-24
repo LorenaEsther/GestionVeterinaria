@@ -18,7 +18,7 @@ public class ControladorCitas implements ActionListener {
     public ControladorCitas(VistaGestionCitas vg) {
         vista = vg;
         
-        
+        //EPOR QUE NO SE DAN LAS ACCIONES?****************************************************
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscarBinaria.addActionListener(this);//BUSQUEDA DE FORMA BINARIA
         vista.btnEliminar.addActionListener(this);

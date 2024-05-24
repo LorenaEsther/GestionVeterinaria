@@ -4,7 +4,7 @@ package Modelo;
 import java.util.Date;
 import java.io.*;
 
-public class Citas {
+public class Citas implements Serializable{
     
     private String idCita;
     private Date fecha;

@@ -8,7 +8,7 @@ import Modelo.Citas;
 public class InsercionOrdenamientoCitas {
     //ARREGLO
     
-    //ESTO SERVIRIA O YA NO?****************************************
+    //ESTO SERVIRIA O YA NO?****************************************************
      public static Citas[] ordenarPorIDcita(Citas a[]){
         for(int i=1;i<ArregloCitas.getCantCitas();i++){
             Citas value=a[i];
@@ -22,7 +22,7 @@ public class InsercionOrdenamientoCitas {
         return a;
     }
     
-    
+    //ESTA BIEN?****************************************************
     public static Citas[] ordenarFechaASC(Citas a[]){
         for(int i=1;i<ArregloCitas.getCantCitas();i++){
             Citas value=a[i];

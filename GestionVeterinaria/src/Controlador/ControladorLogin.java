@@ -24,7 +24,8 @@ public class ControladorLogin implements ActionListener {
         credencialesYNombres.add(new String[]{"VT001", "marco", "Dr. Marco Flores"});
         credencialesYNombres.add(new String[]{"VT002", "lorena", "Dra. Lorena"});
         credencialesYNombres.add(new String[]{"VT003", "fabricio", "Sra. Fabricio"});
-        credencialesYNombres.add(new String[]{"VT003", "juan", "Dr. Juan"});
+        credencialesYNombres.add(new String[]{"VT004", "juan", "Dr. Juan"});
+        credencialesYNombres.add(new String[]{"VT005", "marcelino", "Prof. Willabardo Astrada"});
         // Puedes agregar más credenciales y nombres según sea necesario
 
         // Ordenar el ArrayList por código de veterinario usando el algoritmo de selección

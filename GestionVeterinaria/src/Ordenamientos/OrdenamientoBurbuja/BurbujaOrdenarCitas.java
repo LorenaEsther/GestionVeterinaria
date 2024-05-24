@@ -6,9 +6,11 @@ import Modelo.ArregloCitas;
 import Modelo.Citas;
 
 public class BurbujaOrdenarCitas {
-    //TIPO DE URGENCIA******************************************
+    //ES CORRECTO PONER ESTO?
+    private static int cantCitas=0;
+    //TIPO DE URGENCIA**********************************************************
     
-    /*
+    
     public static Citas[] OrdenarPorUrgencia( Citas[] ListaCitas ) {
         for (int i = 0; i < - 1; i++) {
             for (int j = 0; j < cantCitas - 1 - i; j++) {
@@ -20,11 +22,11 @@ public class BurbujaOrdenarCitas {
             }
         }
         return ListaCitas;
-    }*/
+    }
     
     
     
-    
+    /*
     //Algoritmo de ordenamiento de burbuja
     public static String[] Burbuja(String[] arreglo){
         String auxiliar;
@@ -39,4 +41,5 @@ public class BurbujaOrdenarCitas {
         }//fin del 1er for
         return arreglo;
     }//fin del método 
+*/
 }
