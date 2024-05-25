@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import Persistencia.DatosServicios;
 import java.util.Date;
 import java.io.*;
 
@@ -11,12 +12,13 @@ public class Citas implements Serializable{
     private String hora;
     private String urgencia;
     private double PrecioTotal;
+    
     private String codEmp;
-    private String nomEmp;
+    private String nomEmp="";//
     private String codMas;
-    private String nomMas;
+    private String nomMas="";
     private String codDue;
-    private String nomDue;
+    private String nomDue="";
     private String codSer;
     private String nomSer;
 
@@ -51,11 +53,11 @@ public class Citas implements Serializable{
         //Obtener Nombre de Empleado
         //Obtener Nombre de Mascota
         //Obtener Nombre de Dueño 
-        ClienteDAO cliArreglo = new ClienteDAO();
+        /*ClienteDAO cliArreglo = new ClienteDAO();
         Cliente cliente = cliArreglo.buscarPorCodigo(codEmp);
-        nomDue = cliente.getNombre();
+        nomDue = cliente.getNombre();*/
         //Obtener Servicio
-        PilasServicios pilaServ = new PilasServicios();
+        PilasServicios pilaServ =  DatosServicios.RecuperaDeArchivo();
         Servicio servicio = pilaServ.ObtenerServicio(codSer);
         nomSer = servicio.getNomServi();
     }

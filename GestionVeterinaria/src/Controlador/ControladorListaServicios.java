@@ -18,7 +18,7 @@ public class ControladorListaServicios implements ActionListener{
     ListaServicios vista;
     public ControladorListaServicios(ListaServicios ls){
         vista = ls;
-        vista.btnOrdenar.addActionListener(this);
+        //vista.btnOrdenar.addActionListener(this);
         vista.btnGuardar.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
         vista.btnEditar.addActionListener(this);
