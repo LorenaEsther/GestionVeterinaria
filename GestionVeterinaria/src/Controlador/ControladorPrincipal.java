@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import Vista.*;
 import Vista.VistaPrincipal;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 
 public class ControladorPrincipal implements ActionListener{
@@ -29,6 +30,8 @@ public class ControladorPrincipal implements ActionListener{
         vp.itemCreadores.addActionListener(this);
         vp.itemEmpleados.addActionListener(this);
         vp.itemHistorial.addActionListener(this);
+        
+        vp.itemCerrar.addActionListener(this);
     }
     
     
@@ -99,6 +102,18 @@ public class ControladorPrincipal implements ActionListener{
            ControladorListaServicios cls = new ControladorListaServicios(vLservicios);
            }
        
+        // Acción para cerrar sesión
+        if (e.getSource() == vprin.itemCerrar) {
+            int respuesta = JOptionPane.showConfirmDialog(vprin, "¿Estas seguro que deseas cerrar sesion?", "Confirmar", JOptionPane.YES_NO_OPTION);
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // Volver a la pantalla de login
+                VistaLogin vistaLogin = new VistaLogin();
+                ControladorLogin controladorLogin = new ControladorLogin(vistaLogin);
+                vistaLogin.setVisible(true);
+                vprin.dispose(); // Cerrar la ventana principal
+            }
+        }
+        
         
 
        
