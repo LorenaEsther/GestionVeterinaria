@@ -20,7 +20,7 @@ public class ControladorPrincipal implements ActionListener{
         vp.itemClientes.addActionListener(this);
         vp.itemMascotas.addActionListener(this);
         vp.itemTipos.addActionListener(this);
-        vp.itemCitas.addActionListener(this);
+        
         vp.itemServicios.addActionListener(this);
         vp.itemProcesos.addActionListener(this);
         vp.itemCuenta.addActionListener(this);
@@ -61,19 +61,13 @@ public class ControladorPrincipal implements ActionListener{
            PresentarFramePrincipal.Centrar(vcuenta,vprin.dspEscritorio);
            
         }
-        if(e.getSource() == vprin.itemCitas){
-           VistaCitas vcitas = new VistaCitas();
-           vcitas.setTitle("Citas");
-           MostrarForma(vcitas);
-           PresentarFramePrincipal.Centrar(vcitas,vprin.dspEscritorio);
-            
-        }
+        
         if(e.getSource() == vprin.itemProcesos){
            VistaGestionCitas vprocesos = new VistaGestionCitas();
            vprocesos.setTitle("Procesos de Servicios");
            MostrarForma(vprocesos);
            PresentarFramePrincipal.Centrar(vprocesos,vprin.dspEscritorio);
-           ControladorCitas cc = new ControladorCitas(vprocesos);//DEBE HABER CODUGO
+           ControladorCitas cc = new ControladorCitas(vprocesos);//DEBE HABER CODIGO
         }
         if(e.getSource() == vprin.itemReporte){
            VistaReportesServicios vreporte = new VistaReportesServicios();

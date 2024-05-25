@@ -30,25 +30,25 @@ public class ArregloCitas implements Serializable{
         }
         cantCitas--;
     }//fin
-    public void GuardarEnArchivo(){
-        try{
-            FileOutputStream fos =  new FileOutputStream("ListaEmpleados.bin");
-            ObjectOutputStream oos  = new ObjectOutputStream(fos);
+    public void GuardarEnArchivo() {
+        try {
+            FileOutputStream fos = new FileOutputStream("ListaCitas.bin");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(ListaCitas);
             oos.close();
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null,"ERROR no se puede guardar.."+ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERROR al guardar: " + ex.getMessage());
         }
     }
     
-    public void RecuperarDeArchivo(){
-        try{
-            FileInputStream fis =  new FileInputStream("ListaEmpleados.bin");
-            ObjectInputStream ois  = new ObjectInputStream(fis);
-            ListaCitas = (Citas[])ois.readObject();
+     public void RecuperarDeArchivo() {
+        try {
+            FileInputStream fis = new FileInputStream("ListaCitas.bin");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ListaCitas = (Citas[]) ois.readObject();
             ois.close();
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null,"ERROR no se puede recuperar.."+ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERROR al recuperar: " + ex.getMessage());
         }
     }
     

@@ -8,10 +8,10 @@ public class BusquedaBinariaCitas {
         int inferior = 0, superior = n - 1;
         while (inferior <= superior) {
             int centro = (superior + inferior) / 2;
-            if (codigobuscar.equalsIgnoreCase(vector[centro].getIdCita())) {
+            if (vector[centro] != null && codigobuscar.equalsIgnoreCase(vector[centro].getIdCita())) {
                 return centro;
             } else {
-                if (codigobuscar.compareToIgnoreCase(vector[centro].getIdCita()) < 0)
+                if (vector[centro] != null && codigobuscar.compareToIgnoreCase(vector[centro].getIdCita()) < 0)
                     superior = centro - 1;
                 else
                     inferior = centro + 1;

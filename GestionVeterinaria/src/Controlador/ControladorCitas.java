@@ -69,12 +69,12 @@ public class ControladorCitas implements ActionListener {
         if (e.getSource() == vista.btnOrdenar) {
                 if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) { // Ordenar por Fecha
            
-                    Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarFechaASC(ListaCitas.getListaCitas());
+                    Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarDueñoASC(ListaCitas.getListaCitas());//**DUEÑO ORDEN************************
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
                 if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()) {
                     
-                    Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarFechaDESC(ListaCitas.getListaCitas());
+                    Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarDueñoDESC(ListaCitas.getListaCitas());//**DUEÑO ORDEN********************************
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
                 if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) {//ordenar por ID 
@@ -90,7 +90,8 @@ public class ControladorCitas implements ActionListener {
             }
 
         if (e.getSource() == vista.btnBuscarBinaria) {
-            Citas[] auxiliar = InsercionOrdenamientoCitas.ordenarPorIDcita(ListaCitas.getListaCitas());
+            // Ordenar primero por ID antes de hacer la búsqueda binaria
+            Citas[] auxiliar = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
             int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(auxiliar, codigoBuscar);
             if (posicion == -1) {
@@ -98,6 +99,7 @@ public class ControladorCitas implements ActionListener {
             } else {
                 Mensajes.MostrarTexto(auxiliar[posicion].toString());
             }
-        }//fin busqueda binaria
-    }//fin del action   
-}//fin class
+        }
+    }
+}
+

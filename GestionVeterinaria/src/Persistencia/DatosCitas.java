@@ -12,24 +12,24 @@ import Modelo.*;
 public class DatosCitas {
     public static void GuardarEnArchivo(Citas[] listaCitas){
       try{
-          FileOutputStream fos =  new FileOutputStream("InfoEstudiantes.bin");
+          FileOutputStream fos =  new FileOutputStream("InfoCitas.bin");
           ObjectOutputStream oos =  new ObjectOutputStream(fos);
           oos.writeObject(listaCitas);
           oos.close();
       }catch(Exception ex){
-          Mensajes.MostrarTexto("ERROR no se puede guardar Lista Enlazada.."+ex);
+          Mensajes.MostrarTexto("ERROR no se puede guardar El arreglo.."+ex);
       }
   }//fin guardar 
     
     public static ArregloCitas RecuperaDeArchivo(){
      ArregloCitas listaCitas =  new ArregloCitas();
      try{
-          FileInputStream fis =  new FileInputStream("InfoEstudiantes.bin");
+          FileInputStream fis =  new FileInputStream("InfoCitas.bin");
           ObjectInputStream ois =  new ObjectInputStream(fis);
           listaCitas = (ArregloCitas) ois.readObject();
           ois.close();
       }catch(Exception ex){
-          Mensajes.MostrarTexto("ERROR no se puede recuperar Lista Enlazada.."+ex);
+          Mensajes.MostrarTexto("ERROR no se puede recuperar el arreglo.."+ex);
       }
      return listaCitas;
   }//fin recuperar

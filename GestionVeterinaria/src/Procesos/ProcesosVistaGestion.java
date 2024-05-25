@@ -11,7 +11,7 @@ public class ProcesosVistaGestion {
         gc.jDateChooser1.setDate(null);
         gc.txtHora.setText("");
         gc.cbxTipo.setSelectedIndex(0);
-        gc.txtPrecioTotal.setText("");
+        //gc.txtPrecioTotal.setText("");
         
         gc.txtIdCita.requestFocus();//COLOCA EL CURSOR EN EL TEXTFIELD
     }//fin del metodo
@@ -21,7 +21,7 @@ public class ProcesosVistaGestion {
         ct.setFecha(vg.jDateChooser1.getDate());
         ct.setHora(vg.txtHora.getText());
         ct.setUrgencia(vg.cbxTipo.getSelectedItem().toString());
-        ct.setPrecioTotal(Double.parseDouble(vg.txtPrecioTotal.getText())); //ATRIUBUTO PRECIO TOTAL
+        //ct.setPrecioTotal(Double.parseDouble(vg.txtPrecioTotal.getText())); //ATRIUBUTO PRECIO TOTAL
         return ct;
         
     }
@@ -33,7 +33,7 @@ public class ProcesosVistaGestion {
         vg.cbxTipo.addItem("BAJA PRIORIDAD");
     }//Fin del metodo
     public static void MostaraEnTabla(VistaGestionCitas vg,Citas[] a){
-        String titulos []={"Num","ID","Fecha","Hora","Tip. Urgen.","Precio"};
+        String titulos []={"Num","ID","Codigo Empl.","Nombre Empl.","Nom. Mascota","Dueño","Servicio","Precio","Urgencia","Fecha","Hora"};
         DefaultTableModel mt= new DefaultTableModel(null,titulos);
         vg.tblCitas.setModel(mt);
         for (int i=0; i<ArregloCitas.getCantCitas();i++){

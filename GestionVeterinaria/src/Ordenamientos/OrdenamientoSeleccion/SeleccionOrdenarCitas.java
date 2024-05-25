@@ -6,7 +6,7 @@ import Modelo.Citas;
 
 
 public class SeleccionOrdenarCitas {
-    //ESTARA BIEN ?****************************************************************faltan importar paquetes
+    
     public static Citas[] ordenarPorIdCitaASC(Citas[] ListaCitas, int cantCitas) {
         for (int i = 0; i < cantCitas - 1; i++) {
             int minIndex = i;
