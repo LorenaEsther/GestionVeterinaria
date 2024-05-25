@@ -10,9 +10,42 @@ import java.util.ArrayList;
 
 public class ControladorLogin implements ActionListener {
     VistaLogin vista;
-    ArrayList<String[]> credencialesYNombres;
-
+    //ArrayList<String[]> credencialesYNombres;
+    
+    //SOLO PARA ENTRAR RAPIDO------NO ELIMINAR LOS CODIGOS COMENTADOS!!!!!
+    
     public ControladorLogin(VistaLogin fl) {
+        vista = fl;
+        vista.setTitle("Login de la Veterinaria");
+        vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
+        vista.btnIngresar.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == vista.btnIngresar) {
+            // Redirigir directamente al menú principal
+            VistaPrincipal vistaPrincipal = new VistaPrincipal();
+            ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vistaPrincipal);
+            vistaPrincipal.setVisible(true);
+            vista.dispose(); // Cerrar la ventana de login
+        }
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    /*public ControladorLogin(VistaLogin fl) {
         vista = fl;
         vista.setTitle("Login de la Veterinaria");
         vista.setVisible(true);
@@ -90,5 +123,5 @@ public class ControladorLogin implements ActionListener {
         }
 
         return -1; // Credenciales no encontradas
-    }
-}
+    }*/
+

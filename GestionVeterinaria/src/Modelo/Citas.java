@@ -21,10 +21,10 @@ public class Citas implements Serializable{
   
     @Override
     public String toString() {//*********************************************
-        return "IdCita     :"+idCita+
-               "fecha     :"+fecha+
-                "hora     :"+hora+
-               "urgencia    :"+urgencia;
+        return "Id Cita       :  "+idCita+
+               "\nFecha       :  "+fecha+
+               "\nHora        :  "+hora+
+               "\nUrgencia    :  "+urgencia;
                
     }
 
