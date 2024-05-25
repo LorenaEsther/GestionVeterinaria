@@ -152,9 +152,9 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos de la Mascota"));
 
-        jLabel6.setText("Nombre");
+        jLabel6.setText("ID Mascota");
 
-        jLabel7.setText("Nombre del Cliente");
+        jLabel7.setText("ID Dueño");
 
         jButton7.setBackground(new java.awt.Color(135, 204, 204));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
@@ -175,7 +175,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
                     .addComponent(jTextField4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -190,11 +190,9 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                             .addComponent(jLabel6)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField4)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField4)
+                            .addComponent(jLabel7)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -213,7 +211,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Servicio"));
 
-        jLabel8.setText("Servicio");
+        jLabel8.setText("ID Servicio");
 
         jButton8.setBackground(new java.awt.Color(135, 204, 204));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
@@ -227,12 +225,12 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel8)
-                .addGap(88, 88, 88)
+                .addGap(56, 56, 56)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addGap(24, 24, 24)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -285,7 +283,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
         btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         JdateChooser.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 70, 70));
-        JdateChooser.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 135, 29));
+        JdateChooser.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 319, 135, 40));
 
         btnEditar.setBackground(new java.awt.Color(135, 204, 204));
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
@@ -306,12 +304,13 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnBuscarBinaria.setBackground(new java.awt.Color(255, 204, 51));
         btnBuscarBinaria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBuscarBinaria.setText("BUSQUEDA BINARIA");
+        btnBuscarBinaria.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBuscarBinaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarBinariaActionPerformed(evt);
             }
         });
-        JdateChooser.add(btnBuscarBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 150, 50));
+        JdateChooser.add(btnBuscarBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 240, 50));
 
         cbxOrdenar.setBackground(new java.awt.Color(153, 204, 255));
         cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Cita", "Dueño", "Tipo de Urgencia" }));
@@ -325,6 +324,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnOrdenar.setBackground(new java.awt.Color(57, 109, 255));
         btnOrdenar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrdenar.setText("ORDENAR");
+        btnOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         JdateChooser.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 130, 50));
 
         rbtnASC.setBackground(new java.awt.Color(135, 204, 204));
