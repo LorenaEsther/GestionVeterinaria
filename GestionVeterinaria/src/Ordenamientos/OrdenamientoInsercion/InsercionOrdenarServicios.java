@@ -1,7 +1,7 @@
 
 package Ordenamientos.OrdenamientoInsercion;
 
-import Modelo.Servicio;
+import Modelo.*;
 import java.util.LinkedList;
 
 public class InsercionOrdenarServicios {
