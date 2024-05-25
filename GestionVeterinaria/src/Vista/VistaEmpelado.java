@@ -215,7 +215,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 1060, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 880, 250));
 
         btnAgregarInicio.setBackground(new java.awt.Color(135, 204, 204));
         btnAgregarInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarInicio.png"))); // NOI18N
@@ -263,7 +263,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 920, 10));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perro-salchicha-imagen-animada-0059.gif"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 150, 90));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, 150, 90));
 
         btnOrdenar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ordenar.png"))); // NOI18N
@@ -285,29 +285,28 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
 
         jTextField13.setBackground(new java.awt.Color(204, 204, 255));
-        jTextField13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Buscar por DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 10))); // NOI18N
+        jTextField13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar por DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 10))); // NOI18N
         jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 130, 30));
 
         txaResumen.setBackground(new java.awt.Color(255, 204, 255));
         txaResumen.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         txaResumen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txaResumen.setToolTipText("");
-        txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(153, 153, 255))); // NOI18N
-        jPanel1.add(txaResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1540, 200));
+        txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(153, 153, 255))); // NOI18N
+        jPanel1.add(txaResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1380, 150));
 
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1395, Short.MAX_VALUE)
-);
-layout.setVerticalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
-);
-
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1395, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

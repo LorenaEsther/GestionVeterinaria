@@ -36,7 +36,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         itemClientes = new javax.swing.JMenuItem();
         itemMascotas = new javax.swing.JMenuItem();
         itemTipos = new javax.swing.JMenuItem();
-        itemCitas = new javax.swing.JMenuItem();
         itemServicios = new javax.swing.JMenuItem();
         itemEmpleados = new javax.swing.JMenuItem();
         itemHistorial = new javax.swing.JMenuItem();
@@ -69,11 +68,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         dspEscritorio.setLayout(dspEscritorioLayout);
         dspEscritorioLayout.setHorizontalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(dspEscritorioLayout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(jLabel1)
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         dspEscritorioLayout.setVerticalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 723, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
@@ -90,14 +92,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         itemTipos.setText("Tipo de Mascota");
         jMenu1.add(itemTipos);
-
-        itemCitas.setText("Citas");
-        itemCitas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemCitasActionPerformed(evt);
-            }
-        });
-        jMenu1.add(itemCitas);
 
         itemServicios.setText("Servicios");
         jMenu1.add(itemServicios);
@@ -171,10 +165,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void itemCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCitasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itemCitasActionPerformed
-
     private void itemHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemHistorialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itemHistorialActionPerformed
@@ -216,7 +206,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane dspEscritorio;
-    public javax.swing.JMenuItem itemCitas;
     public javax.swing.JMenuItem itemClientes;
     public javax.swing.JMenuItem itemCreadores;
     public javax.swing.JMenuItem itemCuenta;
