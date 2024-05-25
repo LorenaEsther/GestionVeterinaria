@@ -21,6 +21,7 @@ public class ProcesosVistaGestion {
         ct.setFecha(vg.jDateChooser1.getDate());
         ct.setHora(vg.txtHora.getText());
         ct.setUrgencia(vg.cbxTipo.getSelectedItem().toString());
+        ct.ActualizarRelaciones();
         //ct.setPrecioTotal(Double.parseDouble(vg.txtPrecioTotal.getText())); //ATRIUBUTO PRECIO TOTAL
         return ct;
         

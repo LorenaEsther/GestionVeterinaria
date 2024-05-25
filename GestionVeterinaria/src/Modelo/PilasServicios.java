@@ -26,14 +26,7 @@ public class PilasServicios implements Serializable{
            Mensajes.MostrarTexto("El objeto eliminado es \n\n"+eliminado.toString());
        }       
     }
-    //metodo que muestra el primero elemento de la pila
-    public void MostrarPrimeroPila(){
-        Mensajes.MostrarTexto("El primero de la pila es : \n\n"+pila.peekFirst().toString());
-    }
-    //mètodo que muestra el ultimo elemento de la pila
-    public void MostrarUltimoPila(){
-         Mensajes.MostrarTexto("El último de la pila es : \n\n"+pila.peekLast().toString());
-    }
+    
     //mètodo que busca un operario por su codigo y lo muestra en pantalla
     public void BuscarServicio(String codbuscado){
         boolean encontrado=false;
@@ -48,6 +41,8 @@ public class PilasServicios implements Serializable{
         if(encontrado==false) Mensajes.MostrarTexto("Codigo "+codbuscado+" no existe en la pila");
         else Mensajes.MostrarTexto("DATO ENCONTRADO!!!! \n\n"+pila.get(posicion).toString());
     }  
+    
+    
     //metodo que busca un servicio y retorna su posicion
     public int BuscarPosicion(String codbuscado){
         boolean encontrado=false;
@@ -61,6 +56,13 @@ public class PilasServicios implements Serializable{
         }
         return posicion;
     }
+    //metodo que obtiene el servicio solicitado
+    public Servicio ObtenerServicio(String codbuscado){
+        Servicio nuevo = pila.get(this.BuscarPosicion(codbuscado));
+        return nuevo;
+    }
+    
+    
     //metodo que actualiza un servicio
     public void Actualizar(Servicio nuevo, String codbuscado){
         int posicion = this.BuscarPosicion(codbuscado);
