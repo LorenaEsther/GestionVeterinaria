@@ -1,5 +1,6 @@
 package ListasEnlazadas.ListaEnlazadaEmpleados;
 
+import Modelo.Empleado;
 import java.io.*;
 
 public class ListaEmpleados implements Serializable {
@@ -59,6 +60,15 @@ public class ListaEmpleados implements Serializable {
         return auxiliar;
     }
     
+    //metodo que obtiene el empleado solicitado
+    public Empleado ObtenerEmpleado(String codbuscado){  
+        Nodo nodo = ListaEmpleados.this.BuscarEmpleado(codbuscado);
+        if(nodo != null){
+            return nodo.getEmpleado();
+        }
+        return null;
+    }  
+    
     //Metodo que elimina un nodo de la lista
     public void EliminarEmpleado(Nodo actual){
         Nodo anterior = inicio;
@@ -74,4 +84,6 @@ public class ListaEmpleados implements Serializable {
             }
         }
     }
+    
+    
 }

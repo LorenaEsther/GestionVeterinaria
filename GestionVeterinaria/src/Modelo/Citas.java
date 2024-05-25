@@ -2,6 +2,8 @@
 package Modelo;
 
 import Persistencia.DatosServicios;
+import Persistencia.DatosEmpleados;
+import ListasEnlazadas.ListaEnlazadaEmpleados.ListaEmpleados;
 import java.util.Date;
 import java.io.*;
 
@@ -51,6 +53,10 @@ public class Citas implements Serializable{
     
     public void ActualizarRelaciones(){
         //Obtener Nombre de Empleado
+        ListaEmpleados nodoEmpl = DatosEmpleados.RecuperarDeArchivo();
+        Empleado empleado = nodoEmpl.ObtenerEmpleado(codEmp);
+        nomEmp = empleado.getNombre();
+        
         //Obtener Nombre de Mascota
         //Obtener Nombre de Dueño 
         /*ClienteDAO cliArreglo = new ClienteDAO();
@@ -60,6 +66,7 @@ public class Citas implements Serializable{
         PilasServicios pilaServ =  DatosServicios.RecuperaDeArchivo();
         Servicio servicio = pilaServ.ObtenerServicio(codSer);
         nomSer = servicio.getNomServi();
+        
     }
     
     
