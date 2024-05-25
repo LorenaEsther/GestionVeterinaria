@@ -11,8 +11,16 @@ public class Servicio implements Serializable{
     public Servicio() {
     }
     public Object[] Registro(int num){
-        Object fila[]={num,codServi,nomServi,detallServi,preciServi};
+        Object fila[]={num,codServi,nomServi,preciServi,detallServi};
         return fila;
+    }
+    public String toString() {
+        return "******* DATOS SERVICIO ********" +
+             "\nCodigo              : " + codServi + 
+             "\nNombre del Servicio            : " + nomServi +
+             "\nPrecio del Servicio         : " + preciServi +
+             "\nDetalle del Servicio           : " + detallServi;
+             
     }
     
     public String getCodServi() {   return codServi;    }

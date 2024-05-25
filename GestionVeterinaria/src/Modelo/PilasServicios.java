@@ -11,7 +11,6 @@ public class PilasServicios implements Serializable{
     private LinkedList<Servicio> pila;
     public PilasServicios(){
          pila = new LinkedList();
-         pila = DatosServicios.RecuperaDeArchivo().getPila();
     }
     //metodo para agregar a un operario a la pila
     public void Agregar(Servicio serv){
@@ -68,6 +67,7 @@ public class PilasServicios implements Serializable{
         pila.get(posicion).setNomServi(nuevo.getNomServi());
         pila.get(posicion).setDetallServi(nuevo.getDetallServi());
         pila.get(posicion).setPreciServi(nuevo.getPreciServi());
+        DatosServicios.GuardarEnArchivo(this);
        
     }
    //getter y setter

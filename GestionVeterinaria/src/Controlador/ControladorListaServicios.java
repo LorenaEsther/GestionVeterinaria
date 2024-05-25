@@ -1,7 +1,10 @@
 
 package Controlador;
 
-import Modelo.PilasServicios;
+import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarServicios;
+import Ordenamientos.OrdenamientoInsercion.InsercionOrdenarServicios;
+import Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarServicios;
+import Modelo.*;
 import Procesos.*;
 import Persistencia.*;
 import Vista.*;
@@ -15,7 +18,7 @@ public class ControladorListaServicios implements ActionListener{
     ListaServicios vista;
     public ControladorListaServicios(ListaServicios ls){
         vista = ls;
-        vista.btnNuevo.addActionListener(this);
+        vista.btnOrdenar.addActionListener(this);
         vista.btnGuardar.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
         vista.btnEditar.addActionListener(this);
@@ -37,10 +40,29 @@ public class ControladorListaServicios implements ActionListener{
             ProcesosListaServicios.MostrarEnTabla(vista, pila);
         }
         if(e.getSource()== vista.btnBuscar){
-            String codbuscado = Mensajes.LeerTexto("Ingrese el codigo a eliminar");
+            String codbuscado = Mensajes.LeerTexto("Ingrese el codigo del servicio a buscar");
             pila.BuscarServicio(codbuscado);
         }
+        if(e.getSource()== vista.btnEditar){
+            Servicio nuevo = ProcesosListaServicios.LeerServicio(vista);
+            pila.Actualizar(nuevo, nuevo.getCodServi());
+            ProcesosListaServicios.MostrarEnTabla(vista, pila);
+        }
         
+        /*if (e.getSource() == vista.btnOrdenar) {
+            if (vista.cbxOrdenar.getSelectedIndex()==0) { // Ordenar por CODIGO
+                PilasServicios nuevaPila = InsercionOrdenarServicios.insercionCodASC(pila);
+                ProcesosListaServicios.MostrarEnTabla(vista, nuevaPila);
+            }
+            if (vista.cbxOrdenar.getSelectedIndex()==1 ) { //Ordenar por SERVICIO
+                PilasServicios nuevaPila = BurbujaOrdenarServicios.BurbujaNomASC(pila));//**DUEÑO ORDEN********************************
+                ProcesosVistaGestion.MostaraEnTabla(vista, nuevaPila);
+                }
+            if (vista.cbxOrdenar.getSelectedIndex()==2) {//Ordenar por PRECIO
+                Citas[] listaOrdenada = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
+                ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+                }
+        */    
        
          
     }//fin action    

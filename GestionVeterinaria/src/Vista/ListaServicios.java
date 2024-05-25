@@ -34,7 +34,7 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblServ = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
-        btnNuevo = new javax.swing.JButton();
+        btnOrdenar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -48,7 +48,7 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         areaDet = new javax.swing.JTextArea();
         txtPre = new javax.swing.JTextField();
         txtBuscar = new javax.swing.JTextField();
-        cbxBuscar = new javax.swing.JComboBox<>();
+        cbxOrdenar = new javax.swing.JComboBox<>();
         btnBuscar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(135, 204, 204));
@@ -83,10 +83,10 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 470, 10));
 
-        btnNuevo.setBackground(new java.awt.Color(135, 204, 204));
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-archivo (2).png"))); // NOI18N
-        btnNuevo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, 70));
+        btnOrdenar.setBackground(new java.awt.Color(135, 204, 204));
+        btnOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-archivo (2).png"))); // NOI18N
+        btnOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, 70));
 
         btnGuardar.setBackground(new java.awt.Color(135, 204, 204));
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
@@ -131,13 +131,13 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         txtBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar Servicio"));
         jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 130, 40));
 
-        cbxBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Servicio", "Precio", " " }));
-        cbxBuscar.addActionListener(new java.awt.event.ActionListener() {
+        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo", "Servicio", "Precio", " " }));
+        cbxOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxBuscarActionPerformed(evt);
+                cbxOrdenarActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 150, 40));
+        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 150, 40));
 
         btnBuscar.setText("BUSCAR");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -167,9 +167,9 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void cbxBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBuscarActionPerformed
+    private void cbxOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOrdenarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxBuscarActionPerformed
+    }//GEN-LAST:event_cbxOrdenarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -178,8 +178,8 @@ public class ListaServicios extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
-    public javax.swing.JButton btnNuevo;
-    public javax.swing.JComboBox<String> cbxBuscar;
+    public javax.swing.JButton btnOrdenar;
+    public javax.swing.JComboBox<String> cbxOrdenar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

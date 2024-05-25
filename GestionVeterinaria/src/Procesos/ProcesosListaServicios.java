@@ -9,9 +9,10 @@ public class ProcesosListaServicios {
     
     public static void LimpiarEntradas(ListaServicios ls){
         ls.txtCod.setText("");
+        ls.txtNom.setText("");
         ls.txtBuscar.setText("");
         ls.areaDet.setText("");
-        ls.cbxBuscar.setSelectedIndex(0);
+        ls.cbxOrdenar.setSelectedIndex(0);
         ls.txtPre.setText("");
         ls.txtCod.requestFocus();
     }//fin del metodo
@@ -27,13 +28,13 @@ public class ProcesosListaServicios {
     }
     public static void PresentarGestionDeServicios(ListaServicios ls){
         ls.setTitle("Gestion de Registro de Servicios");
-        ls.cbxBuscar.removeAllItems();
-        ls.cbxBuscar.addItem("CODIGO");
-        ls.cbxBuscar.addItem("SERVICIO");
-        ls.cbxBuscar.addItem("PRECIO");
+        ls.cbxOrdenar.removeAllItems();
+        ls.cbxOrdenar.addItem("CODIGO");
+        ls.cbxOrdenar.addItem("SERVICIO");
+        ls.cbxOrdenar.addItem("PRECIO");
     }//Fin del metodo
     public static void MostrarEnTabla(ListaServicios ls,PilasServicios pila){
-        String titulos []={"Num","Codigo","Servicio","Precio"};
+        String titulos []={"Num","Codigo","Servicio","Precio","Detalle"};
         DefaultTableModel mt= new DefaultTableModel(null,titulos);
         ls.tblServ.setModel(mt);
         for(int i=0;i<pila.getPila().size();i++){

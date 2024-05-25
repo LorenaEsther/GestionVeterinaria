@@ -96,6 +96,7 @@ public class ControladorPrincipal implements ActionListener{
            vLservicios.setTitle("Registro de Servicios");
            MostrarForma(vLservicios);
            PresentarFramePrincipal.Centrar(vLservicios,vprin.dspEscritorio);
+           ControladorListaServicios cls = new ControladorListaServicios(vLservicios);
            }
        
         
