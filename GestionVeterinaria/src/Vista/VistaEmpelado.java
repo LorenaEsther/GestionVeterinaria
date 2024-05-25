@@ -26,6 +26,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         txtCodigo = new javax.swing.JTextField();
@@ -63,11 +64,14 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         btnOrdenar = new javax.swing.JButton();
         cbxOrdenar = new javax.swing.JComboBox<>();
-        btnBuscar = new javax.swing.JButton();
+        btnBusquedaLineal = new javax.swing.JButton();
         btnAgregarFinal = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        txaResumen = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txaResumen = new javax.swing.JTextArea();
+        rbtAscendente = new javax.swing.JRadioButton();
+        rbtDescendente = new javax.swing.JRadioButton();
+        jLabel18 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setClosable(true);
@@ -215,7 +219,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 880, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 1070, 250));
 
         btnAgregarInicio.setBackground(new java.awt.Color(135, 204, 204));
         btnAgregarInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarInicio.png"))); // NOI18N
@@ -250,8 +254,8 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel14.setText("Eliminar");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
+        jLabel14.setText("Busqueda Lineal");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -267,13 +271,21 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
 
         btnOrdenar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ordenar.png"))); // NOI18N
-        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 60, 60));
+        btnOrdenar.setText("Ordenar");
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 130, 60));
 
-        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, 140, 40));
+        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellidos", "FechaContratacion", "Salario" }));
+        cbxOrdenar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        cbxOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxOrdenarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 140, 40));
 
-        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 70, 70));
+        btnBusquedaLineal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBusquedaLineal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
+        jPanel1.add(btnBusquedaLineal, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 70, 70));
 
         btnAgregarFinal.setBackground(new java.awt.Color(135, 204, 204));
         btnAgregarFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarFinal.png"))); // NOI18N
@@ -284,43 +296,66 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jLabel17.setText("Agregar al final");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
 
-        jTextField13.setBackground(new java.awt.Color(204, 204, 255));
-        jTextField13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar por DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 10))); // NOI18N
-        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 130, 30));
-
         txaResumen.setBackground(new java.awt.Color(255, 204, 255));
-        txaResumen.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        txaResumen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txaResumen.setToolTipText("");
-        txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(153, 153, 255))); // NOI18N
-        jPanel1.add(txaResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1380, 150));
+        txaResumen.setColumns(20);
+        txaResumen.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        txaResumen.setRows(5);
+        txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(102, 153, 255))); // NOI18N
+        jScrollPane2.setViewportView(txaResumen);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1560, 160));
+
+        buttonGroup1.add(rbtAscendente);
+        rbtAscendente.setText("Ascendente");
+        rbtAscendente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtAscendenteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rbtAscendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 110, 20));
+
+        buttonGroup1.add(rbtDescendente);
+        rbtDescendente.setText("Descendente");
+        jPanel1.add(rbtDescendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 110, 20));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel18.setText("Eliminar");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
 
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1395, javax.swing.GroupLayout.DEFAULT_SIZE)
-);
-layout.setVerticalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 786, javax.swing.GroupLayout.DEFAULT_SIZE)
-);
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1679, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+        );
 
-pack();
-
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rbtAscendenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtAscendenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtAscendenteActionPerformed
+
+    private void cbxOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOrdenarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxOrdenarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnAgregarFinal;
     public javax.swing.JButton btnAgregarInicio;
-    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnBusquedaLineal;
     public javax.swing.JButton btnConsultar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnOrdenar;
+    private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JComboBox<String> cbxCargo;
     public javax.swing.JComboBox<String> cbxModalidad;
     public javax.swing.JComboBox<String> cbxOrdenar;
@@ -334,6 +369,7 @@ pack();
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -346,11 +382,13 @@ pack();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JTextField jTextField13;
+    public javax.swing.JRadioButton rbtAscendente;
+    public javax.swing.JRadioButton rbtDescendente;
     public javax.swing.JTable tblDatos;
-    public javax.swing.JTextField txaResumen;
+    public javax.swing.JTextArea txaResumen;
     public javax.swing.JTextField txtApellido;
     public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextField txtDni;

@@ -9,7 +9,7 @@ import ListasEnlazadas.ListaEnlazadaEmpleados.ListaEmpleados;
 import ListasEnlazadas.ListaEnlazadaEmpleados.Nodo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarEmpleados;
 public class ControladorEmpleado implements ActionListener{
     ListaEmpleados Lista;
     VistaEmpelado vistaEmpleado;
@@ -47,10 +47,10 @@ public class ControladorEmpleado implements ActionListener{
         }
         
         if(e.getSource() == vistaEmpleado.btnConsultar){
-             String dniBuscado = Mensajes.LeerTexto("Ingrese el DNI a buscar :");
-             actual = Lista.BuscarEmpleado(dniBuscado);
+             String codBuscado = Mensajes.LeerTexto("Ingrese el código a consultar :");
+             actual = Lista.BuscarEmpleado(codBuscado);
              if(actual==null){
-                 Mensajes.MostrarTexto("ERROR: codigo "+dniBuscado+" no existe en la lista");                 
+                 Mensajes.MostrarTexto("ERROR: codigo "+codBuscado+" no existe en la lista");                 
              }else{
                  ProcesosEmpleados.MostrarDatosNodo(actual, vistaEmpleado);
                  vistaEmpleado.txtDni.requestFocus();
@@ -69,9 +69,10 @@ public class ControladorEmpleado implements ActionListener{
             }
         }
         
-        //if(e.getSource() == vistaEmpleado.btnOrdenar){
-        //    ListasEnlazadas.ListaEnlazadaEmpleados.ListaEmpleados listaOrdenada = Ordenamientos.
-        //}
+        if(e.getSource() == vistaEmpleado.btnOrdenar){
+            ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorApellidoAscendente(Lista);
+            ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
+        }
     }
     
 }

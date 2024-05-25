@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 public class ProcesosEmpleados {
+
     public static void LimpiarEntradas(VistaEmpelado vEmplEmpelado) {
         vEmplEmpelado.txtCodigo.setText("");
         vEmplEmpelado.txtNombre.setText("");
@@ -24,7 +25,7 @@ public class ProcesosEmpleados {
         vEmplEmpelado.cbxModalidad.setSelectedIndex(0);
         vEmplEmpelado.txtCodigo.requestFocus();
     }
-    
+
     public static Empleado LeerEmpleado(VistaEmpelado vEmpleEmpelado) {
         Empleado empleado = new Empleado();
         empleado.setCodigo(vEmpleEmpelado.txtCodigo.getText());
@@ -35,7 +36,12 @@ public class ProcesosEmpleados {
         empleado.setCargo(vEmpleEmpelado.cbxCargo.getSelectedItem().toString());
         empleado.setSexo(vEmpleEmpelado.cbxSexo.getSelectedItem().toString());
         empleado.setModalidad(vEmpleEmpelado.cbxModalidad.getSelectedItem().toString());
-        empleado.setSalario(new BigDecimal(vEmpleEmpelado.txtSalario.getText()));
+        String salarioTexto = vEmpleEmpelado.txtSalario.getText();
+        if (!salarioTexto.isEmpty()) {
+            empleado.setSalario(new BigDecimal(salarioTexto));
+        } else {
+            empleado.setSalario(BigDecimal.ZERO); // o algún valor predeterminado
+        }
         Date date = vEmpleEmpelado.dateFechaIngreso.getDate();
         if (date != null) {
             LocalDate fechaIngreso = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -43,7 +49,6 @@ public class ProcesosEmpleados {
         }
         return empleado;
     }
-    
 
     public static void MostrarDatosDeLista(VistaEmpelado vEmpleado, ListaEmpleados Lista) {
         String titulos[] = {"num", "codigo", "nombre", "apellidos", "sexo", "dni",
@@ -83,16 +88,15 @@ public class ProcesosEmpleados {
                     contador5++;
                     break;
             }
-            sumaSalario = sumaSalario.add(auxiliar.getEmpleado().getSalario());
-            auxiliar = auxiliar.getSiguiente();   
+            auxiliar = auxiliar.getSiguiente();
         }
         //Mostrar datos
-        vEmpleado.txaResumen.setText("Cantidad de Empleados Veterinarios" + contador1
-                + "\nCantidad de Empleados Tec. veterinarios" + contador2
-                + "\nCantidad de Empleados Asist. veterinarios" + contador3
-                + "\nCantidad de Empleados Recepcionista" + contador4
-                + "\nCantidad de Empleados Pers. limpieza" + contador5
-                + "\nSuma de todos los cargos de Empleados" + sumaSalario);
+         vEmpleado.txaResumen.setText("Cantidad de Empleados Veterinarios:      " + contador1
+                + "\nCantidad de Empleados Tec. veterinarios:                   " + contador2
+                + "\nCantidad de Empleados Asist. veterinarios:                 " + contador3
+                + "\nCantidad de Empleados Recepcionista:                       " + contador4
+                + "\nCantidad de Empleados Pers. limpieza:                      " + contador5
+                + "\nSuma de todos los cargos de Empleados:                     " + sumaSalario);
 
     }
 

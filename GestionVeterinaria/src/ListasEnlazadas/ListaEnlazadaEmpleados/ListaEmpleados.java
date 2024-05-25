@@ -51,39 +51,37 @@ public class ListaEmpleados implements Serializable {
         fin.siguiente = null;
     }
 
-    //Algoritmo para buscar un nodo por medio de su DNI
-    public Nodo BuscarEmpleado(String dniBuscado) {
+    //Algoritmo para buscar un nodo por medio de su Codigo
+    public Nodo BuscarEmpleado(String codBuscado) {
         Nodo auxiliar = inicio;
-        while (auxiliar != null && !dniBuscado.equalsIgnoreCase(auxiliar.getEmpleado().getDni())) {
+        while (auxiliar != null && !codBuscado.equalsIgnoreCase(auxiliar.getEmpleado().getCodigo())) {
             auxiliar = auxiliar.getSiguiente();
         }
         return auxiliar;
     }
-    
+
     //metodo que obtiene el empleado solicitado
-    public Empleado ObtenerEmpleado(String codbuscado){  
+    public Empleado ObtenerEmpleado(String codbuscado) {
         Nodo nodo = ListaEmpleados.this.BuscarEmpleado(codbuscado);
-        if(nodo != null){
+        if (nodo != null) {
             return nodo.getEmpleado();
         }
         return null;
-    }  
-    
+    }
+
     //Metodo que elimina un nodo de la lista
-    public void EliminarEmpleado(Nodo actual){
+    public void EliminarEmpleado(Nodo actual) {
         Nodo anterior = inicio;
-        while (anterior.siguiente != actual && anterior.siguiente != null){
+        while (anterior.siguiente != actual && anterior.siguiente != null) {
             anterior = anterior.siguiente;
         }
-        if (actual != null){
-            if(inicio == actual){
+        if (actual != null) {
+            if (inicio == actual) {
                 inicio = actual.siguiente;
-            }
-        else {
-            anterior.siguiente = actual.siguiente;
+            } else {
+                anterior.siguiente = actual.siguiente;
             }
         }
     }
-    
-    
+
 }
