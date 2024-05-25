@@ -12,7 +12,11 @@ public class ProcesosVistaGestion {
         gc.txtHora.setText("");
         gc.cbxTipo.setSelectedIndex(0);
         //gc.txtPrecioTotal.setText("");
-        
+        gc.txtPre.setText("");
+        gc.txtIdEmp.setText("");
+        gc.txtIdDue.setText("");
+        gc.txtIdMas.setText("");
+        gc.txtIdSer.setText("");
         gc.txtIdCita.requestFocus();//COLOCA EL CURSOR EN EL TEXTFIELD
     }//fin del metodo
     public static Citas LeerCitas(VistaGestionCitas vg){
@@ -21,6 +25,11 @@ public class ProcesosVistaGestion {
         ct.setFecha(vg.jDateChooser1.getDate());
         ct.setHora(vg.txtHora.getText());
         ct.setUrgencia(vg.cbxTipo.getSelectedItem().toString());
+        ct.setPrecio(Double.parseDouble(vg.txtPre.getText()));
+        ct.setCodEmp(vg.txtIdEmp.getText());
+        ct.setCodDue(vg.txtIdDue.getText());
+        ct.setCodMas(vg.txtIdMas.getText());
+        ct.setCodSer(vg.txtIdSer.getText());
         ct.ActualizarRelaciones();
         //ct.setPrecioTotal(Double.parseDouble(vg.txtPrecioTotal.getText())); //ATRIUBUTO PRECIO TOTAL
         return ct;

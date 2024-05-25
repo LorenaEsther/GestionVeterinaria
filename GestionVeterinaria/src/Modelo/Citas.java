@@ -14,7 +14,7 @@ public class Citas implements Serializable{
     private String hora;
     private String urgencia;
     private double PrecioTotal;
-    
+    private double precio;
     private String codEmp;
     private String nomEmp="";//
     private String codMas;
@@ -42,20 +42,22 @@ public class Citas implements Serializable{
     public void setCodSer(String codSer) { this.codSer = codSer; }
     public String getNomSer() { return nomSer; }
     public void setNomSer(String nomSer) { this.nomSer = nomSer; }
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
     
     
     
     public Object[] Registro(int num){
-        Object fila[]={ num,idCita,codEmp,nomEmp,nomMas,nomDue,nomSer,fecha,hora,urgencia}; //"Num","ID","Codigo Empl.","Nombre Empl.","Nom. Mascota","Dueño","Servicio","Precio","Urgencia","Fecha","Hora"
+        Object fila[]={num,idCita,codEmp,nomEmp,nomMas,nomDue,nomSer,precio,urgencia,fecha,hora}; //"Num","ID","Codigo Empl.","Nombre Empl.","Nom. Mascota","Dueño","Servicio","Precio","Urgencia","Fecha","Hora"
         return fila;
     }
 
     
     public void ActualizarRelaciones(){
         //Obtener Nombre de Empleado
-        ListaEmpleados nodoEmpl = DatosEmpleados.RecuperarDeArchivo();
+        /*ListaEmpleados nodoEmpl = DatosEmpleados.RecuperarDeArchivo();
         Empleado empleado = nodoEmpl.ObtenerEmpleado(codEmp);
-        nomEmp = empleado.getNombre();
+        nomEmp = empleado.getNombre();*/
         
         //Obtener Nombre de Mascota
         //Obtener Nombre de Dueño 
@@ -63,7 +65,7 @@ public class Citas implements Serializable{
         Cliente cliente = cliArreglo.buscarPorCodigo(codEmp);
         nomDue = cliente.getNombre();*/
         //Obtener Servicio
-        PilasServicios pilaServ =  DatosServicios.RecuperaDeArchivo();
+        PilasServicios pilaServ = DatosServicios.RecuperaDeArchivo();
         Servicio servicio = pilaServ.ObtenerServicio(codSer);
         nomSer = servicio.getNomServi();
         

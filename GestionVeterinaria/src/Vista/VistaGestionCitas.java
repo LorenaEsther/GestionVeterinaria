@@ -35,23 +35,23 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtIdEmp = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtIdMas = new javax.swing.JTextField();
+        txtIdDue = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtIdSer = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtPre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -120,7 +120,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIdEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addGap(20, 20, 20)
@@ -141,7 +141,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(txtIdEmp, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -173,8 +173,8 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                     .addComponent(jLabel7))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
+                    .addComponent(txtIdMas, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                    .addComponent(txtIdDue))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,10 +188,10 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtIdMas, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4)
+                            .addComponent(txtIdDue)
                             .addComponent(jLabel7)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,11 +226,11 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel8)
                 .addGap(56, 56, 56)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIdSer, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addComponent(txtPre, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addGap(24, 24, 24)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -242,9 +242,9 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIdSer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtPre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton8))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -406,16 +406,16 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     public javax.swing.JRadioButton rbtnASC;
     public javax.swing.JRadioButton rbtnDESC;
     public javax.swing.JTable tblCitas;
     public javax.swing.JTextField txtHora;
     public javax.swing.JTextField txtIdCita;
+    public javax.swing.JTextField txtIdDue;
+    public javax.swing.JTextField txtIdEmp;
+    public javax.swing.JTextField txtIdMas;
+    public javax.swing.JTextField txtIdSer;
+    public javax.swing.JTextField txtPre;
     public javax.swing.JTextArea txtaResumen;
     // End of variables declaration//GEN-END:variables
 }
