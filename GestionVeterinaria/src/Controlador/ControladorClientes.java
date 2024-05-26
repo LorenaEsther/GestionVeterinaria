@@ -5,18 +5,18 @@
 package Controlador;
 import Modelo.Cliente;
 import Modelo.ClienteDAO;
-import Vista.Clientes;
+import Vista.VistaClientes;
 
 public class ControladorClientes {
     private ClienteDAO modelo;
-    private Clientes vista;
+    private VistaClientes vista;
 
 
-public ControladorClientes(Clientes vista) {
+public ControladorClientes(VistaClientes vista) {
         this.vista = vista;
         this.modelo = new ClienteDAO();
     }
-
+/*
     public void buscarClientePorNombre(String nombre) {
         Cliente cliente = modelo.buscarPorNombre(nombre);
         vista.mostrarCliente(cliente);
@@ -30,5 +30,5 @@ public ControladorClientes(Clientes vista) {
     public void buscarClientePorEdad(int edad) {
         Cliente cliente = modelo.buscarPorEdad(edad);
         vista.mostrarCliente(cliente);
-    }
+    }*/
 }
