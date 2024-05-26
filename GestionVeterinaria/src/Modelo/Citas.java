@@ -55,9 +55,9 @@ public class Citas implements Serializable{
     
     public void ActualizarRelaciones(){
         //Obtener Nombre de Empleado
-        /*ListaEmpleados nodoEmpl = DatosEmpleados.RecuperarDeArchivo();
+        ListaEmpleados nodoEmpl = DatosEmpleados.RecuperarDeArchivo();
         Empleado empleado = nodoEmpl.ObtenerEmpleado(codEmp);
-        nomEmp = empleado.getNombre();*/
+        nomEmp = empleado.getNombre();
         
         //Obtener Nombre de Mascota
         //Obtener Nombre de Dueño 

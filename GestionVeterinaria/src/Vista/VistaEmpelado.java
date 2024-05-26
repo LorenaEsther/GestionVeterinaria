@@ -219,7 +219,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 1070, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 1150, 250));
 
         btnAgregarInicio.setBackground(new java.awt.Color(135, 204, 204));
         btnAgregarInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarInicio.png"))); // NOI18N
@@ -272,7 +272,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         btnOrdenar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ordenar.png"))); // NOI18N
         btnOrdenar.setText("Ordenar");
-        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 130, 60));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 160, 60));
 
         cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellidos", "FechaContratacion", "Salario" }));
         cbxOrdenar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -303,7 +303,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(102, 153, 255))); // NOI18N
         jScrollPane2.setViewportView(txaResumen);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1560, 160));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1640, 160));
 
         buttonGroup1.add(rbtAscendente);
         rbtAscendente.setText("Ascendente");
