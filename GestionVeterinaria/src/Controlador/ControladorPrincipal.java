@@ -56,6 +56,7 @@ public class ControladorPrincipal implements ActionListener{
            vmascotas.setTitle("Mascotas Registradas");
            MostrarForma(vmascotas);
            PresentarFramePrincipal.Centrar(vmascotas,vprin.dspEscritorio);
+           ControladorMascotas cm = new ControladorMascotas(vmascotas);
         }
         if(e.getSource() == vprin.itemCuenta){
            VistaServicios vcuenta = new VistaServicios();

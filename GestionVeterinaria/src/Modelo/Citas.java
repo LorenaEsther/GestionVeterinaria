@@ -4,6 +4,7 @@ package Modelo;
 import Persistencia.DatosServicios;
 import Persistencia.DatosEmpleados;
 import ListasEnlazadas.ListaEnlazadaEmpleados.ListaEmpleados;
+import Persistencia.DatosMascotas;
 import java.util.Date;
 import java.io.*;
 
@@ -60,6 +61,9 @@ public class Citas implements Serializable{
         nomEmp = empleado.getNombre();
         
         //Obtener Nombre de Mascota
+        ColeccionMascotas colMasc = DatosMascotas.RecuperarDeArchivo();
+        Mascotas mascota = colMasc.RecuperarMascota(codMas);
+        nomMas = mascota.getNombre();
         //Obtener Nombre de Dueño 
         /*ClienteDAO cliArreglo = new ClienteDAO();
         Cliente cliente = cliArreglo.buscarPorCodigo(codEmp);
