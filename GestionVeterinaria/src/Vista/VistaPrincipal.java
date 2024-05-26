@@ -47,8 +47,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         itemReporte = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         itemGuia = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         itemCreadores = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        itemCerrar = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -60,7 +65,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         dspEscritorio.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PerritoOficial.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PerritoELREAL1.gif"))); // NOI18N
+        jLabel1.setText("}");
 
         dspEscritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -69,13 +75,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
         dspEscritorioLayout.setHorizontalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dspEscritorioLayout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jLabel1)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addGap(200, 200, 200)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 999, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         dspEscritorioLayout.setVerticalGroup(
             dspEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 723, Short.MAX_VALUE)
+            .addGroup(dspEscritorioLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(135, 204, 204));
@@ -139,6 +148,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
         itemGuia.setText("Guia de usuario");
         jMenu7.add(itemGuia);
 
+        jMenuItem2.setText("Facebook");
+        jMenu7.add(jMenuItem2);
+
+        jMenuItem3.setText("Instagram");
+        jMenu7.add(jMenuItem3);
+
+        jMenuItem4.setText("WhatsApp");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem4);
+
         jMenuBar1.add(jMenu7);
 
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/anonimo.png"))); // NOI18N
@@ -148,6 +171,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu8.add(itemCreadores);
 
         jMenuBar1.add(jMenu8);
+
+        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Salir.png"))); // NOI18N
+        jMenu9.setText("Salir");
+
+        itemCerrar.setText("Cerrar Sesion");
+        jMenu9.add(itemCerrar);
+
+        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -168,6 +199,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void itemHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemHistorialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itemHistorialActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +241,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane dspEscritorio;
+    public javax.swing.JMenuItem itemCerrar;
     public javax.swing.JMenuItem itemClientes;
     public javax.swing.JMenuItem itemCreadores;
     public javax.swing.JMenuItem itemCuenta;
@@ -226,7 +262,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    public javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }

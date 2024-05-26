@@ -2,8 +2,10 @@ package Controlador;
 
 import Modelo.*;
 import Busquedas.BusquedaBinaria.BusquedaBinariaCitas;
+import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
 import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
+
 import Vista.*;
 import Procesos.*;
 
@@ -87,6 +89,20 @@ public class ControladorCitas implements ActionListener {
                     Citas[] listaOrdenada = SeleccionOrdenarCitas.ordenarPorIdCitaDESC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
+                //NO FUNCIONA
+                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) {
+                    
+                    Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaASC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
+                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+                }
+                //NO FUNCIONA
+                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()){
+                    Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaDESC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
+                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+                }
+                
+                
+                
             }
 
         if (e.getSource() == vista.btnBuscarBinaria) {
