@@ -5,6 +5,7 @@ import Busquedas.BusquedaBinaria.BusquedaBinariaCitas;
 import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
 import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
+import Persistencia.DatosCitas;
 
 import Vista.*;
 import Procesos.*;
@@ -15,6 +16,7 @@ import java.awt.event.ActionListener;
 public class ControladorCitas implements ActionListener {
     VistaGestionCitas vista;
     ArregloCitas ListaCitas;
+   
     Citas ct;
 
     public ControladorCitas(VistaGestionCitas vg) {
@@ -25,10 +27,11 @@ public class ControladorCitas implements ActionListener {
         vista.btnBuscarBinaria.addActionListener(this);//BUSQUEDA DE FORMA BINARIA
         vista.btnEliminar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
+        vista.btnEditar.addActionListener(this);
         
         
         ListaCitas = new ArregloCitas(); // Inicializar el arreglo de citas
-        ListaCitas.RecuperarDeArchivo();
+        DatosCitas.GuardarEnArchivo(ListaCitas);
         ListaCitas.ActualizarCantidadCitas();
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
         ListaCitas.MostrarResumen(vista.txtaResumen);
@@ -43,7 +46,7 @@ public class ControladorCitas implements ActionListener {
         if (e.getSource() == vista.btnGuardar) {
             ct = ProcesosVistaGestion.LeerCitas(vista);
             ListaCitas.AgregarCita(ct);
-            ListaCitas.GuardarEnArchivo();
+            DatosCitas.GuardarEnArchivo(ListaCitas);
 
             ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
             ListaCitas.MostrarResumen(vista.txtaResumen);
@@ -61,12 +64,25 @@ public class ControladorCitas implements ActionListener {
                                 ListaCitas.RecuperarCita(posicion).getUrgencia() + "?");
                 if (resp == 0) {
                     ListaCitas.EliminarCita(posicion);
-                    ListaCitas.GuardarEnArchivo();
+                    DatosCitas.GuardarEnArchivo(ListaCitas);
                     ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
                     ListaCitas.MostrarResumen(vista.txtaResumen);
                 }
             }
         }
+        
+        if (e.getSource() == vista.btnEditar) {
+        String codBuscado = Mensajes.LeerTexto("Ingrese el código de la cita a editar:");
+        Citas nuevo = ProcesosVistaGestion.LeerCitas(vista); 
+        ListaCitas.Actualizar(nuevo, codBuscado);
+        DatosCitas.GuardarEnArchivo(ListaCitas);
+        ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
+        ListaCitas.MostrarResumen(vista.txtaResumen);
+        ProcesosVistaGestion.LimpiarEntradas(vista);
+    }
+        
+        
+        
 
         if (e.getSource() == vista.btnOrdenar) {
                 if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) { // Ordenar por Fecha

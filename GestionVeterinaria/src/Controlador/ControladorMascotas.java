@@ -60,7 +60,7 @@ public class ControladorMascotas implements ActionListener{
         
         if (e.getSource() == vista.btnEditar) {
             Mascotas nuevo = ProcesosVistaMascotas.LeerMascota(vista);
-            coleccion.Actualizar(nuevo, nuevo.getCodigo());
+            coleccion.Actualizar(nuevo, nuevo.getCodigo()); 
             ProcesosVistaMascotas.MostrarEnTabla(vista, coleccion);
         }
         

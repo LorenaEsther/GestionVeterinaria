@@ -1,15 +1,17 @@
 
 package Modelo;
+import Busquedas.BusquedaBinaria.BusquedaBinariaCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import java.io.*;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import Persistencia.DatosCitas;
 
 public class ArregloCitas implements Serializable{
     private Citas[] ListaCitas; 
-    private ArregloServicios ListaServicios;
+    
    
     
     private static int cantCitas=0;
@@ -30,27 +32,7 @@ public class ArregloCitas implements Serializable{
         }
         cantCitas--;
     }//fin
-    public void GuardarEnArchivo() {
-        try {
-            FileOutputStream fos = new FileOutputStream("ListaCitas.bin");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(ListaCitas);
-            oos.close();
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "ERROR al guardar: " + ex.getMessage());
-        }
-    }
-    
-     public void RecuperarDeArchivo() {
-        try {
-            FileInputStream fis = new FileInputStream("ListaCitas.bin");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            ListaCitas = (Citas[]) ois.readObject();
-            ois.close();
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "ERROR al recuperar: " + ex.getMessage());
-        }
-    }
+   
     
     public void ActualizarCantidadCitas(){
         cantCitas=0;
@@ -59,6 +41,30 @@ public class ArregloCitas implements Serializable{
         }
         
     }
+    public void Actualizar(Citas nuevo, String codBuscado) {
+    int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(ListaCitas, codBuscado);
+    if (posicion != -1) {
+        ListaCitas[posicion].setIdCita(nuevo.getIdCita());
+        ListaCitas[posicion].setFecha(nuevo.getFecha());
+        ListaCitas[posicion].setHora(nuevo.getHora());
+        ListaCitas[posicion].setUrgencia(nuevo.getUrgencia());
+        ListaCitas[posicion].setPrecioTotal(nuevo.getPrecioTotal());
+        ListaCitas[posicion].setCodEmp(nuevo.getCodEmp());
+        ListaCitas[posicion].setNomEmp(nuevo.getNomEmp());
+        ListaCitas[posicion].setCodMas(nuevo.getCodMas());
+        ListaCitas[posicion].setNomMas(nuevo.getNomMas());
+        ListaCitas[posicion].setCodDue(nuevo.getCodDue());
+        ListaCitas[posicion].setNomDue(nuevo.getNomDue());
+        ListaCitas[posicion].setCodSer(nuevo.getCodSer());
+        ListaCitas[posicion].setNomSer(nuevo.getNomSer());
+        DatosCitas.GuardarEnArchivo(this);
+    } else {
+        JOptionPane.showMessageDialog(null, "Código de cita no encontrado.");
+    }
+}
+    
+    
+    
     public void MostrarResumen(JTextArea txa){
         double suma=0;
         int c1=0,c2=0,c3=0;
@@ -83,8 +89,6 @@ public class ArregloCitas implements Serializable{
     
     
     //GETTERS AND SETTERS
-    
-    
     
     
     public Citas[] getListaCitas() {return ListaCitas;}
