@@ -1,14 +1,15 @@
 package Busquedas.BusquedaLineal;
+import Modelo.*;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Ferna
- */
 public class BusquedaLinealClientes {
-    
+public Cliente buscarCliente(String keyword) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCodigo().equalsIgnoreCase(keyword) || 
+                cliente.getNombre().equalsIgnoreCase(keyword) || 
+                cliente.getDni().equalsIgnoreCase(keyword)) {
+                return cliente;
+            }
+        }
+        return null;
+    }    
 }

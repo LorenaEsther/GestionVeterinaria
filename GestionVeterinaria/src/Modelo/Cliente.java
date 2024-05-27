@@ -31,4 +31,8 @@ public class Cliente {
     public String getTelefono() { return telefono; }
     public String getSexo() { return sexo; }
     public String getIdMascota() { return idMascota; }
+
+    public Object getCodCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
