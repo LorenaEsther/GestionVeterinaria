@@ -68,6 +68,7 @@ public class Citas implements Serializable{
         //Obtener Nombre de Dueño 
         
         ArregloClientes cliArreglo = DatosClientes.RecuperaDeArchivo();
+        cliArreglo.ActualizarCantidadClientes();
         Cliente cliente = cliArreglo.RecuperarCliente(codDue);
         nomDue = cliente.getNombre();
         //Obtener Servicio
