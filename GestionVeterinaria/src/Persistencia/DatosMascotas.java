@@ -6,12 +6,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import Modelo.PilasServicios;
+import Modelo.ColeccionMascotas;
 
-public class DatosServicios {
-    public static void GuardarEnArchivo(PilasServicios Lista){
+public class DatosMascotas {
+    
+    public static void GuardarEnArchivo(ColeccionMascotas Lista){
       try{
-          FileOutputStream fos =  new FileOutputStream("InfoServicios.bin");
+          FileOutputStream fos =  new FileOutputStream("InfoMascotas.bin");
           ObjectOutputStream oos =  new ObjectOutputStream(fos);
           oos.writeObject(Lista);
           oos.close();
@@ -20,16 +21,17 @@ public class DatosServicios {
       }
   }//fin guardar 
     
-  public static PilasServicios RecuperaDeArchivo(){
-    PilasServicios Lista = new PilasServicios();
+  public static ColeccionMascotas RecuperarDeArchivo(){
+    ColeccionMascotas Lista = new ColeccionMascotas();
      try{
-          FileInputStream fis =  new FileInputStream("InfoServicios.bin");
+          FileInputStream fis =  new FileInputStream("InfoMascotas.bin");
           ObjectInputStream ois =  new ObjectInputStream(fis);
-          Lista = (PilasServicios) ois.readObject();
+          Lista = (ColeccionMascotas) ois.readObject();
           ois.close();
       }catch(Exception ex){
           Mensajes.MostrarTexto("ERROR no se puede recuperar Pila.."+ex);
       }
      return Lista;
   }//fin recuperar
+    
 }

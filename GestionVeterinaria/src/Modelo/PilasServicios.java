@@ -24,6 +24,7 @@ public class PilasServicios implements Serializable{
        }else{
            Servicio eliminado = pila.pop();
            Mensajes.MostrarTexto("El objeto eliminado es \n\n"+eliminado.toString());
+           DatosServicios.GuardarEnArchivo(this);
        }       
     }
     

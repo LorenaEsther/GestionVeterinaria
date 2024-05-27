@@ -10,7 +10,7 @@ import Modelo.Cliente;
  * @author Marco Antonio
  */
 public class Clientes extends javax.swing.JInternalFrame {
-    private ControladorClientes controlador;
+    private final ControladorClientes controlador;
     /**
      * Creates new form Clientes
      */
