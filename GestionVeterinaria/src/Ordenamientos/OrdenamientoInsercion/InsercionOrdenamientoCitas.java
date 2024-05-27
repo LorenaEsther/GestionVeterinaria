@@ -28,7 +28,7 @@ public class InsercionOrdenamientoCitas {
         for(int i=1;i<ArregloCitas.getCantCitas();i++){
             Citas value=a[i];
             int j=i;
-            while(j>0 && a[j-1].getFecha().compareTo(value.getFecha())>0){
+            while(j>0 && a[j-1].getNomDue().compareTo(value.getNomDue())>0){
                 a[j]= a[j-1];
                 j--;
             }
@@ -41,7 +41,7 @@ public class InsercionOrdenamientoCitas {
         for(int i=1;i<ArregloCitas.getCantCitas();i++){
             Citas value=a[i];
             int j=i;
-            while(j>0 && a[j-1].getFecha().compareTo(value.getFecha())<0){
+            while(j>0 && a[j-1].getNomDue().compareTo(value.getNomDue())<0){
                 a[j]= a[j-1];
                 j--;
             }
