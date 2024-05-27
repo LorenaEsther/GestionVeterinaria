@@ -274,7 +274,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         btnOrdenar.setText("Ordenar");
         jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 160, 60));
 
-        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellidos", "FechaContratacion", "Salario" }));
+        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellidos", "Nombres", "Codigo" }));
         cbxOrdenar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbxOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

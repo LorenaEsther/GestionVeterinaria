@@ -27,6 +27,7 @@ public class ControladorEmpleado implements ActionListener {
         vistaEmpleado.btnEliminar.addActionListener(this);
         vistaEmpleado.btnOrdenar.addActionListener(this);
         vistaEmpleado.btnBusquedaLineal.addActionListener(this);
+        vistaEmpleado.btnActualizar.addActionListener(this);
         Lista = DatosEmpleados.RecuperarDeArchivo();
         ProcesosEmpleados.MostrarDatosDeLista(vEmpleado, Lista);
     }
@@ -78,10 +79,10 @@ public class ControladorEmpleado implements ActionListener {
                     ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorApellidoAscendente(Lista);
                     ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
                 } else if (vistaEmpleado.cbxOrdenar.getSelectedIndex() == 1) { // Ordenar por salario
-                    ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorSalarioAscendente(Lista);
+                    ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorNombreAscendente(Lista);
                     ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
                 } else if (vistaEmpleado.cbxOrdenar.getSelectedIndex() == 2) { // Ordenar por fecha de contratación
-                    ListaEmpleados listaOrdenada = BurbujaOrdenarEmpleados.OrdenarPorFechaContratacionAscendente(Lista);
+                    ListaEmpleados listaOrdenada = BurbujaOrdenarEmpleados.OrdenarPorCodigoAscendente(Lista);
                     ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
                 }
             } else if (vistaEmpleado.rbtDescendente.isSelected()) {
@@ -89,10 +90,10 @@ public class ControladorEmpleado implements ActionListener {
                     ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorApellidoDescendente(Lista);
                     ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
                 } else if (vistaEmpleado.cbxOrdenar.getSelectedIndex() == 1) { // Ordenar por salario
-                    ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorSalarioDescendente(Lista);
-                    ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
+                    ListaEmpleados listaOrdenada = SeleccionOrdenarEmpleados.OrdenarPorNombreDescendente(Lista);
+                   // ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
                 } else if (vistaEmpleado.cbxOrdenar.getSelectedIndex() == 2) { // Ordenar por fecha de contratación
-                    ListaEmpleados listaOrdenada = BurbujaOrdenarEmpleados.OrdenarPorFechaContratacionDescendente(Lista);
+                    ListaEmpleados listaOrdenada = BurbujaOrdenarEmpleados.OrdenarPorCodigoDescendente(Lista);
                     ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, listaOrdenada);
                 }
             }
@@ -106,6 +107,13 @@ public class ControladorEmpleado implements ActionListener {
                 Mensajes.MostrarTexto("Empleado encontrado: " + empleado.getNombre() + " " + empleado.getApellidos());
                 // Aquí puedes mostrar más detalles del empleado en la vista si lo deseas
             }
+        }
+        if(e.getSource() == vistaEmpleado.btnActualizar) {
+            Empleado actualizado = ProcesosEmpleados.LeerEmpleado(vistaEmpleado);
+            Lista.Actualizar(actual, actualizado);
+            ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, Lista);
+            DatosEmpleados.GuardarEnArchivo(Lista);
+            ProcesosEmpleados.LimpiarEntradas(vistaEmpleado);
         }
     }
 

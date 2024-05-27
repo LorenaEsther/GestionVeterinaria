@@ -59,6 +59,9 @@ public class ListaEmpleados implements Serializable {
         }
         return auxiliar;
     }
+    public void Actualizar(Nodo actual, Empleado actualizado) {
+        actual.setEmpleado(actualizado);
+    }
 
     //metodo que obtiene el empleado solicitado
     public Empleado ObtenerEmpleado(String codbuscado) {
@@ -83,5 +86,15 @@ public class ListaEmpleados implements Serializable {
             }
         }
     }
-
+    
+    // Método para contar los nodos de la lista
+    public int contarNodos() {
+        Nodo actual = inicio;
+        int contador = 0;
+        while (actual != null) {
+            contador++;
+            actual = actual.getSiguiente();
+        }
+        return contador;
+    }
 }

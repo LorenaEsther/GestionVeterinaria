@@ -38,12 +38,13 @@ public class SeleccionOrdenarEmpleados {
         return a;
     }
 
-    public static ListaEmpleados OrdenarPorSalarioAscendente(ListaEmpleados a) {
+   // Método de selección para ordenar empleados por nombre en orden ascendente
+    public static ListaEmpleados OrdenarPorNombreAscendente(ListaEmpleados lista) {
         Nodo k;
-        for (Nodo i = a.getInicio(); i != null; i = i.getSiguiente()) {
+        for (Nodo i = lista.getInicio(); i != null; i = i.getSiguiente()) {
             k = i;
             for (Nodo j = i.getSiguiente(); j != null; j = j.getSiguiente()) {
-                if (j.getEmpleado().getSalario().compareTo(k.getEmpleado().getSalario()) < 0) {
+                if (j.getEmpleado().getNombre().compareToIgnoreCase(k.getEmpleado().getNombre()) < 0) {
                     k = j;
                 }
             }
@@ -51,22 +52,25 @@ public class SeleccionOrdenarEmpleados {
             i.setEmpleado(k.getEmpleado());
             k.setEmpleado(auxiliar);
         }
-        return a;
+        return lista;
     }
 
-    public static ListaEmpleados OrdenarPorSalarioDescendente(ListaEmpleados a) {
+    // Método de selección para ordenar empleados por nombre en orden descendente
+    public static ListaEmpleados OrdenarPorNombreDescendente(ListaEmpleados lista) {
         Nodo k;
-        for (Nodo i = a.getInicio(); i != null; i = i.getSiguiente()) {
+        for (Nodo i = lista.getInicio(); i != null; i = i.getSiguiente()) {
             k = i;
             for (Nodo j = i.getSiguiente(); j != null; j = j.getSiguiente()) {
-                if (j.getEmpleado().getSalario().compareTo(k.getEmpleado().getSalario()) > 0) {
+                if (j.getEmpleado().getNombre().compareToIgnoreCase(k.getEmpleado().getNombre()) > 0) {
                     k = j;
                 }
             }
-            Empleado auxiliar = i.getEmpleado();
-            i.setEmpleado(k.getEmpleado());
-            k.setEmpleado(auxiliar);
+            if (k != i) {
+                Empleado auxiliar = i.getEmpleado();
+                i.setEmpleado(k.getEmpleado());
+                k.setEmpleado(auxiliar);
+            }
         }
-        return a;
+        return lista;
     }
 }
