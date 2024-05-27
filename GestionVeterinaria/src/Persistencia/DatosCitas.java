@@ -33,11 +33,4 @@ public class DatosCitas {
       }
      return listaCitas;
   }//fin recuperar
-   
-    
-    
-    
-    
-    
-    
 }

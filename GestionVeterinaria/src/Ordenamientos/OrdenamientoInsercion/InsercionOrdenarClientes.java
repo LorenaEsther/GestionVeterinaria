@@ -1,4 +1,4 @@
-package Ordenamientos.OrdenamientoInsercion;
+/*package Ordenamientos.OrdenamientoInsercion;
 
 import Modelo.*;
 import java.util.LinkedList;
@@ -46,5 +46,5 @@ public class InsercionOrdenarClientes {
 
         return nuevo;
     }
-}
+}*/
 

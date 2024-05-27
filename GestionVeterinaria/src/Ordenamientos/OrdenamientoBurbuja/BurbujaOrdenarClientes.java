@@ -1,10 +1,11 @@
-
+/*
 package Ordenamientos.OrdenamientoBurbuja;
 import Modelo.*;
+import java.util.*;
 
 public class BurbujaOrdenarClientes {
     // Algoritmo de búsqueda burbuja por código
-    public Cliente buscarPorCodigo(String codigo) {
+    public static Cliente[] BuscarPorCodigo(String codigo) {
         burbujaPorCodigo();
         for (Cliente cliente : clientes) {
             if (cliente.getCodigo().equalsIgnoreCase(codigo)) {
@@ -27,3 +28,4 @@ public class BurbujaOrdenarClientes {
         }
     }
 }
+*/
