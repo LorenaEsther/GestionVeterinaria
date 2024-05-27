@@ -48,8 +48,8 @@ public class ControladorPrincipal implements ActionListener{
            VistaClientes vcliente = new VistaClientes();
            vcliente.setTitle("Clientes Registrados");
            MostrarForma(vcliente);
-           
-           
+           PresentarFramePrincipal.Centrar(vcliente,vprin.dspEscritorio);
+           ControladorClientes cm = new ControladorClientes(vcliente);
         }        
         if(e.getSource() == vprin.itemMascotas){
            VistaMascotas vmascotas = new VistaMascotas();

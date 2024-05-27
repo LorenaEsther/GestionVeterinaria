@@ -1,3 +1,4 @@
+/*
 package Ordenamientos.OrdenamientoSeleccion;
 
 import Modelo.ArregloClientes;
@@ -20,3 +21,4 @@ public class SeleccionOrdenarClientes {
         return listaClientes;
     }
 }
+*/
