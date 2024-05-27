@@ -31,7 +31,7 @@ public class ControladorCitas implements ActionListener {
         
         
         ListaCitas = new ArregloCitas(); // Inicializar el arreglo de citas
-        DatosCitas.GuardarEnArchivo(ListaCitas);
+        ListaCitas = DatosCitas.RecuperaDeArchivo();//DEVUELVE LISTA DE CITAS
         ListaCitas.ActualizarCantidadCitas();
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
         ListaCitas.MostrarResumen(vista.txtaResumen);
@@ -46,6 +46,7 @@ public class ControladorCitas implements ActionListener {
         if (e.getSource() == vista.btnGuardar) {
             ct = ProcesosVistaGestion.LeerCitas(vista);
             ListaCitas.AgregarCita(ct);
+            
             DatosCitas.GuardarEnArchivo(ListaCitas);
 
             ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
