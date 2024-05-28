@@ -73,6 +73,16 @@ public class PilasServicios implements Serializable{
         DatosServicios.GuardarEnArchivo(this);
        
     }
+    
+    public void MostrarPrimeroPila(){
+        Mensajes.MostrarTexto("El primero de la pila es : \n\n"+pila.peekFirst().toString());
+    }
+    //mètodo que muestra el ultimo elemento de la pila
+    public void MostrarUltimoPila(){
+         Mensajes.MostrarTexto("El último de la pila es : \n\n"+pila.peekLast().toString());
+    }
+    
+    
    //getter y setter
     public LinkedList<Servicio> getPila() {     return pila;    }
     public void setPila(LinkedList<Servicio> pila) {   this.pila = pila;    }
