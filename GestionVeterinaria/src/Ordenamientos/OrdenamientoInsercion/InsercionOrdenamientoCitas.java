@@ -6,24 +6,7 @@ import Modelo.Citas;
 
 //ORDENAMIENTO POR INSERCION
 public class InsercionOrdenamientoCitas {
-    //ARREGLO
     
-    //ESTO SERVIRIA O YA NO?****************************************************
-    /*
-     public static Citas[] ordenarPorIDcita(Citas[] a) {
-    for (int i = 1; i < a.length; i++) {
-        Citas value = a[i];
-        int j = i;
-        while (j > 0 && a[j - 1].getIdCita().compareTo(value.getIdCita()) > 0) {
-            a[j] = a[j - 1];
-            j--;
-        }
-        a[j] = value;
-    }
-    return a;
-}*/
-    
-    //ESTA BIEN?ORDENAR DUEÑOS****************************************************
     public static Citas[] ordenarDueñoASC(Citas a[]){
         for(int i=1;i<ArregloCitas.getCantCitas();i++){
             Citas value=a[i];
