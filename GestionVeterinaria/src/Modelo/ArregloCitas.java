@@ -43,7 +43,7 @@ public class ArregloCitas implements Serializable{
     }
     public void Actualizar(Citas nuevo, String codBuscado) {
     int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(this.getListaCitas(), codBuscado);
-    if (posicion != -1) {
+
         ListaCitas[posicion].setIdCita(nuevo.getIdCita());
         ListaCitas[posicion].setFecha(nuevo.getFecha());
         ListaCitas[posicion].setHora(nuevo.getHora());
@@ -58,10 +58,9 @@ public class ArregloCitas implements Serializable{
         ListaCitas[posicion].setCodSer(nuevo.getCodSer());
         ListaCitas[posicion].setNomSer(nuevo.getNomSer());
         DatosCitas.GuardarEnArchivo(this);
-    } else {
-        JOptionPane.showMessageDialog(null, "Código de cita no encontrado.");
+    
     }
-}
+
     
     
     

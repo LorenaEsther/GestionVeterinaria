@@ -73,10 +73,8 @@ public class ControladorCitas implements ActionListener {
         }
         
         if (e.getSource() == vista.btnEditar) {
-        String codBuscado = Mensajes.LeerTexto("Ingrese el código de la cita a editar:");
         Citas nuevo = ProcesosVistaGestion.LeerCitas(vista); 
-        ListaCitas.Actualizar(nuevo, codBuscado);
-        
+        ListaCitas.Actualizar(nuevo, nuevo.getIdCita());
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
         ListaCitas.MostrarResumen(vista.txtaResumen);
         ProcesosVistaGestion.LimpiarEntradas(vista);
@@ -86,12 +84,12 @@ public class ControladorCitas implements ActionListener {
         
 
         if (e.getSource() == vista.btnOrdenar) {
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) { // Ordenar por Fecha
+                if (vista.cbxOrdenar.getSelectedIndex()==1 && vista.rbtnASC.isSelected()) { // Ordenar por Fecha
            
                     Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarDueñoASC(ListaCitas.getListaCitas());//**DUEÑO ORDEN************************
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()) {
+                if (vista.cbxOrdenar.getSelectedIndex()==1 && vista.rbtnDESC.isSelected()) {
                     
                     Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarDueñoDESC(ListaCitas.getListaCitas());//**DUEÑO ORDEN********************************
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
@@ -107,13 +105,13 @@ public class ControladorCitas implements ActionListener {
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
                 //NO FUNCIONA
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) {
+                if (vista.cbxOrdenar.getSelectedIndex()==2 && vista.rbtnASC.isSelected()) {
                     
                     Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaASC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
                 //NO FUNCIONA
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()){
+                if (vista.cbxOrdenar.getSelectedIndex()==2 && vista.rbtnDESC.isSelected()){
                     Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaDESC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
                     ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
                 }
