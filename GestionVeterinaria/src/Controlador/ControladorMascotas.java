@@ -10,6 +10,7 @@ import Persistencia.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ControladorMascotas implements ActionListener{
     
@@ -22,8 +23,8 @@ public class ControladorMascotas implements ActionListener{
         vista.btnGuardar.addActionListener(this);
         vista.btnEditar.addActionListener(this);//BUSQUEDA DE FORMA BINARIA
         vista.btnEliminar.addActionListener(this);
-        /*vista.btnBuscar.addActionListener(this);
-        vista.btnOrdenar.addActionListener(this);*/
+        vista.btnBuscar.addActionListener(this);
+        vista.btnOrdenar.addActionListener(this);
         
         
         coleccion = new ColeccionMascotas(); // Inicializar el arreglo de citas
@@ -64,54 +65,46 @@ public class ControladorMascotas implements ActionListener{
             ProcesosVistaMascotas.MostrarEnTabla(vista, coleccion);
         }
         
-        /*if (e.getSource() == vista.btnOrdenar) {
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) { // Ordenar por Fecha
-           
-                    Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarDueñoASC(ListaCitas.getListaCitas());//**DUEÑO ORDEN************************
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()) {
-                    
-                    Citas[] listaOrdenada = InsercionOrdenamientoCitas.ordenarDueñoDESC(ListaCitas.getListaCitas());//**DUEÑO ORDEN********************************
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) {//ordenar por ID 
-                    
-                    Citas[] listaOrdenada = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()) {
-                    
-                    Citas[] listaOrdenada = SeleccionOrdenarCitas.ordenarPorIdCitaDESC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-                //NO FUNCIONA
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnASC.isSelected()) {
-                    
-                    Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaASC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-                //NO FUNCIONA
-                if (vista.cbxOrdenar.getSelectedIndex()==0 && vista.rbtnDESC.isSelected()){
-                    Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaDESC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-                
-                
-                
+        if(e.getSource()==vista.btnOrdenar){
+            if(vista.cbxOrdenar.getSelectedIndex()==0 && vista.rBtnASC.isSelected()){ 
+                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoASC(coleccion.getLista(), 0, coleccion.getLista().size()-1);
+                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
             }
+            if(vista.cbxOrdenar.getSelectedIndex()==0 && vista.rBtnDESC.isSelected()){ 
+                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoDESC(coleccion.getLista(), 0, coleccion.getLista().size()-1);
+                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+            }
+            if(vista.cbxOrdenar.getSelectedIndex()==1 && vista.rBtnASC.isSelected()){ 
+                Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoMascotas.OrdenarNombreASC(coleccion.getLista());
+                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+            }
+            if(vista.cbxOrdenar.getSelectedIndex()==1 && vista.rBtnDESC.isSelected()){ 
+                Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoMascotas.OrdenarNombreDESC(coleccion.getLista());
+                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+            }
+            if(vista.cbxOrdenar.getSelectedIndex()==2 && vista.rBtnASC.isSelected()){ 
+                Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarMascotas.OrdenarEspecieASC(coleccion.getLista());
+                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+            }
+            if(vista.cbxOrdenar.getSelectedIndex()==2 && vista.rBtnDESC.isSelected()){ 
+                Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarMascotas.OrdenarEspecieDESC(coleccion.getLista());
+                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+            }
+        }      
 
-        if (e.getSource() == vista.btnBuscarBinaria) {
+        if (e.getSource() == vista.btnBuscar) {
             // Ordenar primero por ID antes de hacer la búsqueda binaria
-            Citas[] auxiliar = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
+            Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoASC(coleccion.getLista(), 0, coleccion.getLista().size()-1);
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
-            int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(auxiliar, codigoBuscar);
+            int posicion = BusquedaBinariaMascotas.BuscarPorCodigo(coleccion.getLista(), codigoBuscar);
             if (posicion == -1) {
                 Mensajes.MostrarTexto("ID " + codigoBuscar + " no existe en la lista...");
             } else {
-                Mensajes.MostrarTexto(auxiliar[posicion].toString());
+                Mensajes.MostrarTexto(coleccion.getLista().get(posicion).toString());
             }
-        }*/
+        }
+  
     }
-    
+
 }
+

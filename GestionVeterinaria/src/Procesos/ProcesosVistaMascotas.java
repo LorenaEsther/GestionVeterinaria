@@ -37,6 +37,11 @@ public class ProcesosVistaMascotas {
         vm.cbxSexo.removeAllItems();
         vm.cbxSexo.addItem("MACHO");
         vm.cbxSexo.addItem("HEMBRA");
+        
+        vm.cbxOrdenar.removeAllItems();
+        vm.cbxOrdenar.addItem("CODIGO");
+        vm.cbxOrdenar.addItem("NOMBRE");
+        vm.cbxOrdenar.addItem("ESPECIE");
     }//Fin del metodo
     
     

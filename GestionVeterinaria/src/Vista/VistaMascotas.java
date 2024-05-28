@@ -26,6 +26,7 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -52,11 +53,8 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         cbxSexo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblMas = new javax.swing.JTable();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
+        rBtnASC = new javax.swing.JRadioButton();
+        rBtnDESC = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -67,6 +65,9 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
+        btnOrdenar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        cbxOrdenar = new javax.swing.JComboBox<>();
 
         setClosable(true);
 
@@ -147,26 +148,18 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 760, 250));
 
-        jRadioButton1.setText("Nombre");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, -1, -1));
-
-        jRadioButton2.setText("Codigo");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, -1, -1));
-
-        jRadioButton3.setText("Raza");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, -1, -1));
-
-        jRadioButton4.setText("Todos");
-        jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 370, -1, -1));
-
-        jTextField1.setBackground(new java.awt.Color(255, 204, 0));
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rBtnASC);
+        rBtnASC.setText("ASC");
+        rBtnASC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                rBtnASCActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 490, 130, 30));
+        jPanel1.add(rBtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, -1, -1));
+
+        buttonGroup1.add(rBtnDESC);
+        rBtnDESC.setText("DESC");
+        jPanel1.add(rBtnDESC, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel13.setText("Nuevo");
@@ -208,6 +201,15 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         btnEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 70, 70));
 
+        btnOrdenar.setText("ORDENAR");
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 440, -1, -1));
+
+        btnBuscar.setText("BUSCAR");
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 340, -1, -1));
+
+        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -222,19 +224,23 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void cbxSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSexoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxSexoActionPerformed
 
+    private void rBtnASCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnASCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rBtnASCActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnOrdenar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    public javax.swing.JComboBox<String> cbxOrdenar;
     public javax.swing.JComboBox<String> cbxSexo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -255,16 +261,13 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
+    public javax.swing.JRadioButton rBtnASC;
+    public javax.swing.JRadioButton rBtnDESC;
     public javax.swing.JTable tblMas;
     public javax.swing.JTextField txtCod;
     public javax.swing.JTextField txtEdad;
