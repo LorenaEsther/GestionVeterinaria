@@ -53,7 +53,6 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
@@ -71,6 +70,13 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         rbtnDESC = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaResumen = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(102, 255, 102));
         setClosable(true);
@@ -196,7 +202,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         JdateChooser.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 620, -1));
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        JdateChooser.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 270, 20));
+        JdateChooser.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 160, 270, 20));
 
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
         JdateChooser.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 260, 10));
@@ -245,7 +251,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        JdateChooser.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 30, 350));
+        JdateChooser.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 30, 590));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel14.setText("Guardar");
@@ -254,10 +260,6 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel15.setText("Eliminar");
         JdateChooser.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("ID Cita");
-        JdateChooser.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 29));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel16.setText("Editar");
@@ -282,12 +284,13 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         JdateChooser.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 10, 70, 70));
 
+        txtIdCita.setBorder(javax.swing.BorderFactory.createTitledBorder("ID Cita"));
         txtIdCita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdCitaActionPerformed(evt);
             }
         });
-        JdateChooser.add(txtIdCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 103, 29));
+        JdateChooser.add(txtIdCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 103, 29));
 
         jLabel12.setText("Hora");
         JdateChooser.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
@@ -334,13 +337,37 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         JdateChooser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 300, 170));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ositogay.gif"))); // NOI18N
+        JdateChooser.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, 310, 360));
+
+        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        JdateChooser.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 30, 350));
+
+        jLabel10.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 42)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("MASCOTAS");
+        JdateChooser.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 90, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 42)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("FIORI, AMANDO");
+        JdateChooser.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 50, -1, -1));
+
+        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
+        JdateChooser.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 270, 20));
+
+        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
+        JdateChooser.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 50, 270, 20));
+
+        jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
+        JdateChooser.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 50, 270, 20));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(JdateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 975, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(JdateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 1398, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,8 +404,10 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton9;
     public com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -396,6 +425,10 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     public javax.swing.JRadioButton rbtnASC;
     public javax.swing.JRadioButton rbtnDESC;
     public javax.swing.JTable tblCitas;

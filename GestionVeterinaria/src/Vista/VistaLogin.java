@@ -79,6 +79,7 @@ public class VistaLogin extends javax.swing.JFrame {
         btnIngresar.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(54, 154, 146));
         btnIngresar.setText("I N G R E S A R");
+        btnIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);

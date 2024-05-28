@@ -55,19 +55,19 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         tblMas = new javax.swing.JTable();
         rBtnASC = new javax.swing.JRadioButton();
         rBtnDESC = new javax.swing.JRadioButton();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnOrdenar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         cbxOrdenar = new javax.swing.JComboBox<>();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
 
         setClosable(true);
 
@@ -155,60 +155,71 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
                 rBtnASCActionPerformed(evt);
             }
         });
-        jPanel1.add(rBtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, -1, -1));
+        jPanel1.add(rBtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 550, -1, -1));
 
         buttonGroup1.add(rBtnDESC);
         rBtnDESC.setText("DESC");
+        rBtnDESC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rBtnDESCActionPerformed(evt);
+            }
+        });
         jPanel1.add(rBtnDESC, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel13.setText("Nuevo");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel14.setText("Guardar");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel15.setText("Editar");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel16.setText("Eliminar");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, -1, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perro-imagen-animada-0638.gif"))); // NOI18N
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, 110, 110));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 360, 20));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 110, 110));
 
-        jButton1.setBackground(new java.awt.Color(135, 204, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-archivo (2).png"))); // NOI18N
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 70, 70));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 360, 20));
 
         btnGuardar.setBackground(new java.awt.Color(135, 204, 204));
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
         btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 70, 70));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 70, 70));
 
         btnEliminar.setBackground(new java.awt.Color(135, 204, 204));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrar (2).png"))); // NOI18N
         btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, 70, 70));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 70, 70));
 
         btnEditar.setBackground(new java.awt.Color(135, 204, 204));
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
         btnEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 70, 70));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 70, 70));
 
+        btnOrdenar.setBackground(new java.awt.Color(57, 109, 255));
+        btnOrdenar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnOrdenar.setText("ORDENAR");
-        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 440, -1, -1));
+        btnOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 410, 140, 50));
 
+        btnBuscar.setBackground(new java.awt.Color(255, 204, 51));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnBuscar.setText("BUSCAR");
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 340, -1, -1));
+        btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 340, 130, 50));
 
+        cbxOrdenar.setBackground(new java.awt.Color(153, 204, 255));
         cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, -1, -1));
+        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, 130, 40));
+
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 360, 20));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Flechas (1) (1).gif"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 30, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,7 +229,10 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -232,6 +246,10 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rBtnASCActionPerformed
 
+    private void rBtnDESCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnDESCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rBtnDESCActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscar;
@@ -242,12 +260,10 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JComboBox<String> cbxOrdenar;
     public javax.swing.JComboBox<String> cbxSexo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -259,10 +275,12 @@ public class VistaMascotas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;

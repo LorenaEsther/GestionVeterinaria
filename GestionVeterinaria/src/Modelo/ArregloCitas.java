@@ -42,7 +42,7 @@ public class ArregloCitas implements Serializable{
         
     }
     public void Actualizar(Citas nuevo, String codBuscado) {
-    int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(ListaCitas, codBuscado);
+    int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(this.getListaCitas(), codBuscado);
     if (posicion != -1) {
         ListaCitas[posicion].setIdCita(nuevo.getIdCita());
         ListaCitas[posicion].setFecha(nuevo.getFecha());
