@@ -1,7 +1,5 @@
-/*
 package Ordenamientos.OrdenamientoSeleccion;
 
-import Modelo.ArregloClientes;
 import Modelo.Cliente;
 
 public class SeleccionOrdenarClientes {
@@ -10,7 +8,7 @@ public class SeleccionOrdenarClientes {
         for (int i = 0; i < cantClientes - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < cantClientes; j++) {
-                if (listaClientes[j].getIdCliente().compareTo(listaClientes[minIndex].getIdCliente()) < 0) {
+                if (listaClientes[j].getCodCliente().compareTo(listaClientes[minIndex].getCodCliente()) < 0) {
                     minIndex = j;
                 }
             }
@@ -21,4 +19,3 @@ public class SeleccionOrdenarClientes {
         return listaClientes;
     }
 }
-*/

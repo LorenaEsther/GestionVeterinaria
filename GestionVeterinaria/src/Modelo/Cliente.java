@@ -1,9 +1,8 @@
-
 package Modelo;
 
-import java.io.*;
+import java.io.Serializable;
 
-public class Cliente implements Serializable {
+public class Cliente implements Serializable, Comparable<Cliente> {
     private String codigo;
     private String nombre;
     private String dni;
@@ -12,15 +11,16 @@ public class Cliente implements Serializable {
     private String telefono;
     private String sexo;
 
-    public Cliente(){
-    
+    public Cliente() {
     }
-    public Object[] Registro(int num){
-        Object fila[]={num,codigo,nombre,dni,direccion,edad,telefono,sexo};
+
+    public Object[] Registro(int num) {
+        Object fila[] = {num, codigo, nombre, dni, direccion, edad, telefono, sexo};
         return fila;
     }
-    
+
     @Override
+<<<<<<< Updated upstream
     public String toString() {//*********************************************
         return "Id Codigo            :  "+codigo+
                "\nCod Nombre         :  "+nombre+
@@ -29,6 +29,16 @@ public class Cliente implements Serializable {
                "\nEdad               :  "+edad+
                "\ntelefono           :  "+telefono+
                "\nSexo               :  "+sexo;
+=======
+    public String toString() {
+        return "Id Codigo       :  " + codigo +
+               "\nCod Nombre       :  " + nombre +
+               "\nNombre DNI        :  " + dni +
+               "\nNombre Direccion       :  " + direccion +
+               "\nEdad        :  " + edad +
+               "\ntelefono       :  " + telefono +
+               "\nSexo       :  " + sexo;
+>>>>>>> Stashed changes
     }
 
     public String getCodigo() {
@@ -86,5 +96,13 @@ public class Cliente implements Serializable {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    
+
+    public String getCodCliente() {
+        return codigo;
+    }
+
+    @Override
+    public int compareTo(Cliente otroCliente) {
+        return this.codigo.compareTo(otroCliente.getCodigo());
+    }
 }
