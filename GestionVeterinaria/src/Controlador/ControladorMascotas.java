@@ -16,6 +16,7 @@ public class ControladorMascotas implements ActionListener{
     
     VistaMascotas vista;
     ColeccionMascotas coleccion;
+    ColeccionMascotas auxiliar;
     
     public ControladorMascotas (VistaMascotas vm) {
         vista = vm;
@@ -67,28 +68,34 @@ public class ControladorMascotas implements ActionListener{
         
         if(e.getSource()==vista.btnOrdenar){
             if(vista.cbxOrdenar.getSelectedIndex()==0 && vista.rBtnASC.isSelected()){ 
-                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoASC(coleccion.getLista(), 0, coleccion.getLista().size()-1);
-                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+                auxiliar = DatosMascotas.RecuperarDeArchivo();
+                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoASC(auxiliar.getLista(), 0, auxiliar.getLista().size()-1);
+                ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==0 && vista.rBtnDESC.isSelected()){ 
-                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoDESC(coleccion.getLista(), 0, coleccion.getLista().size()-1);
-                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+                auxiliar = DatosMascotas.RecuperarDeArchivo();
+                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoDESC(auxiliar.getLista(), 0, auxiliar.getLista().size()-1);
+                ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==1 && vista.rBtnASC.isSelected()){ 
-                Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoMascotas.OrdenarNombreASC(coleccion.getLista());
-                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+                auxiliar = DatosMascotas.RecuperarDeArchivo();
+                auxiliar.setLista(Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoMascotas.OrdenarNombreASC(coleccion.getLista()));
+                ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==1 && vista.rBtnDESC.isSelected()){ 
-                Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoMascotas.OrdenarNombreDESC(coleccion.getLista());
-                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+                auxiliar = DatosMascotas.RecuperarDeArchivo();
+                auxiliar.setLista(Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoMascotas.OrdenarNombreDESC(coleccion.getLista()));
+                ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==2 && vista.rBtnASC.isSelected()){ 
-                Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarMascotas.OrdenarEspecieASC(coleccion.getLista());
-                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+                auxiliar = DatosMascotas.RecuperarDeArchivo();
+                auxiliar.setLista(Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarMascotas.OrdenarEspecieASC(coleccion.getLista()));
+                ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==2 && vista.rBtnDESC.isSelected()){ 
-                Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarMascotas.OrdenarEspecieDESC(coleccion.getLista());
-                ProcesosVistaMascotas.MostrarEnTabla(vista,coleccion);
+                auxiliar = DatosMascotas.RecuperarDeArchivo();
+                auxiliar.setLista(Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarMascotas.OrdenarEspecieDESC(coleccion.getLista()));              
+                ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
         }      
 

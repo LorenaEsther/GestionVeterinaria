@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class SeleccionOrdenarMascotas {
     
-    public static void OrdenarEspecieASC(ArrayList<Mascotas> arreglo) {
+    public static ArrayList<Mascotas> OrdenarEspecieASC(ArrayList<Mascotas> arreglo) {
         int k;
         for (int i = 0; i < arreglo.size(); i++) {
             k = i;
@@ -20,9 +20,10 @@ public class SeleccionOrdenarMascotas {
             arreglo.set(i, arreglo.get(k));
             arreglo.set(k, aux);
         }
+        return arreglo;
     }
 
-    public static void OrdenarEspecieDESC(ArrayList<Mascotas> arreglo) {
+    public static ArrayList<Mascotas> OrdenarEspecieDESC(ArrayList<Mascotas> arreglo) {
         int k;
         for (int i = 0; i < arreglo.size(); i++) {
             k = i;
@@ -35,6 +36,7 @@ public class SeleccionOrdenarMascotas {
             arreglo.set(i, arreglo.get(k));
             arreglo.set(k, aux);
         }
+        return arreglo;
     }
     
     
