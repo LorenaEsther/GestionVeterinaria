@@ -76,7 +76,7 @@ public class ControladorCitas implements ActionListener {
         String codBuscado = Mensajes.LeerTexto("Ingrese el código de la cita a editar:");
         Citas nuevo = ProcesosVistaGestion.LeerCitas(vista); 
         ListaCitas.Actualizar(nuevo, codBuscado);
-        DatosCitas.GuardarEnArchivo(ListaCitas);
+        
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
         ListaCitas.MostrarResumen(vista.txtaResumen);
         ProcesosVistaGestion.LimpiarEntradas(vista);

@@ -29,7 +29,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" pref="1679" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="1381" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -330,7 +330,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="500" y="320" width="1150" height="250"/>
+              <AbsoluteConstraints x="500" y="320" width="870" height="250"/>
             </Constraint>
           </Constraints>
 
@@ -524,7 +524,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="500" y="240" width="920" height="10"/>
+              <AbsoluteConstraints x="500" y="240" width="870" height="10"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -647,7 +647,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="580" width="1640" height="160"/>
+              <AbsoluteConstraints x="0" y="580" width="1370" height="160"/>
             </Constraint>
           </Constraints>
 
