@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class QuickSortOrdenarMascotas {
     
-    public static ArrayList<Mascotas> OrdenarCodigoASC(ArrayList<Mascotas> A,int izq,int der){
+    public static void OrdenarCodigoASC(ArrayList<Mascotas> A,int izq,int der){
         Mascotas pivote=A.get(izq);
         int i=izq;
         int j=der;
@@ -24,8 +24,7 @@ public class QuickSortOrdenarMascotas {
         A.set(izq,A.get(j));
         A.set(j,pivote);
         if(izq<j+1) OrdenarCodigoASC(A,izq,j-1);
-        if(j+1<der) OrdenarCodigoASC(A,j+1,der);       
-        return A;
+        if(j+1<der) OrdenarCodigoASC(A,j+1,der);    
     }
     
     public static void OrdenarCodigoDESC(ArrayList<Mascotas> A,int izq,int der){

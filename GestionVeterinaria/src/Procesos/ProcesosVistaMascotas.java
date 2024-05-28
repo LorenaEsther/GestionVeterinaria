@@ -2,6 +2,7 @@ package Procesos;
 
 import Modelo.*;
 import Vista.*;
+import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -54,5 +55,6 @@ public class ProcesosVistaMascotas {
             mt.addRow(masc.Registro(i+1));
         }
     }
+    
     
 }
