@@ -20,7 +20,7 @@ public class Cliente implements Serializable, Comparable<Cliente> {
     }
 
     @Override
-<<<<<<< Updated upstream
+
     public String toString() {//*********************************************
         return "Id Codigo            :  "+codigo+
                "\nCod Nombre         :  "+nombre+
@@ -29,16 +29,7 @@ public class Cliente implements Serializable, Comparable<Cliente> {
                "\nEdad               :  "+edad+
                "\ntelefono           :  "+telefono+
                "\nSexo               :  "+sexo;
-=======
-    public String toString() {
-        return "Id Codigo       :  " + codigo +
-               "\nCod Nombre       :  " + nombre +
-               "\nNombre DNI        :  " + dni +
-               "\nNombre Direccion       :  " + direccion +
-               "\nEdad        :  " + edad +
-               "\ntelefono       :  " + telefono +
-               "\nSexo       :  " + sexo;
->>>>>>> Stashed changes
+
     }
 
     public String getCodigo() {
