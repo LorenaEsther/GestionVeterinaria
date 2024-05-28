@@ -69,12 +69,12 @@ public class ControladorMascotas implements ActionListener{
         if(e.getSource()==vista.btnOrdenar){
             if(vista.cbxOrdenar.getSelectedIndex()==0 && vista.rBtnASC.isSelected()){ 
                 auxiliar = DatosMascotas.RecuperarDeArchivo();
-                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoASC(auxiliar.getLista(), 0, auxiliar.getLista().size()-1);
+                auxiliar.setLista(Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarMascotas.OrdenarCodigoASC(coleccion.getLista()));
                 ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==0 && vista.rBtnDESC.isSelected()){ 
                 auxiliar = DatosMascotas.RecuperarDeArchivo();
-                Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoDESC(auxiliar.getLista(), 0, auxiliar.getLista().size()-1);
+                auxiliar.setLista(Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarMascotas.OrdenarCodigoDESC(coleccion.getLista()));
                 ProcesosVistaMascotas.MostrarEnTabla(vista,auxiliar);
             }
             if(vista.cbxOrdenar.getSelectedIndex()==1 && vista.rBtnASC.isSelected()){ 
@@ -101,9 +101,10 @@ public class ControladorMascotas implements ActionListener{
 
         if (e.getSource() == vista.btnBuscar) {
             // Ordenar primero por ID antes de hacer la búsqueda binaria
-            Ordenamientos.OrdenamientoQuicksort.QuickSortOrdenarMascotas.OrdenarCodigoASC(coleccion.getLista(), 0, coleccion.getLista().size()-1);
+            auxiliar = DatosMascotas.RecuperarDeArchivo();
+            auxiliar.setLista(Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarMascotas.OrdenarCodigoASC(coleccion.getLista()));
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
-            int posicion = BusquedaBinariaMascotas.BuscarPorCodigo(coleccion.getLista(), codigoBuscar);
+            int posicion = BusquedaBinariaMascotas.BuscarPorCodigo(auxiliar.getLista(), codigoBuscar);
             if (posicion == -1) {
                 Mensajes.MostrarTexto("ID " + codigoBuscar + " no existe en la lista...");
             } else {

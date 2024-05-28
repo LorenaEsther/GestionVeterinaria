@@ -8,7 +8,7 @@ public class BurbujaOrdenarCitas {
     
     //TIPO DE URGENCIA**********************************************************
     
-     public static Citas[] OrdenarPorUrgenciaASC(Citas[] ListaCitas, int cantCitas) {
+    public static Citas[] OrdenarPorUrgenciaASC(Citas[] ListaCitas, int cantCitas) {
         for (int i = 0; i < cantCitas - 1; i++) {
             for (int j = 0; j < cantCitas - 1 - i; j++) {
                 if (ListaCitas[j].getUrgencia().compareTo(ListaCitas[j + 1].getUrgencia()) > 0) {
