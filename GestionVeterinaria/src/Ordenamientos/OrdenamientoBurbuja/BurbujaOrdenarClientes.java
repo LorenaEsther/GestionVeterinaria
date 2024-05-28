@@ -1,37 +1,31 @@
 package Ordenamientos.OrdenamientoBurbuja;
 
 import Modelo.Cliente;
-import java.util.List;
 
 public class BurbujaOrdenarClientes {
-    private static List<Cliente> clientes;
-
-    // Método para inicializar la lista de clientes
-    public static void setClientes(List<Cliente> listaClientes) {
-        clientes = listaClientes;
-    }
-
-    // Algoritmo de búsqueda burbuja por código
-    public static Cliente buscarPorCodigo(String codigo) {
-        burbujaPorCodigo();
-        for (Cliente cliente : clientes) {
-            if (cliente.getCodigo().equalsIgnoreCase(codigo)) {
-                return cliente;
-            }
-        }
-        return null;
-    }
-
-    private static void burbujaPorCodigo() {
-        int n = clientes.size();
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - 1 - i; j++) {
-                if (clientes.get(j).getCodigo().compareTo(clientes.get(j + 1).getCodigo()) > 0) {
-                    Cliente temp = clientes.get(j);
-                    clientes.set(j, clientes.get(j + 1));
-                    clientes.set(j + 1, temp);
+    public static Cliente[] ordenarCodASC(Cliente[] listaClientes, int cantClientes) {
+        for (int i = 0; i < cantClientes - 1; i++) {
+            for (int j = 0; j < cantClientes - 1 - i; j++) {
+                if (listaClientes[j].getCodigo().compareTo(listaClientes[j + 1].getCodigo()) > 0) {
+                    Cliente temp = listaClientes[j];
+                    listaClientes[j] = listaClientes[j + 1];
+                    listaClientes[j + 1] = temp;
                 }
             }
         }
+        return listaClientes;
+    }
+
+    public static Cliente[] ordenarCodDESC(Cliente[] listaClientes, int cantClientes) {
+        for (int i = 0; i < cantClientes - 1; i++) {
+            for (int j = 0; j < cantClientes - 1 - i; j++) {
+                if (listaClientes[j].getCodigo().compareTo(listaClientes[j + 1].getCodigo()) < 0) {
+                    Cliente temp = listaClientes[j];
+                    listaClientes[j] = listaClientes[j + 1];
+                    listaClientes[j + 1] = temp;
+                }
+            }
+        }
+        return listaClientes;
     }
 }

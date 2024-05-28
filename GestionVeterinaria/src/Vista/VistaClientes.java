@@ -52,8 +52,8 @@ public class VistaClientes extends javax.swing.JInternalFrame {
         cbxOrdenar = new javax.swing.JComboBox<>();
         btnOrdenar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbtnASC = new javax.swing.JRadioButton();
+        rbtnDESC = new javax.swing.JRadioButton();
 
         setClosable(true);
 
@@ -246,13 +246,13 @@ public class VistaClientes extends javax.swing.JInternalFrame {
         btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 110, 50));
 
-        jRadioButton1.setBackground(new java.awt.Color(135, 204, 204));
-        jRadioButton1.setText("ASC");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
+        rbtnASC.setBackground(new java.awt.Color(135, 204, 204));
+        rbtnASC.setText("ASC");
+        jPanel1.add(rbtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(135, 204, 204));
-        jRadioButton2.setText("DESC");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, -1, -1));
+        rbtnDESC.setBackground(new java.awt.Color(135, 204, 204));
+        rbtnDESC.setText("DESC");
+        jPanel1.add(rbtnDESC, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -303,11 +303,11 @@ public class VistaClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JRadioButton rbtnASC;
+    public javax.swing.JRadioButton rbtnDESC;
     public javax.swing.JTable tblClientes;
     public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextField txtDireccion;

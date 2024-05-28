@@ -2,7 +2,7 @@ package Modelo;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable, Comparable<Cliente> {
+public class Cliente implements Serializable {
     private String codigo;
     private String nombre;
     private String dni;
@@ -92,8 +92,4 @@ public class Cliente implements Serializable, Comparable<Cliente> {
         return codigo;
     }
 
-    @Override
-    public int compareTo(Cliente otroCliente) {
-        return this.codigo.compareTo(otroCliente.getCodigo());
-    }
 }

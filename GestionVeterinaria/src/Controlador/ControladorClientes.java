@@ -2,8 +2,9 @@ package Controlador;
 
 import Modelo.*;
 import Busquedas.BusquedaLineal.BusquedaLinealClientes;
-/*import Ordenamientos.OrdenamientoInsercion.InsercionOrdenarClientes;
-import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarClientes;*/
+import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarClientes;
+import Ordenamientos.OrdenamientoInsercion.InsercionOrdenarClientes;
+import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarClientes;
 import Vista.*;
 import Procesos.*;
 import Persistencia.*;
@@ -65,35 +66,43 @@ public class ControladorClientes implements ActionListener {
             ProcesosVistaClientes.MostaraEnTabla(vista, listaClientes.getListaClientes());
         }
 
-        /*if (e.getSource() == vista.btnOrdenar) {
-            if (vista.cbxOrdenar.getSelectedIndex() == 0 && vista.rbtnASC.isSelected()) { // Ordenar por Nombre
-                VistaClientes[] listaOrdenada = InsercionOrdenamientoClientes.ordenarNombreASC(listaClientes.getListaClientes());
-                ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+        if (e.getSource() == vista.btnOrdenar) {
+            if (vista.cbxOrdenar.getSelectedIndex() == 0 && vista.rbtnASC.isSelected()) { // Ordenar por ID
+                Cliente[] listaOrdenada = BurbujaOrdenarClientes.ordenarCodASC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
+                ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
             }
             if (vista.cbxOrdenar.getSelectedIndex() == 0 && vista.rbtnDESC.isSelected()) {
-                VistaClientes[] listaOrdenada = InsercionOrdenamientoClientes.ordenarNombreDESC(listaClientes.getListaClientes());
-                ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+                Cliente[] listaOrdenada = BurbujaOrdenarClientes.ordenarCodDESC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
+                ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
             }
+            
             if (vista.cbxOrdenar.getSelectedIndex() == 1 && vista.rbtnASC.isSelected()) { // Ordenar por ID
-                VistaClientes[] listaOrdenada = SeleccionOrdenarClientes.ordenarPorIdClienteASC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
-                ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+                Cliente[] listaOrdenada = SeleccionOrdenarClientes.ordenarNombASC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
+                ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
             }
             if (vista.cbxOrdenar.getSelectedIndex() == 1 && vista.rbtnDESC.isSelected()) {
-                VistaClientes[] listaOrdenada = SeleccionOrdenarClientes.ordenarPorIdClienteDESC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
-                ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+                Cliente[] listaOrdenada = SeleccionOrdenarClientes.ordenarNombDESC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
+                ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
+            }
+            if (vista.cbxOrdenar.getSelectedIndex() == 2 && vista.rbtnASC.isSelected()) { // Ordenar por Nombre
+                Cliente[] listaOrdenada = InsercionOrdenarClientes.ordenarEdadASC(listaClientes.getListaClientes());
+                ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
+            }
+            if (vista.cbxOrdenar.getSelectedIndex() == 2 && vista.rbtnDESC.isSelected()) {
+                Cliente[] listaOrdenada = InsercionOrdenarClientes.ordenarEdadDESC(listaClientes.getListaClientes());
+                ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
             }
         }
 
         if (e.getSource() == vista.btnBuscar) {
-            // Ordenar primero por ID antes de hacer la búsqueda binaria
-            VistaClientes[] auxiliar = SeleccionOrdenarClientes.ordenarPorIdClienteASC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
+            
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
-            int posicion = BusquedaClientes.BuscarPorCodigoCliente(auxiliar, codigoBuscar);
+            int posicion = BusquedaLinealClientes.Secuencial(codigoBuscar, listaClientes);
             if (posicion == -1) {
                 Mensajes.MostrarTexto("ID " + codigoBuscar + " no existe en la lista...");
             } else {
-                Mensajes.MostrarTexto(auxiliar[posicion].toString());
+                Mensajes.MostrarTexto(listaClientes.getListaClientes()[posicion].toString());
             }
-        }*/
+        }
     }
 }

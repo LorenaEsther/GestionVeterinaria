@@ -4,37 +4,29 @@ import Modelo.*;
 
 public class InsercionOrdenarClientes {
     
-    public static Cliente[] insercionCodASC(Cliente[] arregloClientes) {
-        int n = arregloClientes.length;
-        Cliente[] nuevo = new Cliente[n];
-        int nuevoSize = 0;
-        
-        for (Cliente actual : arregloClientes) {
-            int i;
-            for (i = nuevoSize - 1; i >= 0 && nuevo[i].compareTo(actual) > 0; i--) {
-                nuevo[i + 1] = nuevo[i];
+    public static Cliente[] ordenarEdadASC(Cliente[] Arreglo) {
+        for(int i=1;i<ArregloClientes.getCantClientes();i++){
+            Cliente value=Arreglo[i];
+            int j=i;
+            while(j > 0 && Arreglo[j - 1].getEdad() > value.getEdad()){
+                Arreglo[j]= Arreglo[j-1];
+                j--;
             }
-            nuevo[i + 1] = actual;
-            nuevoSize++;
+            Arreglo[j] = value;
         }
-
-        return nuevo;
+        return Arreglo;
     }
     
-    public static Cliente[] insercionCodDESC(Cliente[] arregloClientes) {
-        int n = arregloClientes.length;
-        Cliente[] nuevo = new Cliente[n];
-        int nuevoSize = 0;
-        
-        for (Cliente actual : arregloClientes) {
-            int i;
-            for (i = nuevoSize - 1; i >= 0 && nuevo[i].compareTo(actual) < 0; i--) {
-                nuevo[i + 1] = nuevo[i];
+    public static Cliente[] ordenarEdadDESC(Cliente[] Arreglo) {
+        for(int i=1;i<ArregloClientes.getCantClientes();i++){
+            Cliente value=Arreglo[i];
+            int j=i;
+            while(j > 0 && Arreglo[j - 1].getEdad() < value.getEdad()){
+                Arreglo[j]= Arreglo[j-1];
+                j--;
             }
-            nuevo[i + 1] = actual;
-            nuevoSize++;
+            Arreglo[j] = value;
         }
-
-        return nuevo;
+        return Arreglo;
     }
 }
