@@ -11,9 +11,6 @@ import Persistencia.DatosCitas;
 
 public class ArregloCitas implements Serializable{
     private Citas[] ListaCitas; 
-    
-   
-    
     private static int cantCitas=0;
     
     public ArregloCitas(){

@@ -22,13 +22,13 @@ public class Cliente implements Serializable {
     
     @Override
     public String toString() {//*********************************************
-        return "Id Codigo       :  "+codigo+
-               "\nCod Nombre       :  "+nombre+
-               "\nNombre DNI        :  "+dni+
-               "\nNombre Direccion       :  "+direccion+
-               "\nEdad        :  "+edad+
-               "\ntelefono       :  "+telefono+
-               "\nSexo       :  "+sexo;
+        return "Id Codigo            :  "+codigo+
+               "\nCod Nombre         :  "+nombre+
+               "\nNombre DNI         :  "+dni+
+               "\nNombre Direccion   :  "+direccion+
+               "\nEdad               :  "+edad+
+               "\ntelefono           :  "+telefono+
+               "\nSexo               :  "+sexo;
     }
 
     public String getCodigo() {

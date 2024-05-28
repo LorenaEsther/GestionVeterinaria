@@ -1,6 +1,5 @@
 
 package Persistencia;
-
 import Modelo.Citas;
 import Procesos.Mensajes;
 import java.io.FileInputStream;
@@ -10,7 +9,6 @@ import java.io.ObjectOutputStream;
 import Modelo.*;
 
 public class DatosCitas {
-    
     public static void GuardarEnArchivo(ArregloCitas listaCitas){
       try{
           FileOutputStream fos =  new FileOutputStream("InfoCitas.bin");

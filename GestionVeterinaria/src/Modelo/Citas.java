@@ -18,11 +18,11 @@ public class Citas implements Serializable{
     private double PrecioTotal;
     private double precio;
     private String codEmp;
-    private String nomEmp="";//
+    private String nomEmp;//
     private String codMas;
-    private String nomMas="";
+    private String nomMas;
     private String codDue;
-    private String nomDue="";
+    private String nomDue;
     private String codSer;
     private String nomSer;
 
@@ -64,7 +64,7 @@ public class Citas implements Serializable{
         //Obtener Nombre de Mascota
         ColeccionMascotas colMasc = DatosMascotas.RecuperarDeArchivo();
         Mascotas mascota = colMasc.RecuperarMascota(codMas);
-        nomMas = mascota.getNombre();
+        nomMas = mascota.getNombre();//AGARRO EL NOMBRE
         //Obtener Nombre de Dueño 
         
         ArregloClientes cliArreglo = DatosClientes.RecuperaDeArchivo();
@@ -82,15 +82,15 @@ public class Citas implements Serializable{
     
     @Override
     public String toString() {//*********************************************
-        return "Id Cita       :  "+idCita+
+        return "Id Cita              :  "+idCita+
                "\nCod Empleado       :  "+codEmp+
-               "\nNombre Empleado        :  "+nomEmp+
-               "\nNombre Mascota       :  "+nomMas+
-               "\nDueño        :  "+nomDue+
-               "\nServicio       :  "+nomSer+
-               "\nFecha       :  "+fecha+
-               "\nHora        :  "+hora+
-               "\nUrgencia    :  "+urgencia;
+               "\nNombre Empleado    :  "+nomEmp+
+               "\nNombre Mascota     :  "+nomMas+
+               "\nDueño              :  "+nomDue+
+               "\nServicio           :  "+nomSer+
+               "\nFecha              :  "+fecha+
+               "\nHora               :  "+hora+
+               "\nUrgencia           :  "+urgencia;
                
     }
 

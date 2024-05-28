@@ -52,6 +52,8 @@ public class VistaClientes extends javax.swing.JInternalFrame {
         cbxOrdenar = new javax.swing.JComboBox<>();
         btnOrdenar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setClosable(true);
 
@@ -201,7 +203,7 @@ public class VistaClientes extends javax.swing.JInternalFrame {
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 60, 220));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 30, 220));
 
         btnGuardar.setBackground(new java.awt.Color(135, 204, 204));
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
@@ -219,7 +221,7 @@ public class VistaClientes extends javax.swing.JInternalFrame {
         jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 70, 70));
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 490, 30));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 490, 30));
 
         cbxOrdenar.setBackground(new java.awt.Color(153, 204, 255));
         cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Codigo", "Edad", " " }));
@@ -228,21 +230,29 @@ public class VistaClientes extends javax.swing.JInternalFrame {
                 cbxOrdenarActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 250, 180, 50));
+        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 180, 50));
 
         btnOrdenar.setBackground(new java.awt.Color(57, 109, 255));
         btnOrdenar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnOrdenar.setForeground(new java.awt.Color(255, 255, 255));
         btnOrdenar.setText("ORDENAR");
         btnOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 70, 50));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 70, 50));
 
         btnBuscar.setBackground(new java.awt.Color(255, 204, 51));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("BUSCAR");
         btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 80, 50));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 110, 50));
+
+        jRadioButton1.setBackground(new java.awt.Color(135, 204, 204));
+        jRadioButton1.setText("ASC");
+        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
+
+        jRadioButton2.setBackground(new java.awt.Color(135, 204, 204));
+        jRadioButton2.setText("DESC");
+        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -293,6 +303,8 @@ public class VistaClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

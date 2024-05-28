@@ -11,7 +11,7 @@ public class ArregloClientes implements Serializable{
     
     private Cliente[] ListaClientes;
 
-     public ArregloClientes(){
+    public ArregloClientes(){
         ListaClientes = new Cliente[50];
     }
     public void AgregarClientes(Cliente cli){
