@@ -23,6 +23,8 @@ public class ControladorListaServicios implements ActionListener{
         vista.btnEliminar.addActionListener(this);
         vista.btnEditar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
+        vista.btnPrimero.addActionListener(this);
+        vista.btnUltimo.addActionListener(this);
         pila = new PilasServicios();
         pila = DatosServicios.RecuperaDeArchivo();
         ProcesosListaServicios.PresentarGestionDeServicios(vista);
@@ -49,20 +51,18 @@ public class ControladorListaServicios implements ActionListener{
             ProcesosListaServicios.MostrarEnTabla(vista, pila);
         }
         
-        /*if (e.getSource() == vista.btnOrdenar) {
-            if (vista.cbxOrdenar.getSelectedIndex()==0) { // Ordenar por CODIGO
-                PilasServicios nuevaPila = InsercionOrdenarServicios.insercionCodASC(pila);
-                ProcesosListaServicios.MostrarEnTabla(vista, nuevaPila);
-            }
-            if (vista.cbxOrdenar.getSelectedIndex()==1 ) { //Ordenar por SERVICIO
-                PilasServicios nuevaPila = BurbujaOrdenarServicios.BurbujaNomASC(pila));//**DUEÑO ORDEN********************************
-                ProcesosVistaGestion.MostaraEnTabla(vista, nuevaPila);
-                }
-            if (vista.cbxOrdenar.getSelectedIndex()==2) {//Ordenar por PRECIO
-                Citas[] listaOrdenada = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
-                ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }
-        */    
+         if(e.getSource()== vista.btnEditar){
+            Servicio nuevo = ProcesosListaServicios.LeerServicio(vista);
+            pila.Actualizar(nuevo, nuevo.getCodServi());
+            ProcesosListaServicios.MostrarEnTabla(vista, pila);
+        }
+         
+        if(e.getSource() == vista.btnPrimero){ 
+            pila.MostrarPrimeroPila();
+        }
+        if(e.getSource() == vista.btnUltimo){ 
+            pila.MostrarUltimoPila();
+        } 
        
          
     }//fin action    

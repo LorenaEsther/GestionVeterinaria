@@ -46,8 +46,8 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         txtPre = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnPrimero = new javax.swing.JButton();
+        btnUltimo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(135, 204, 204));
         setClosable(true);
@@ -129,15 +129,15 @@ public class ListaServicios extends javax.swing.JInternalFrame {
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 470, 180));
 
-        jButton1.setBackground(new java.awt.Color(57, 109, 255));
-        jButton1.setText("VER PRIMERO");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 170, 40));
+        btnPrimero.setBackground(new java.awt.Color(57, 109, 255));
+        btnPrimero.setText("VER PRIMERO");
+        btnPrimero.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnPrimero, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 170, 40));
 
-        jButton2.setBackground(new java.awt.Color(57, 109, 255));
-        jButton2.setText("VER ULTIMO");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 170, 40));
+        btnUltimo.setBackground(new java.awt.Color(57, 109, 255));
+        btnUltimo.setText("VER ULTIMO");
+        btnUltimo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnUltimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 170, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,8 +164,8 @@ public class ListaServicios extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btnPrimero;
+    public javax.swing.JButton btnUltimo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

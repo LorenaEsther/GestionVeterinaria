@@ -6,7 +6,6 @@ import Modelo.Citas;
 
 
 public class SeleccionOrdenarCitas {
-    
     public static Citas[] ordenarPorIdCitaASC(Citas[] ListaCitas, int cantCitas) {
         for (int i = 0; i < cantCitas - 1; i++) {
             int minIndex = i;
@@ -21,7 +20,6 @@ public class SeleccionOrdenarCitas {
         }
         return ListaCitas;
     }
-
     public static Citas[] ordenarPorIdCitaDESC(Citas[] ListaCitas, int cantCitas) {
         for (int i = 0; i < cantCitas - 1; i++) {
             int maxIndex = i;
