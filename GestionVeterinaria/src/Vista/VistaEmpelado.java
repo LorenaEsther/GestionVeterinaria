@@ -200,7 +200,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 430, 340));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 460, 340));
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -215,7 +215,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 870, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 1100, 250));
 
         btnAgregarInicio.setBackground(new java.awt.Color(135, 204, 204));
         btnAgregarInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregarInicio.png"))); // NOI18N
@@ -256,11 +256,11 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 20, 200));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, 10, 200));
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 870, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 1070, 10));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perro-salchicha-imagen-animada-0059.gif"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, 150, 90));
@@ -270,7 +270,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         btnOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ordenar.png"))); // NOI18N
         btnOrdenar.setText("Ordenar");
         btnOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 160, 60));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 160, 60));
 
         cbxOrdenar.setBackground(new java.awt.Color(153, 204, 255));
         cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellidos", "Nombres", "Codigo" }));
@@ -280,7 +280,7 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
                 cbxOrdenarActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 140, 40));
+        jPanel1.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 140, 40));
 
         btnBusquedaLineal.setBackground(new java.awt.Color(135, 204, 204));
         btnBusquedaLineal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -301,10 +301,10 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         txaResumen.setColumns(20);
         txaResumen.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         txaResumen.setRows(5);
-        txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(102, 153, 255))); // NOI18N
+        txaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "RESUMEN DE DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(102, 153, 255))); // NOI18N
         jScrollPane2.setViewportView(txaResumen);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 1340, 170));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 1590, 170));
 
         rbtAscendente.setBackground(new java.awt.Color(135, 204, 204));
         buttonGroup1.add(rbtAscendente);
@@ -314,12 +314,12 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
                 rbtAscendenteActionPerformed(evt);
             }
         });
-        jPanel1.add(rbtAscendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 110, 20));
+        jPanel1.add(rbtAscendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 110, 20));
 
         rbtDescendente.setBackground(new java.awt.Color(135, 204, 204));
         buttonGroup1.add(rbtDescendente);
         rbtDescendente.setText("Descendente");
-        jPanel1.add(rbtDescendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 110, 20));
+        jPanel1.add(rbtDescendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 110, 20));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel18.setText("Eliminar");
@@ -331,7 +331,9 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1348, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1613, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

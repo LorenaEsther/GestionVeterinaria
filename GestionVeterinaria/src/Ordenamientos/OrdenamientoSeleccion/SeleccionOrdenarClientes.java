@@ -18,6 +18,7 @@ public class SeleccionOrdenarClientes {
         }
         return listaClientes;
     }
+
     public static Cliente[] ordenarNombDESC(Cliente[] listaClientes, int cantCitas) {
         for (int i = 0; i < cantCitas - 1; i++) {
             int maxIndex = i;
