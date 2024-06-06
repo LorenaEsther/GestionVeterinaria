@@ -10,42 +10,11 @@ import java.util.ArrayList;
 
 public class ControladorLogin implements ActionListener {
     VistaLogin vista;
-    //ArrayList<String[]> credencialesYNombres;
+    ArrayList<String[]> credencialesYNombres;
     
     //SOLO PARA ENTRAR RAPIDO------NO ELIMINAR LOS CODIGOS COMENTADOS!!!!!
     
     public ControladorLogin(VistaLogin fl) {
-        vista = fl;
-        vista.setTitle("Login de la Veterinaria");
-        vista.setVisible(true);
-        vista.setLocationRelativeTo(null);
-        vista.btnIngresar.addActionListener(this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.btnIngresar) {
-            // Redirigir directamente al menú principal
-            VistaPrincipal vistaPrincipal = new VistaPrincipal();
-            ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vistaPrincipal);
-            vistaPrincipal.setVisible(true);
-            vista.dispose(); // Cerrar la ventana de login
-        }
-    }
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    /*public ControladorLogin(VistaLogin fl) {
         vista = fl;
         vista.setTitle("Login de la Veterinaria");
         vista.setVisible(true);
@@ -56,7 +25,7 @@ public class ControladorLogin implements ActionListener {
         credencialesYNombres = new ArrayList<>();
         credencialesYNombres.add(new String[]{"VT001", "marco", "Dr. Marco Flores"});
         credencialesYNombres.add(new String[]{"VT002", "lorena", "Dra. Lorena"});
-        credencialesYNombres.add(new String[]{"VT003", "fabricio", "Sra. Fabricio"});
+        credencialesYNombres.add(new String[]{"VT003", "fabricio", "Sr. Fabricio"});
         credencialesYNombres.add(new String[]{"VT004", "juan", "Dr. Juan"});
         credencialesYNombres.add(new String[]{"VT005", "marcelino", "Prof. Willabardo Astrada"});
         // Puedes agregar más credenciales y nombres según sea necesario
@@ -123,5 +92,6 @@ public class ControladorLogin implements ActionListener {
         }
 
         return -1; // Credenciales no encontradas
-    }*/
+    }
+}
 
