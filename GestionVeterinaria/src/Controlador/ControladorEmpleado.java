@@ -72,6 +72,14 @@ public class ControladorEmpleado implements ActionListener {
                 }
             }
         }
+        
+        if(e.getSource() == vistaEmpleado.btnActualizar) {
+            Empleado actualizado = ProcesosEmpleados.LeerEmpleado(vistaEmpleado);
+            Lista.Actualizar(actual, actualizado);
+            ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, Lista);
+            DatosEmpleados.GuardarEnArchivo(Lista);
+            ProcesosEmpleados.LimpiarEntradas(vistaEmpleado);
+        }
 
         if (e.getSource() == vistaEmpleado.btnOrdenar) {
             if (vistaEmpleado.rbtAscendente.isSelected()) {
@@ -107,13 +115,6 @@ public class ControladorEmpleado implements ActionListener {
                 Mensajes.MostrarTexto("Empleado encontrado: " + empleado.getNombre() + " " + empleado.getApellidos());
                 // Aquí puedes mostrar más detalles del empleado en la vista si lo deseas
             }
-        }
-        if(e.getSource() == vistaEmpleado.btnActualizar) {
-            Empleado actualizado = ProcesosEmpleados.LeerEmpleado(vistaEmpleado);
-            Lista.Actualizar(actual, actualizado);
-            ProcesosEmpleados.MostrarDatosDeLista(vistaEmpleado, Lista);
-            DatosEmpleados.GuardarEnArchivo(Lista);
-            ProcesosEmpleados.LimpiarEntradas(vistaEmpleado);
         }
     }
 

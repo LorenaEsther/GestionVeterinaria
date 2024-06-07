@@ -2,6 +2,7 @@ package ListasEnlazadas.ListaEnlazadaEmpleados;
 
 import Modelo.Empleado;
 import java.io.*;
+import Busquedas.BusquedaLineal.BusquedaLinealEmpleados;
 
 public class ListaEmpleados implements Serializable {
 
