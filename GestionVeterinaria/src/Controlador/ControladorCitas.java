@@ -6,6 +6,7 @@ import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
 import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import Persistencia.DatosCitas;
+import Principal.Main;
 
 import Vista.*;
 import Procesos.*;
@@ -14,15 +15,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorCitas implements ActionListener {
-    VistaGestionCitas vista;
+    VistaGestionCitas vista;//LISTO
     ArregloCitas ListaCitas;
    
-    Citas ct;
+    Citas ct;   
 
     public ControladorCitas(VistaGestionCitas vg) {
         vista = vg;
         
-        //EPOR QUE NO SE DAN LAS ACCIONES?****************************************************
+        //TRANSFERENCIA 
+        vista.btnBuscar1.addActionListener(this);
+        vista.setVisible(true);
+        
+        
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscarBinaria.addActionListener(this);//BUSQUEDA DE FORMA BINARIA
         vista.btnEliminar.addActionListener(this);
@@ -130,6 +135,15 @@ public class ControladorCitas implements ActionListener {
             } else {
                 Mensajes.MostrarTexto(auxiliar[posicion].toString());
             }
+            
+        }
+        //TRANSFERENCIA
+        if(e.getSource()==vista.btnBuscar1){
+            //Main.ve=new VistaEmpelado();
+            //ControladorEmpleado ce= new ControladorEmpleado(Main.ve);
+            Main.ve.setVisible(true);
+            PresentarFramePrincipal.Centrar(Main.ve,Main.vprin.dspEscritorio);
+            
         }
     }
 }

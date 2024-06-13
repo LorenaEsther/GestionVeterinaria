@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import Principal.Main;
 import Procesos.PresentarFramePrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,10 +13,10 @@ import javax.swing.JOptionPane;
 
 public class ControladorPrincipal implements ActionListener{
 
-    VistaPrincipal vprin;
+    //VistaPrincipal vprin;
     
     public ControladorPrincipal(VistaPrincipal vp){
-        this.vprin=vp;
+        Main.vprin=vp;
         vp.setTitle("SITEMA DE VETERINARIA-2024");
         vp.setVisible(true);
         vp.itemClientes.addActionListener(this);
@@ -36,82 +37,82 @@ public class ControladorPrincipal implements ActionListener{
     
     
     public void MostrarForma(JInternalFrame internal){
-        vprin.dspEscritorio.removeAll();
-        vprin.dspEscritorio.add(internal);
+        Main.vprin.dspEscritorio.removeAll();
+        Main.vprin.dspEscritorio.add(internal);
         internal.setVisible(true);
-        vprin.dspEscritorio.repaint();       
+        Main.vprin.dspEscritorio.repaint();       
     }  
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()== vprin.itemClientes){
+        if(e.getSource()== Main.vprin.itemClientes){
            VistaClientes vcliente = new VistaClientes();
            vcliente.setTitle("Clientes Registrados");
            MostrarForma(vcliente);
-           PresentarFramePrincipal.Centrar(vcliente,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vcliente,Main.vprin.dspEscritorio);
            ControladorClientes cm = new ControladorClientes(vcliente);
         }        
-        if(e.getSource() == vprin.itemMascotas){
+        if(e.getSource() == Main.vprin.itemMascotas){
            VistaMascotas vmascotas = new VistaMascotas();
            vmascotas.setTitle("Mascotas Registradas");
            MostrarForma(vmascotas);
-           PresentarFramePrincipal.Centrar(vmascotas,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vmascotas,Main.vprin.dspEscritorio);
            ControladorMascotas cm = new ControladorMascotas(vmascotas);
         }
-        if(e.getSource() == vprin.itemCuenta){
+        if(e.getSource() == Main.vprin.itemCuenta){
            VistaServicios vcuenta = new VistaServicios();
            vcuenta.setTitle("Cuenta de Servicios");
            MostrarForma(vcuenta);
-           PresentarFramePrincipal.Centrar(vcuenta,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vcuenta,Main.vprin.dspEscritorio);
            
         }
         
-        if(e.getSource() == vprin.itemProcesos){
+        if(e.getSource() == Main.vprin.itemProcesos){
            VistaGestionCitas vprocesos = new VistaGestionCitas();
            vprocesos.setTitle("Procesos de Servicios");
            MostrarForma(vprocesos);
-           PresentarFramePrincipal.Centrar(vprocesos,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vprocesos,Main.vprin.dspEscritorio);
            ControladorCitas cc = new ControladorCitas(vprocesos);//DEBE HABER CODIGO
         }
-        if(e.getSource() == vprin.itemReporte){
+        if(e.getSource() == Main.vprin.itemReporte){
            VistaReportesServicios vreporte = new VistaReportesServicios();
            vreporte.setTitle("Reporte de Servicios");
            MostrarForma(vreporte);
-           PresentarFramePrincipal.Centrar(vreporte,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vreporte,Main.vprin.dspEscritorio);
         }
         //EMPELADOS
-        if(e.getSource() == vprin.itemEmpleados){
+        if(e.getSource() == Main.vprin.itemEmpleados){
            VistaEmpelado vempleados = new VistaEmpelado();
            vempleados.setTitle("Registro de Empleados con Listas Enlazadas");
            MostrarForma(vempleados);
-           PresentarFramePrincipal.Centrar(vempleados,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vempleados,Main.vprin.dspEscritorio);
            ControladorEmpleado controladorEmpleado = new ControladorEmpleado(vempleados);
            } 
         //HISTORIAL
-        if(e.getSource() == vprin.itemHistorial){
+        if(e.getSource() == Main.vprin.itemHistorial){
            VistaHistorialClinico vhistorial = new VistaHistorialClinico();
            vhistorial.setTitle("Registro de Historiales Clinicos");
            MostrarForma(vhistorial);
-           PresentarFramePrincipal.Centrar(vhistorial,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vhistorial,Main.vprin.dspEscritorio);
            }  
         //SERVICIOS
-        if(e.getSource() == vprin.itemServicios){
+        if(e.getSource() == Main.vprin.itemServicios){
            ListaServicios vLservicios = new ListaServicios();
            vLservicios.setTitle("Registro de Servicios");
            MostrarForma(vLservicios);
-           PresentarFramePrincipal.Centrar(vLservicios,vprin.dspEscritorio);
+           PresentarFramePrincipal.Centrar(vLservicios,Main.vprin.dspEscritorio);
            ControladorListaServicios cls = new ControladorListaServicios(vLservicios);
            }
        
         // Acción para cerrar sesión
-        if (e.getSource() == vprin.itemCerrar) {
-            int respuesta = JOptionPane.showConfirmDialog(vprin, "¿Estas seguro que deseas cerrar sesion?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        if (e.getSource() == Main.vprin.itemCerrar) {
+            int respuesta = JOptionPane.showConfirmDialog(Main.vprin, "¿Estas seguro que deseas cerrar sesion?", "Confirmar", JOptionPane.YES_NO_OPTION);
             if (respuesta == JOptionPane.YES_OPTION) {
                 // Volver a la pantalla de login
                 VistaLogin vistaLogin = new VistaLogin();
                 ControladorLogin controladorLogin = new ControladorLogin(vistaLogin);
                 vistaLogin.setVisible(true);
-                vprin.dispose(); // Cerrar la ventana principal
+                Main.vprin.dispose(); // Cerrar la ventana principal
             }
         }
         
