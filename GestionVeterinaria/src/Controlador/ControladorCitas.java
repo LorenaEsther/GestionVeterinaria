@@ -139,10 +139,14 @@ public class ControladorCitas implements ActionListener {
         }
         //TRANSFERENCIA
         if(e.getSource()==vista.btnBuscar1){
-            //Main.ve=new VistaEmpelado();
-            //ControladorEmpleado ce= new ControladorEmpleado(Main.ve);
-            Main.ve.setVisible(true);
-            PresentarFramePrincipal.Centrar(Main.ve,Main.vprin.dspEscritorio);
+            VistaEmpelado vempleado = new VistaEmpelado();
+            VistaPrincipal.dspEscritorio.add(vempleado);
+            vempleado.toFront();
+            
+            vempleado.setTitle("Registro de Empleados con Listas Enlazadas");
+            ControladorEmpleado controladorEmpleado = new ControladorEmpleado(vempleado);
+            vempleado.setVisible(true);
+            
             
         }
     }

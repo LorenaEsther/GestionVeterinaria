@@ -14,6 +14,7 @@ import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarEmpleados;
 import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarEmpleados;
 import Busquedas.BusquedaLineal.BusquedaLinealEmpleados;
 import Principal.Main;
+import Vista.VistaGestionCitas;
 
 public class ControladorEmpleado implements ActionListener {
 
@@ -131,10 +132,8 @@ public class ControladorEmpleado implements ActionListener {
         //TRANFERENCIA
         if(e.getSource()==vistaEmpleado.btnEnviarIdEmp){
             String idEmpleado = vistaEmpleado.txtCodigo.getText();
-            Main.vg.txtIdEmp.setText(idEmpleado);
+            VistaGestionCitas.txtIdEmp.setText(idEmpleado);
             vistaEmpleado.dispose();
-            
-            //Main.vg.txtIdEmp.setText(vistaEmpleado.txtCodigo.getText());
         }
     }
 

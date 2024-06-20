@@ -437,7 +437,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtHora;
     public javax.swing.JTextField txtIdCita;
     public javax.swing.JTextField txtIdDue;
-    public javax.swing.JTextField txtIdEmp;
+    public static javax.swing.JTextField txtIdEmp;
     public javax.swing.JTextField txtIdMas;
     public javax.swing.JTextField txtIdSer;
     public javax.swing.JTextField txtPre;
