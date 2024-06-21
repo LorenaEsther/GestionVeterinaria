@@ -119,18 +119,21 @@ public class ControladorEmpleado implements ActionListener {
             }
         }
         if (e.getSource() == vistaEmpleado.btnBusquedaLineal) {
+            
             String dniBuscado = Mensajes.LeerTexto("Ingrese el DNI a consultar:");
-            Empleado empleado = BusquedaLinealEmpleados.buscarEmpleadoPorDNI(dniBuscado, Lista);
+            Nodo empleado = BusquedaLinealEmpleados.buscarEmpleadoPorDNI(dniBuscado, Lista);
             if (empleado == null) {
                 Mensajes.MostrarTexto("ERROR: DNI " + dniBuscado + " no existe en la lista");
             } else {
-                Mensajes.MostrarTexto("Empleado encontrado: " + empleado.getNombre() + " " + empleado.getApellidos());
+                ProcesosEmpleados.MostrarDatosNodo(empleado, vistaEmpleado);
+                Mensajes.MostrarTexto("Empleado encontrado: " + empleado.getEmpleado().getNombre() + " " + empleado.getEmpleado().getApellidos());
                 // Aquí puedes mostrar más detalles del empleado en la vista si lo deseas
             }
         }
         
         //TRANFERENCIA
         if(e.getSource()==vistaEmpleado.btnEnviarIdEmp){
+            
             String idEmpleado = vistaEmpleado.txtCodigo.getText();
             VistaGestionCitas.txtIdEmp.setText(idEmpleado);
             vistaEmpleado.dispose();

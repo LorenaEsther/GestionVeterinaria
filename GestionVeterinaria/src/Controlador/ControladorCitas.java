@@ -141,7 +141,7 @@ public class ControladorCitas implements ActionListener {
         if(e.getSource()==vista.btnBuscar1){
             VistaEmpelado vempleado = new VistaEmpelado();
             VistaPrincipal.dspEscritorio.add(vempleado);
-            vempleado.toFront();
+            vempleado.toFront();//PARA PONERLO AL FRENTE
             
             vempleado.setTitle("Registro de Empleados con Listas Enlazadas");
             ControladorEmpleado controladorEmpleado = new ControladorEmpleado(vempleado);
