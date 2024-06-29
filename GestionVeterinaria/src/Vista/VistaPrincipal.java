@@ -29,6 +29,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu10 = new javax.swing.JMenu();
+        jMenu11 = new javax.swing.JMenu();
         dspEscritorio = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -41,6 +44,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         itemHistorial = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         itemProcesos = new javax.swing.JMenuItem();
+        itemEstadoCitas = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         itemCuenta = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -60,6 +64,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenu4.setText("Edit");
         jMenuBar2.add(jMenu4);
+
+        jMenu10.setText("File");
+        jMenuBar3.add(jMenu10);
+
+        jMenu11.setText("Edit");
+        jMenuBar3.add(jMenu11);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,8 +131,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flujo-de-trabajo (2).png"))); // NOI18N
         jMenu2.setText("Procesos");
 
-        itemProcesos.setText("Procesos del Citas");
+        itemProcesos.setText("Procesos de Citas");
         jMenu2.add(itemProcesos);
+
+        itemEstadoCitas.setText("Estado de Citas");
+        jMenu2.add(itemEstadoCitas);
 
         jMenuBar1.add(jMenu2);
 
@@ -246,6 +259,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem itemCreadores;
     public javax.swing.JMenuItem itemCuenta;
     public javax.swing.JMenuItem itemEmpleados;
+    public javax.swing.JMenuItem itemEstadoCitas;
     public javax.swing.JMenuItem itemGuia;
     public javax.swing.JMenuItem itemHistorial;
     public javax.swing.JMenuItem itemMascotas;
@@ -255,6 +269,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem itemTipos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -265,6 +281,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import Persistencia.DatosServicios;
@@ -9,8 +8,8 @@ import Persistencia.DatosMascotas;
 import java.util.Date;
 import java.io.*;
 
-public class Citas implements Serializable{
-    
+public class Citas implements Serializable {
+
     private String idCita;
     private Date fecha;
     private String hora;
@@ -18,16 +17,16 @@ public class Citas implements Serializable{
     private double PrecioTotal;
     private double precio;
     private String codEmp;
-    private String nomEmp;//
+    private String nomEmp;
     private String codMas;
     private String nomMas;
     private String codDue;
     private String nomDue;
     private String codSer;
     private String nomSer;
+    private String estado;
 
-    
- 
+    // Getters y setters
     public String getCodEmp() { return codEmp; }
     public void setCodEmp(String codEmp) { this.codEmp = codEmp; }
     public String getNomEmp() { return nomEmp; }
@@ -46,52 +45,44 @@ public class Citas implements Serializable{
     public void setNomSer(String nomSer) { this.nomSer = nomSer; }
     public double getPrecio() { return precio; }
     public void setPrecio(double precio) { this.precio = precio; }
-    
-    
-    
-    public Object[] Registro(int num){
-        Object fila[]={num,idCita,codEmp,nomEmp,nomMas,nomDue,nomSer,precio,urgencia,fecha,hora}; //"Num","ID","Codigo Empl.","Nombre Empl.","Nom. Mascota","Dueño","Servicio","Precio","Urgencia","Fecha","Hora"
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
+
+    public Object[] Registro(int num) {
+        Object fila[] = {num, idCita, codEmp, nomEmp, nomMas, nomDue, nomSer, precio, urgencia, fecha, hora};
         return fila;
     }
 
-    
-    public void ActualizarRelaciones(){
-        //Obtener Nombre de Empleado
+    public void ActualizarRelaciones() {
         ListaEmpleados nodoEmpl = DatosEmpleados.RecuperarDeArchivo();
         Empleado empleado = nodoEmpl.ObtenerEmpleado(codEmp);
         nomEmp = empleado.getNombre();
-        
-        //Obtener Nombre de Mascota
+
         ColeccionMascotas colMasc = DatosMascotas.RecuperarDeArchivo();
         Mascotas mascota = colMasc.RecuperarMascota(codMas);
-        nomMas = mascota.getNombre();//AGARRO EL NOMBRE
-        //Obtener Nombre de Dueño 
+        nomMas = mascota.getNombre();
         
         ArregloClientes cliArreglo = DatosClientes.RecuperaDeArchivo();
         cliArreglo.ActualizarCantidadClientes();
         Cliente cliente = cliArreglo.RecuperarCliente(codDue);
         nomDue = cliente.getNombre();
-        //Obtener Servicio
+        
         PilasServicios pilaServ = DatosServicios.RecuperaDeArchivo();
         Servicio servicio = pilaServ.ObtenerServicio(codSer);
         nomSer = servicio.getNomServi();
-        
     }
-    
-    
-    
+
     @Override
-    public String toString() {//*********************************************
-        return "Id Cita              :  "+idCita+
-               "\nCod Empleado       :  "+codEmp+
-               "\nNombre Empleado    :  "+nomEmp+
-               "\nNombre Mascota     :  "+nomMas+
-               "\nDueño              :  "+nomDue+
-               "\nServicio           :  "+nomSer+
-               "\nFecha              :  "+fecha+
-               "\nHora               :  "+hora+
-               "\nUrgencia           :  "+urgencia;
-               
+    public String toString() {
+        return "Id Cita              :  " + idCita +
+               "\nCod Empleado       :  " + codEmp +
+               "\nNombre Empleado    :  " + nomEmp +
+               "\nNombre Mascota     :  " + nomMas +
+               "\nDueño              :  " + nomDue +
+               "\nServicio           :  " + nomSer +
+               "\nFecha              :  " + fecha +
+               "\nHora               :  " + hora +
+               "\nUrgencia           :  " + urgencia;
     }
 
     public String getIdCita() {
@@ -133,6 +124,5 @@ public class Citas implements Serializable{
     public void setPrecioTotal(double PrecioTotal) {
         this.PrecioTotal = PrecioTotal;
     }
-    
 
 }
