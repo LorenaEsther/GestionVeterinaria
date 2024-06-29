@@ -253,7 +253,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JDesktopPane dspEscritorio;
+    public static javax.swing.JDesktopPane dspEscritorio;
     public javax.swing.JMenuItem itemCerrar;
     public javax.swing.JMenuItem itemClientes;
     public javax.swing.JMenuItem itemCreadores;

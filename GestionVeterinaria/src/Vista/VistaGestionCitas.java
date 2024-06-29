@@ -32,7 +32,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         tblCitas = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        btnBuscar1 = new javax.swing.JButton();
         txtIdEmp = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
@@ -40,14 +40,14 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         txtIdMas = new javax.swing.JTextField();
         txtIdDue = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnBuscar2 = new javax.swing.JButton();
+        btnBuscar3 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         txtIdSer = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        btnBuscar4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtPre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -105,14 +105,14 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblCitas);
 
-        JdateChooser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 640, 230));
+        JdateChooser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 640, 190));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Empleado"));
 
         jLabel5.setText("ID                           : ");
 
-        jButton6.setBackground(new java.awt.Color(135, 204, 204));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        btnBuscar1.setBackground(new java.awt.Color(135, 204, 204));
+        btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -124,27 +124,29 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 .addGap(58, 58, 58)
                 .addComponent(txtIdEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtIdEmp)
-                    .addComponent(jLabel5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        JdateChooser.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 620, -1));
+        JdateChooser.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 620, -1));
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        JdateChooser.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 630, 20));
+        JdateChooser.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 630, 20));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos de la Mascota"));
 
@@ -152,11 +154,11 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         jLabel7.setText("ID Dueño                    :");
 
-        jButton7.setBackground(new java.awt.Color(135, 204, 204));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        btnBuscar2.setBackground(new java.awt.Color(135, 204, 204));
+        btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
 
-        jButton9.setBackground(new java.awt.Color(135, 204, 204));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        btnBuscar3.setBackground(new java.awt.Color(135, 204, 204));
+        btnBuscar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -173,8 +175,8 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                     .addComponent(txtIdDue, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
@@ -192,27 +194,27 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel7))
                             .addComponent(txtIdDue)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        JdateChooser.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 620, -1));
+        JdateChooser.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 620, -1));
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         JdateChooser.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 160, 270, 20));
 
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
-        JdateChooser.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 260, 10));
+        JdateChooser.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 260, 10));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Servicio"));
 
         jLabel8.setText("ID Servicio");
 
-        jButton8.setBackground(new java.awt.Color(135, 204, 204));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
+        btnBuscar4.setBackground(new java.awt.Color(135, 204, 204));
+        btnBuscar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa (2).png"))); // NOI18N
 
         jLabel11.setText("Precio");
 
@@ -230,7 +232,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtPre, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addGap(24, 24, 24)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         jPanel4Layout.setVerticalGroup(
@@ -243,11 +245,11 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                         .addComponent(txtIdSer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11)
                         .addComponent(txtPre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton8))
+                    .addComponent(btnBuscar4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        JdateChooser.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 620, -1));
+        JdateChooser.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 620, -1));
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -266,7 +268,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         JdateChooser.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, -1, -1));
 
         jLabel3.setText("Fecha");
-        JdateChooser.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+        JdateChooser.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(135, 204, 204));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrar (2).png"))); // NOI18N
@@ -277,7 +279,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/disco-flexible (1).png"))); // NOI18N
         btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         JdateChooser.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 70, 70));
-        JdateChooser.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 319, 135, 40));
+        JdateChooser.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 135, 40));
 
         btnEditar.setBackground(new java.awt.Color(135, 204, 204));
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar-codigo (2).png"))); // NOI18N
@@ -290,11 +292,11 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
                 txtIdCitaActionPerformed(evt);
             }
         });
-        JdateChooser.add(txtIdCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 103, 29));
+        JdateChooser.add(txtIdCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 10, 130, 40));
 
         jLabel12.setText("Hora");
-        JdateChooser.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
-        JdateChooser.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 110, 40));
+        JdateChooser.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        JdateChooser.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 110, 40));
 
         btnBuscarBinaria.setBackground(new java.awt.Color(255, 204, 51));
         btnBuscarBinaria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -314,7 +316,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALTA PRIORIDAD", "MODERADA PRIORIDAD", "BAJA PRIORIDAD", " ", " " }));
         cbxTipo.setBorder(javax.swing.BorderFactory.createTitledBorder("Urgencia"));
-        JdateChooser.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 140, 40));
+        JdateChooser.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 140, 40));
 
         btnOrdenar.setBackground(new java.awt.Color(57, 109, 255));
         btnOrdenar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -324,18 +326,18 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
         rbtnASC.setBackground(new java.awt.Color(135, 204, 204));
         rbtnASC.setText("ASC");
-        JdateChooser.add(rbtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, -1, -1));
+        JdateChooser.add(rbtnASC, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
 
         rbtnDESC.setBackground(new java.awt.Color(135, 204, 204));
         rbtnDESC.setText("DESC");
-        JdateChooser.add(rbtnDESC, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, -1, -1));
+        JdateChooser.add(rbtnDESC, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, -1, -1));
 
         txtaResumen.setBackground(new java.awt.Color(222, 254, 255));
         txtaResumen.setColumns(20);
         txtaResumen.setRows(5);
         jScrollPane2.setViewportView(txtaResumen);
 
-        JdateChooser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 300, 170));
+        JdateChooser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 430, 300, 170));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ositogay.gif"))); // NOI18N
         JdateChooser.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, 310, 360));
@@ -390,6 +392,10 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel JdateChooser;
+    public javax.swing.JButton btnBuscar1;
+    public javax.swing.JButton btnBuscar2;
+    public javax.swing.JButton btnBuscar3;
+    public javax.swing.JButton btnBuscar4;
     public javax.swing.JButton btnBuscarBinaria;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
@@ -398,10 +404,6 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     public javax.swing.JComboBox<String> cbxOrdenar;
     public javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     public com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -435,7 +437,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtHora;
     public javax.swing.JTextField txtIdCita;
     public javax.swing.JTextField txtIdDue;
-    public javax.swing.JTextField txtIdEmp;
+    public static javax.swing.JTextField txtIdEmp;
     public javax.swing.JTextField txtIdMas;
     public javax.swing.JTextField txtIdSer;
     public javax.swing.JTextField txtPre;

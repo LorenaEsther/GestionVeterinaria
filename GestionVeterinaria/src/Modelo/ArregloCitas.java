@@ -24,7 +24,7 @@ public class ArregloCitas implements Serializable{
         return ListaCitas[posicion];
     }
     public void EliminarCita(int posicion){
-        for(int j=posicion;j<cantCitas-1;j++){
+        for(int j=posicion;j<cantCitas;j++){
             ListaCitas[j]=ListaCitas[j+1];
         }
         cantCitas--;

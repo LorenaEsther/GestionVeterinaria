@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.*;
+import Vista.VistaGestionCitas.*;
 import Vista.VistaEmpelado;
 import Procesos.ProcesosEmpleados;
 import Procesos.Mensajes;
@@ -12,14 +13,25 @@ import java.awt.event.ActionListener;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarEmpleados;
 import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarEmpleados;
 import Busquedas.BusquedaLineal.BusquedaLinealEmpleados;
+import Principal.Main;
+import Vista.VistaGestionCitas;
 
 public class ControladorEmpleado implements ActionListener {
 
     ListaEmpleados Lista;
     VistaEmpelado vistaEmpleado;
     Nodo actual;
+    
 
     public ControladorEmpleado(VistaEmpelado vEmpleado) {
+        
+        //TRANSFERENCIA
+        vistaEmpleado=vEmpleado;
+        vistaEmpleado.btnEnviarIdEmp.addActionListener(this);
+        vistaEmpleado.setVisible(true);
+        
+        
+        
         vistaEmpleado = vEmpleado;
         vistaEmpleado.btnAgregarInicio.addActionListener(this);
         vistaEmpleado.btnAgregarFinal.addActionListener(this);
@@ -107,14 +119,24 @@ public class ControladorEmpleado implements ActionListener {
             }
         }
         if (e.getSource() == vistaEmpleado.btnBusquedaLineal) {
+            
             String dniBuscado = Mensajes.LeerTexto("Ingrese el DNI a consultar:");
-            Empleado empleado = BusquedaLinealEmpleados.buscarEmpleadoPorDNI(dniBuscado, Lista);
+            Nodo empleado = BusquedaLinealEmpleados.buscarEmpleadoPorDNI(dniBuscado, Lista);
             if (empleado == null) {
                 Mensajes.MostrarTexto("ERROR: DNI " + dniBuscado + " no existe en la lista");
             } else {
-                Mensajes.MostrarTexto("Empleado encontrado: " + empleado.getNombre() + " " + empleado.getApellidos());
+                ProcesosEmpleados.MostrarDatosNodo(empleado, vistaEmpleado);
+                Mensajes.MostrarTexto("Empleado encontrado: " + empleado.getEmpleado().getNombre() + " " + empleado.getEmpleado().getApellidos());
                 // Aquí puedes mostrar más detalles del empleado en la vista si lo deseas
             }
+        }
+        
+        //TRANFERENCIA
+        if(e.getSource()==vistaEmpleado.btnEnviarIdEmp){
+            
+            String idEmpleado = vistaEmpleado.txtCodigo.getText();
+            VistaGestionCitas.txtIdEmp.setText(idEmpleado);
+            vistaEmpleado.dispose();
         }
     }
 

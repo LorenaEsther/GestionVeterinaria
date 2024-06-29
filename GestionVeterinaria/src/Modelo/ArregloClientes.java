@@ -24,7 +24,7 @@ public class ArregloClientes implements Serializable{
         return nuevo;
     }
     public void EliminarClientes(int posicion){
-        for(int j=posicion;j<cantClientes-1;j++){
+        for(int j=posicion;j<cantClientes;j++){
             ListaClientes[j]=ListaClientes[j+1];
         }
         cantClientes--;

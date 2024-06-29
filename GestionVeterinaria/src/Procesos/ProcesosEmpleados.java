@@ -49,6 +49,10 @@ public class ProcesosEmpleados {
         }
         return empleado;
     }
+    // Método para leer el ID del empleado
+    public static String LeerIdEmpleado(VistaEmpelado vEmpleEmpelado) {
+        return vEmpleEmpelado.txtCodigo.getText();
+    }
 
     public static void MostrarDatosDeLista(VistaEmpelado vEmpleado, ListaEmpleados Lista) {
         String titulos[] = {"num", "codigo", "nombre", "apellidos", "sexo", "dni",

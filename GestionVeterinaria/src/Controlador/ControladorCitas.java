@@ -6,6 +6,7 @@ import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
 import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import Persistencia.DatosCitas;
+import Principal.Main;
 
 import Vista.*;
 import Procesos.*;
@@ -14,15 +15,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorCitas implements ActionListener {
-    VistaGestionCitas vista;
+    VistaGestionCitas vista;//LISTO
     ArregloCitas ListaCitas;
    
-    Citas ct;
+    Citas ct;   
 
     public ControladorCitas(VistaGestionCitas vg) {
         vista = vg;
         
-        //EPOR QUE NO SE DAN LAS ACCIONES?****************************************************
+        //TRANSFERENCIA 
+        vista.btnBuscar1.addActionListener(this);
+        vista.setVisible(true);
+        
+        
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscarBinaria.addActionListener(this);//BUSQUEDA DE FORMA BINARIA
         vista.btnEliminar.addActionListener(this);
@@ -130,6 +135,19 @@ public class ControladorCitas implements ActionListener {
             } else {
                 Mensajes.MostrarTexto(auxiliar[posicion].toString());
             }
+            
+        }
+        //TRANSFERENCIA
+        if(e.getSource()==vista.btnBuscar1){
+            VistaEmpelado vempleado = new VistaEmpelado();
+            VistaPrincipal.dspEscritorio.add(vempleado);
+            vempleado.toFront();//PARA PONERLO AL FRENTE
+            
+            vempleado.setTitle("Registro de Empleados con Listas Enlazadas");
+            ControladorEmpleado controladorEmpleado = new ControladorEmpleado(vempleado);
+            vempleado.setVisible(true);
+            
+            
         }
     }
 }
