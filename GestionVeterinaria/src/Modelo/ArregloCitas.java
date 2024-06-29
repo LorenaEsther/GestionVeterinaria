@@ -8,11 +8,51 @@ import javax.swing.JTextArea;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Persistencia.DatosCitas;
-
+import java.util.Hashtable;
 public class ArregloCitas implements Serializable{
-    private Citas[] ListaCitas; 
-    private static int cantCitas=0;
+    private Hashtable<String,Citas> Lista;
+    public ArregloCitas() {
+        Lista =new Hashtable();
+    }
     
+    public void AgregarCita(Citas ct){
+        getLista().put(ct.getIdCita(), ct);
+        Persistencia.DatosCitas.GuardarEnArchivo(this);
+    }
+    public Citas obtenerCitas(String id){
+        return getLista().get(id);
+    }
+    
+    public void ActualizarCitas(Citas actualizado){
+        getLista().replace(actualizado.getIdCita(), actualizado);
+        Persistencia.DatosCitas.GuardarEnArchivo(this);
+    }
+    public void EliminarCitas(String clave){
+        getLista().remove(clave);
+        Persistencia.DatosCitas.GuardarEnArchivo(this);
+    }
+    public boolean VerificarCitas(String id){
+        return getLista().containsKey(id);
+    }
+    
+    public int CantidadCitas(){
+        return getLista().size();
+    }
+   
+    public Hashtable<String,Citas> getLista(){ return Lista;}
+    
+    public void setLista(Hashtable<String,Citas> Lista){ 
+        this.Lista=Lista;
+    }
+    
+    
+    /*
+    
+    
+    private Citas[] ListaCitas;*/
+    
+    //private static int cantCitas=0;
+    /*
     public ArregloCitas(){
         ListaCitas = new Citas[50];
     }
@@ -57,7 +97,8 @@ public class ArregloCitas implements Serializable{
         ListaCitas[posicion].setNomSer(nuevo.getNomSer());
         DatosCitas.GuardarEnArchivo(this);
     
-    }
+    
+    
 
     
     
@@ -66,7 +107,7 @@ public class ArregloCitas implements Serializable{
         double suma=0;
         int c1=0,c2=0,c3=0;
         for(int i=0;i<cantCitas;i++){
-            suma=suma +ListaCitas[i].getPrecioTotal(); //PRECIO TOTAL (Como atriubuto de la clase cita)................
+            suma=suma +Lista[i].getPrecioTotal(); //PRECIO TOTAL (Como atriubuto de la clase cita)................
             switch (ListaCitas[i].getUrgencia()){ //SOLO CONTARA EL TIPO DE URGENCIA DEPENDIENDO LO QUE SE SELECIONE
                 case "ALTA PRIORIDAD": c1++;break;
                 case "MODERADA PRIORIDAD" : c2++;break;
@@ -86,7 +127,7 @@ public class ArregloCitas implements Serializable{
     
     
     //GETTERS AND SETTERS
-    
+    /*
     
     public Citas[] getListaCitas() {return ListaCitas;}
     public void setListaCitas(Citas[] ListaCitas) {this.ListaCitas = ListaCitas; }
@@ -94,6 +135,8 @@ public class ArregloCitas implements Serializable{
     
 
     public static void setCantCitas(int acantCitas) { cantCitas = acantCitas;}//POR QUE SE QUITA EL ARREGLO?
+    */
     
-    
+
+
 }

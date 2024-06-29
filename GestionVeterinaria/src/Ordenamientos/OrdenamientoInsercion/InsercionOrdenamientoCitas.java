@@ -6,7 +6,7 @@ import Modelo.Citas;
 
 //ORDENAMIENTO POR INSERCION
 public class InsercionOrdenamientoCitas {
-    
+    /*
     public static Citas[] ordenarDueñoASC(Citas a[]){
         for(int i=1;i<ArregloCitas.getCantCitas();i++){
             Citas value=a[i];
@@ -33,6 +33,6 @@ public class InsercionOrdenamientoCitas {
         return a;
     }
     
-    
+    */
     
     }

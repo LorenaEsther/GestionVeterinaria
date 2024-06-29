@@ -3,6 +3,7 @@ package Procesos;
 
 import Modelo.*;
 import Vista.*;
+import java.util.Enumeration;
 
 import javax.swing.table.DefaultTableModel;
 public class ProcesosVistaGestion {
@@ -42,13 +43,21 @@ public class ProcesosVistaGestion {
         vg.cbxTipo.addItem("MODERADA PRIORIDAD");
         vg.cbxTipo.addItem("BAJA PRIORIDAD");
     }//Fin del metodo
-    public static void MostaraEnTabla(VistaGestionCitas vg,Citas[] a){
+    
+    
+    public static void MostaraEnTabla(VistaGestionCitas vg,ArregloCitas ListaCitas){
         String titulos []={"Num","ID","Codigo Empl.","Nombre Empl.","Nom. Mascota","Dueño","Servicio","Precio","Urgencia","Fecha","Hora"};
         DefaultTableModel mt= new DefaultTableModel(null,titulos);
         vg.tblCitas.setModel(mt);
-        for (int i=0; i<ArregloCitas.getCantCitas();i++){
-            mt.addRow(a[i].Registro(i+1));                          
+        int cont=0;
+        Enumeration<Citas>enumer= ListaCitas.getLista().elements();
+        while (enumer.hasMoreElements()) {
+            cont++;
+            mt.addRow(enumer.nextElement().Registro(cont));
         }
+        /*for (int i=0; i<ArregloCitas.getCantCitas();i++){
+            mt.addRow(a[i].Registro(i+1));                          
+        }*/
     }
     
     

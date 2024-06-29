@@ -6,7 +6,7 @@ import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
 import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import Persistencia.DatosCitas;
-import Principal.Main;
+
 
 import Vista.*;
 import Procesos.*;
@@ -15,9 +15,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorCitas implements ActionListener {
-    VistaGestionCitas vista;//LISTO
+    VistaGestionCitas vista; 
     ArregloCitas ListaCitas;
-   
+    String id;
     Citas ct;   
 
     public ControladorCitas(VistaGestionCitas vg) {
@@ -33,31 +33,89 @@ public class ControladorCitas implements ActionListener {
         vista.btnEliminar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
         vista.btnEditar.addActionListener(this);
+        vista.btnConsultar.addActionListener(this);
+        
         
         
         ListaCitas = new ArregloCitas(); // Inicializar el arreglo de citas
         ListaCitas = DatosCitas.RecuperaDeArchivo();//DEVUELVE LISTA DE CITAS
-        ListaCitas.ActualizarCantidadCitas();
-        ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
-        ListaCitas.MostrarResumen(vista.txtaResumen);
+        
+        //ListaCitas.ActualizarCantidadCitas();
+        //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
+        //ListaCitas.MostrarResumen(vista.txtaResumen);
         ProcesosVistaGestion.PresentarGestionDeCitas(vista);
         
-        
-        
     }
+    private void ActualizarVistaCitas(){
+        ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas);
+        ProcesosVistaGestion.LimpiarEntradas(vista);
+        vista.lblcantCitas.setText("Cantidad de Citas:"+ListaCitas.CantidadCitas());
+        
+    
+    }
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnGuardar) {
             ct = ProcesosVistaGestion.LeerCitas(vista);
             ListaCitas.AgregarCita(ct);
-            
-            DatosCitas.GuardarEnArchivo(ListaCitas);
+            //DatosCitas.GuardarEnArchivo(ListaCitas);
 
-            ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
-            ListaCitas.MostrarResumen(vista.txtaResumen);
+            //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
+            //ListaCitas.MostrarResumen(vista.txtaResumen);
             ProcesosVistaGestion.LimpiarEntradas(vista);
+            ActualizarVistaCitas();
         }
+        
+        
+        if (e.getSource() == vista.btnConsultar) {
+            id=Mensajes.LeerTexto("Ingrese el ID a consultar:");
+            boolean existe= ListaCitas.VerificarCitas(id);
+            if (existe==false) {
+                Mensajes.MostrarTexto("El ID"+id+" no existe en la tabla");
+            }else{
+                ct=ListaCitas.obtenerCitas(id);
+                vista.txtIdCita.setText(ct.getIdCita());
+                vista.jDateChooser1.setDate(ct.getFecha());
+                vista.txtHora.setText(ct.getHora());
+                switch (ct.getUrgencia()) {
+                    case "ALTA PRIORIDAD ":vista.cbxTipo.setSelectedIndex(0);break;
+                    case "MEDIANA PRIORIDAD ":vista.cbxTipo.setSelectedIndex(1);break;
+                    case "BAJA PRIORIDAD ":vista.cbxTipo.setSelectedIndex(2);break;
+                }
+            }      
+        }
+        
+        
+        if (e.getSource() == vista.btnEditar) {
+            ct = ProcesosVistaGestion.LeerCitas(vista); 
+            ListaCitas.ActualizarCitas(ct);
+            Mensajes.LeerTexto("Regsitro actualizado...");
+            ActualizarVistaCitas();
+            //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
+            //ListaCitas.MostrarResumen(vista.txtaResumen);
+            //ProcesosVistaGestion.LimpiarEntradas(vista);
+        }
+        
+        if (e.getSource() == vista.btnEliminar) {
+            int respuesta= Mensajes.Respuesta("RESPONDER!!",
+                                    "Deseas eliminar:"+id+"?");
+            if(respuesta==0){
+                ListaCitas.EliminarCitas(id);
+                Mensajes.MostrarTexto("Registro eliminado...");
+                ActualizarVistaCitas();
+            }
+            //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
+            //ListaCitas.MostrarResumen(vista.txtaResumen);
+            //ProcesosVistaGestion.LimpiarEntradas(vista);
+        }
+        
+        
+        
+        
+        /*
 
         if (e.getSource() == vista.btnEliminar) {
             String elemento = Mensajes.LeerTexto("Ingrese el código a eliminar por favor...");
@@ -83,7 +141,7 @@ public class ControladorCitas implements ActionListener {
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
         ListaCitas.MostrarResumen(vista.txtaResumen);
         ProcesosVistaGestion.LimpiarEntradas(vista);
-    }
+        }
         
         
         
@@ -125,7 +183,7 @@ public class ControladorCitas implements ActionListener {
                 
             }
 
-        if (e.getSource() == vista.btnBuscarBinaria) {
+        /*if (e.getSource() == vista.btnBuscarBinaria) {
             // Ordenar primero por ID antes de hacer la búsqueda binaria
             Citas[] auxiliar = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
@@ -136,8 +194,9 @@ public class ControladorCitas implements ActionListener {
                 Mensajes.MostrarTexto(auxiliar[posicion].toString());
             }
             
-        }
+        }*/
         //TRANSFERENCIA
+        /*
         if(e.getSource()==vista.btnBuscar1){
             VistaEmpelado vempleado = new VistaEmpelado();
             VistaPrincipal.dspEscritorio.add(vempleado);
@@ -149,6 +208,7 @@ public class ControladorCitas implements ActionListener {
             
             
         }
+        */ 
     }
 }
 

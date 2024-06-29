@@ -77,6 +77,8 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
+        lblcantCitas = new javax.swing.JLabel();
+        btnConsultar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 255, 102));
         setClosable(true);
@@ -365,6 +367,12 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
         JdateChooser.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 50, 270, 20));
 
+        lblcantCitas.setText("Cantidad de citas: ");
+        JdateChooser.add(lblcantCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 130, 40));
+
+        btnConsultar.setText("Consultar");
+        JdateChooser.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 390, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -397,6 +405,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnBuscar3;
     public javax.swing.JButton btnBuscar4;
     public javax.swing.JButton btnBuscarBinaria;
+    public javax.swing.JButton btnConsultar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
@@ -431,6 +440,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    public javax.swing.JLabel lblcantCitas;
     public javax.swing.JRadioButton rbtnASC;
     public javax.swing.JRadioButton rbtnDESC;
     public javax.swing.JTable tblCitas;
