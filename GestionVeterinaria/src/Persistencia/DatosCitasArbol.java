@@ -2,9 +2,15 @@ package Persistencia;
 
 import java.io.*;
 import EstructuraArbol.ArbolCita;
+import EstructuraArbol.NodoCita;
+import Modelo.ArregloCitas;
+import Modelo.Citas;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class DatosCitasArbol {
+    
+    private static boolean isSyncing = false;
 
     public static void guardarEnArchivo(ArbolCita arbol) {
         try {
@@ -12,6 +18,11 @@ public class DatosCitasArbol {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(arbol);
             oos.close();
+            if (!isSyncing) {
+                isSyncing = true;
+                sincronizarConCitas(arbol);
+                isSyncing = false;
+            }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "ERROR: No se puede guardar " + ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -29,4 +40,29 @@ public class DatosCitasArbol {
         }
         return arbol;
     }
+    
+    public static void actualizarEstadoCitaPorId(String idCita, String nuevoEstado) {
+        ArbolCita arbol = recuperarDeArchivo();
+        NodoCita nodo = arbol.buscarPorID(idCita);
+        
+        if (nodo != null) {
+            Citas cita = nodo.getElemento();
+            cita.setEstado(nuevoEstado);
+            arbol.actualizarCita(cita);
+            guardarEnArchivo(arbol);
+            JOptionPane.showMessageDialog(null, "Estado de la cita actualizado correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cita no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private static void sincronizarConCitas(ArbolCita arbol) {
+        ArregloCitas listaCitas = new ArregloCitas();
+        List<NodoCita> nodos = arbol.getInOrder();
+        for (NodoCita nodo : nodos) {
+            listaCitas.AgregarCita(nodo.getElemento());
+        }
+        DatosCitas.GuardarEnArchivo(listaCitas);
+    }
 }
+

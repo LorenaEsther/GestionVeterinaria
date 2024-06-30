@@ -384,7 +384,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="btnMarcarAtendida1">
+        <Component class="javax.swing.JButton" name="btnMarcarAtendida">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/check.png"/>

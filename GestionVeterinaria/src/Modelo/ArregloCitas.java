@@ -8,17 +8,20 @@ import javax.swing.JTextArea;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Persistencia.DatosCitas;
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 public class ArregloCitas implements Serializable{
     private Hashtable<String,Citas> Lista;
     public ArregloCitas() {
-        Lista =new Hashtable();
+        Lista =new Hashtable<>();
     }
     
     public void AgregarCita(Citas ct){
         getLista().put(ct.getIdCita(), ct);
         Persistencia.DatosCitas.GuardarEnArchivo(this);
     }
+    
     public Citas obtenerCitas(String id){
         return getLista().get(id);
     }
@@ -43,6 +46,10 @@ public class ArregloCitas implements Serializable{
     
     public void setLista(Hashtable<String,Citas> Lista){ 
         this.Lista=Lista;
+    }
+    
+    public List<Citas> getAllCitas() {
+        return new ArrayList<>(Lista.values());
     }
     
     

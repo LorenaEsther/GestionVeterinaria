@@ -22,6 +22,7 @@ public class ControladorLogin implements ActionListener {
         vista.btnIngresar.addActionListener(this);
 
         // Inicializar el ArrayList con las credenciales y nombres de los veterinarios
+        
         credencialesYNombres = new ArrayList<>();
         credencialesYNombres.add(new String[]{"VT001", "marco", "Dr. Marco Flores"});
         credencialesYNombres.add(new String[]{"VT002", "lorena", "Dra. Lorena"});
