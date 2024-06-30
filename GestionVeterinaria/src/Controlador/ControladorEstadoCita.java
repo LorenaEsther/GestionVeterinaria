@@ -98,6 +98,7 @@ public class ControladorEstadoCita implements ActionListener {
 
         } else {
             idCita = vista.txtBuscarID.getText().trim();
+            vista.btnMarcarAtendida.setEnabled(true);
         }
 
         NodoCita citaNodo = listaCitas.buscarPorID(idCita);

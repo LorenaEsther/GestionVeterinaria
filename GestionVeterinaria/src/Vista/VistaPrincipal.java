@@ -2,6 +2,7 @@
 package Vista;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import javax.swing.UIManager;
 
 public class VistaPrincipal extends javax.swing.JFrame {
@@ -14,7 +15,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
     
     private void initFlat() {
-        FlatLightLaf.setup();
+        FlatMacLightLaf.setup();
         UIManager.put("Button.arc", 5);
     }
 
