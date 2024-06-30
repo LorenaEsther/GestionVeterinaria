@@ -2,10 +2,7 @@
 package Persistencia;
 import Modelo.Citas;
 import Procesos.Mensajes;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import Modelo.*;
 
 public class DatosCitas {
@@ -31,5 +28,5 @@ public class DatosCitas {
           Mensajes.MostrarTexto("ERROR no se puede recuperar el arreglo.."+ex);
       }
      return listaCitas;
-  }//fin recuperar
+  }//fin recuperar*/
 }

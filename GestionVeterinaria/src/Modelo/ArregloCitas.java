@@ -18,6 +18,18 @@ public class ArregloCitas implements Serializable{
     public void AgregarCita(Citas ct){
         getLista().put(ct.getIdCita(), ct);
         Persistencia.DatosCitas.GuardarEnArchivo(this);
+        
+        
+    // Código de verificación
+    System.out.println("Cita guardada. Verificando...");
+    ArregloCitas verificacion = Persistencia.DatosCitas.RecuperaDeArchivo();
+    if (verificacion.obtenerCitas(ct.getIdCita()) != null) {
+        System.out.println("Cita verificada correctamente en el archivo.");
+    } else {
+        System.out.println("ERROR: La cita no se guardó correctamente.");
+    }
+    
+
     }
     public Citas obtenerCitas(String id){
         return getLista().get(id);

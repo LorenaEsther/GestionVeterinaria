@@ -24,8 +24,8 @@ public class ControladorCitas implements ActionListener {
         vista = vg;
         
         //TRANSFERENCIA 
-        vista.btnBuscar1.addActionListener(this);
-        vista.setVisible(true);
+        //vista.btnBuscar1.addActionListener(this);
+        //vista.setVisible(true);
         
         
         vista.btnGuardar.addActionListener(this);
@@ -39,12 +39,12 @@ public class ControladorCitas implements ActionListener {
         
         ListaCitas = new ArregloCitas(); // Inicializar el arreglo de citas
         ListaCitas = DatosCitas.RecuperaDeArchivo();//DEVUELVE LISTA DE CITAS
-        
+        System.out.println("Citas cargadas al iniciar: " + ListaCitas.CantidadCitas());
         //ListaCitas.ActualizarCantidadCitas();
         //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
         //ListaCitas.MostrarResumen(vista.txtaResumen);
         ProcesosVistaGestion.PresentarGestionDeCitas(vista);
-        
+        ActualizarVistaCitas();
     }
     private void ActualizarVistaCitas(){
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas);
@@ -61,7 +61,7 @@ public class ControladorCitas implements ActionListener {
         if (e.getSource() == vista.btnGuardar) {
             ct = ProcesosVistaGestion.LeerCitas(vista);
             ListaCitas.AgregarCita(ct);
-            //DatosCitas.GuardarEnArchivo(ListaCitas);
+            DatosCitas.GuardarEnArchivo(ListaCitas);
 
             //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
             //ListaCitas.MostrarResumen(vista.txtaResumen);
@@ -78,7 +78,12 @@ public class ControladorCitas implements ActionListener {
             }else{
                 ct=ListaCitas.obtenerCitas(id);
                 vista.txtIdCita.setText(ct.getIdCita());
+                vista.txtIdEmp.setText(ct.getCodEmp());
+                vista.txtIdMas.setText(ct.getCodMas());
+                vista.txtIdDue.setText(ct.getCodDue());
+                vista.txtIdSer.setText(ct.getCodSer());
                 vista.jDateChooser1.setDate(ct.getFecha());
+                vista.txtPre.setText(String.valueOf(ct.getPrecio()));
                 vista.txtHora.setText(ct.getHora());
                 switch (ct.getUrgencia()) {
                     case "ALTA PRIORIDAD ":vista.cbxTipo.setSelectedIndex(0);break;
@@ -92,7 +97,8 @@ public class ControladorCitas implements ActionListener {
         if (e.getSource() == vista.btnEditar) {
             ct = ProcesosVistaGestion.LeerCitas(vista); 
             ListaCitas.ActualizarCitas(ct);
-            Mensajes.LeerTexto("Regsitro actualizado...");
+            Mensajes.MostrarTexto("Registro actualizado...");
+            DatosCitas.GuardarEnArchivo(ListaCitas);
             ActualizarVistaCitas();
             //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
             //ListaCitas.MostrarResumen(vista.txtaResumen);
@@ -100,11 +106,12 @@ public class ControladorCitas implements ActionListener {
         }
         
         if (e.getSource() == vista.btnEliminar) {
-            int respuesta= Mensajes.Respuesta("RESPONDER!!",
+            int respuesta= Mensajes.Respuesta("RESPONDER POR FAVOR...!",
                                     "Deseas eliminar:"+id+"?");
             if(respuesta==0){
                 ListaCitas.EliminarCitas(id);
                 Mensajes.MostrarTexto("Registro eliminado...");
+                DatosCitas.GuardarEnArchivo(ListaCitas);
                 ActualizarVistaCitas();
             }
             //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());

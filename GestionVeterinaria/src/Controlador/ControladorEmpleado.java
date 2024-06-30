@@ -132,12 +132,12 @@ public class ControladorEmpleado implements ActionListener {
         }
         
         //TRANFERENCIA
-        if(e.getSource()==vistaEmpleado.btnEnviarIdEmp){
+        /*if(e.getSource()==vistaEmpleado.btnEnviarIdEmp){
             
             String idEmpleado = vistaEmpleado.txtCodigo.getText();
             VistaGestionCitas.txtIdEmp.setText(idEmpleado);
             vistaEmpleado.dispose();
-        }
+        }*/
     }
 
 }
