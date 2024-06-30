@@ -59,6 +59,5 @@ public class ProcesosVistaGestion {
             mt.addRow(a[i].Registro(i+1));                          
         }*/
     }
-    
-    
+      
 }//FIN DE LA CLASEISHON

@@ -3,6 +3,8 @@ package EstructuraArbol;
 import Modelo.Citas;
 import java.io.Serializable;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArbolCita implements Serializable {
     private NodoCita raiz;
@@ -39,10 +41,29 @@ public class ArbolCita implements Serializable {
     }
 
     // Método que muestra los datos del árbol en una tabla
-    public void listarInOrder(NodoCita nodo, DefaultTableModel modelo) {
+    /*public void listarInOrder(NodoCita nodo, DefaultTableModel modelo) {
         if (nodo != null) {
             listarInOrder(nodo.getIzq(), modelo);
             modelo.addRow(nodo.getElemento().Registro(modelo.getRowCount() + 1));
+            listarInOrder(nodo.getDer(), modelo);
+        }
+    }*/
+    
+    public void listarInOrder(NodoCita nodo, DefaultTableModel modelo) {
+        if (nodo != null) {
+            listarInOrder(nodo.getIzq(), modelo);
+            Citas cita = nodo.getElemento();
+            Object[] fila = {
+                cita.getIdCita(), 
+                cita.getFecha(), 
+                cita.getNomEmp(), 
+                cita.getNomMas(), 
+                cita.getNomDue(), 
+                cita.getNomSer(), 
+                cita.getPrecio(), 
+                cita.getEstado()
+            };
+            modelo.addRow(fila);
             listarInOrder(nodo.getDer(), modelo);
         }
     }
@@ -112,6 +133,21 @@ public class ArbolCita implements Serializable {
         NodoCita nodo = buscarPorID(citaActualizada.getIdCita());
         if (nodo != null) {
             nodo.setElemento(citaActualizada);
+        }
+    }
+
+    // Método que retorna una lista de nodos en orden (InOrder)
+    public List<NodoCita> getInOrder() {
+        List<NodoCita> nodos = new ArrayList<>();
+        inOrderTraversal(raiz, nodos);
+        return nodos;
+    }
+
+    private void inOrderTraversal(NodoCita nodo, List<NodoCita> nodos) {
+        if (nodo != null) {
+            inOrderTraversal(nodo.getIzq(), nodos);
+            nodos.add(nodo);
+            inOrderTraversal(nodo.getDer(), nodos);
         }
     }
 }

@@ -1,13 +1,14 @@
 package Vista;
 
 import Modelo.ModeloTablaCitas;
-
+import javax.swing.table.DefaultTableModel;
 
 
 public class VistaEstadoCita extends javax.swing.JInternalFrame {
 
     public VistaEstadoCita() {
         initComponents();
+        tblEstadoCita.setModel(ModeloTablaCitas.crearModeloCitas());
     }
     
 
@@ -42,7 +43,7 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
-        btnMarcarAtendida1 = new javax.swing.JButton();
+        btnMarcarAtendida = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtBuscarTabla = new javax.swing.JTextField();
@@ -202,9 +203,9 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         btnEliminar.setText("Eliminar");
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 650, 150, 30));
 
-        btnMarcarAtendida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check.png"))); // NOI18N
-        btnMarcarAtendida1.setText("Marcar como atendida");
-        jPanel1.add(btnMarcarAtendida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 250, 30));
+        btnMarcarAtendida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check.png"))); // NOI18N
+        btnMarcarAtendida.setText("Marcar como atendida");
+        jPanel1.add(btnMarcarAtendida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 250, 30));
 
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/update.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
@@ -286,7 +287,7 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnBuscarEnTabla;
     public javax.swing.JButton btnEliminar;
-    public javax.swing.JButton btnMarcarAtendida1;
+    public javax.swing.JButton btnMarcarAtendida;
     public javax.swing.JButton btnNuevo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;

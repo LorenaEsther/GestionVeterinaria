@@ -10,13 +10,13 @@ import javax.swing.table.DefaultTableModel;
 public class ProcesosEstadoCita {
 
     public static void estadoBotones(boolean estado, VistaEstadoCita f) {
-        f.txtFecha.setEnabled(estado);
-        f.txtVeterinario.setEnabled(estado);
-        f.txtMascota.setEnabled(estado);
-        f.txtDueño.setEnabled(estado);
-        f.txtServicio.setEnabled(estado);
-        f.txtPrecio.setEnabled(estado);
-        f.txtEstado.setEnabled(estado);
+        f.txtFecha.setEnabled(false);
+        f.txtVeterinario.setEnabled(false);
+        f.txtMascota.setEnabled(false);
+        f.txtDueño.setEnabled(false);
+        f.txtServicio.setEnabled(false);
+        f.txtPrecio.setEnabled(false);
+        f.txtEstado.setEnabled(false);
         f.btnEliminar.setEnabled(estado);
         f.btnActualizar.setEnabled(estado);
         f.txtBuscarID.setEnabled(!estado);
@@ -67,7 +67,7 @@ public class ProcesosEstadoCita {
             cita.setEstado("Atendida");
             arbol.actualizarCita(cita);
             f.txtEstado.setText("Atendida");
-            JOptionPane.showMessageDialog(f, "Cita actualizada correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(f, "Cita marcada como atendida", "Información", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(f, "Cita no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -89,3 +89,5 @@ public class ProcesosEstadoCita {
         // Implementar lógica de búsqueda en la tabla
     }
 }
+
+
