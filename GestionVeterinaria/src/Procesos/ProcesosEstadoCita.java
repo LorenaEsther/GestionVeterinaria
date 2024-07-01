@@ -10,18 +10,25 @@ import javax.swing.table.DefaultTableModel;
 public class ProcesosEstadoCita {
 
     public static void estadoBotones(boolean estado, VistaEstadoCita f) {
-        f.txtFecha.setEnabled(false);
-        f.txtVeterinario.setEnabled(false);
-        f.txtMascota.setEnabled(false);
-        f.txtDueño.setEnabled(false);
-        f.txtServicio.setEnabled(false);
-        f.txtPrecio.setEnabled(false);
-        f.txtEstado.setEnabled(false);
-        f.btnEliminar.setEnabled(estado);
-        f.btnActualizar.setEnabled(estado);
-        f.txtBuscarID.setEnabled(!estado);
-        f.btnNuevo.setEnabled(!estado);
+        f.txtFecha.setEnabled(estado);
+        f.txtVeterinario.setEnabled(estado);
+        f.txtMascota.setEnabled(estado);
+        f.txtDueño.setEnabled(estado);
+        f.txtServicio.setEnabled(estado);
+        f.txtPrecio.setEnabled(estado);
+        f.txtEstado.setEnabled(estado);
+        f.txtBuscarID.setEnabled(true);
+        f.txtBuscarTabla.setEnabled(true);
+        f.btnBuscarEnTabla.setEnabled(true);
+        f.btnEliminar.setEnabled(true);
+        f.btnCancelar.setEnabled(false);
+        f.btnActualizar.setEnabled(false);
+        f.btnNuevo.setEnabled(true);
+        f.btnAgregarCitaAtendida.setEnabled(false);
         f.tblEstadoCita.setEnabled(!estado);
+        f.btnCancelar.setEnabled(estado);
+        f.btnNuevo.setEnabled(!estado);
+        
     }
 
     public static void limpiarEntradas(VistaEstadoCita f) {
@@ -40,21 +47,21 @@ public class ProcesosEstadoCita {
         modtabla.setRowCount(0);
     }
 
-    public static void buscarCitaPorID(VistaEstadoCita f, ArbolCita arbol) {
-        String idCita = f.txtBuscarID.getText().trim();
+    public static void buscarCitaPorID(VistaEstadoCita vista, ArbolCita arbol) {
+        String idCita = vista.txtBuscarID.getText().trim();
         NodoCita nodoCita = arbol.buscarPorID(idCita);
 
         if (nodoCita != null) {
             Citas cita = nodoCita.getElemento();
-            f.txtFecha.setText(cita.getFecha().toString());
-            f.txtVeterinario.setText(cita.getNomEmp());
-            f.txtMascota.setText(cita.getNomMas());
-            f.txtDueño.setText(cita.getNomDue());
-            f.txtServicio.setText(cita.getNomSer());
-            f.txtPrecio.setText(String.valueOf(cita.getPrecio()));
-            f.txtEstado.setText("No Atendida");  // Suponiendo que la búsqueda es para citas no atendidas
+            vista.txtFecha.setText(cita.getFecha().toString());
+            vista.txtVeterinario.setText(cita.getNomEmp());
+            vista.txtMascota.setText(cita.getNomMas());
+            vista.txtDueño.setText(cita.getNomDue());
+            vista.txtServicio.setText(cita.getNomSer());
+            vista.txtPrecio.setText(String.valueOf(cita.getPrecio()));
+            vista.txtEstado.setText("No Atendida");  
         } else {
-            JOptionPane.showMessageDialog(f, "Cita no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(vista, "Cita no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -76,12 +83,6 @@ public class ProcesosEstadoCita {
     public static void listarCitasEnTabla(DefaultTableModel modelo, ArbolCita arbol) {
         limpiarTabla(modelo);
         arbol.listarInOrder(arbol.getRaiz(), modelo);
-    }
-
-    public static void eliminarCita(VistaEstadoCita f, ArbolCita arbol) {
-        String idCita = f.txtBuscarID.getText().trim();
-        arbol.eliminarCita(idCita);
-        JOptionPane.showMessageDialog(f, "Cita eliminada correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void buscarEnTabla(VistaEstadoCita f, ArbolCita arbol) {

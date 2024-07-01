@@ -43,14 +43,15 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
-        btnMarcarAtendida = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnAgregarCitaAtendida = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtBuscarTabla = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnBuscarEnTabla = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnActualizar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setClosable(true);
@@ -203,13 +204,13 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         btnEliminar.setText("Eliminar");
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 650, 150, 30));
 
-        btnMarcarAtendida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check.png"))); // NOI18N
-        btnMarcarAtendida.setText("Marcar como atendida");
-        jPanel1.add(btnMarcarAtendida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 250, 30));
+        btnAgregarCitaAtendida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check.png"))); // NOI18N
+        btnAgregarCitaAtendida.setText("Agregar Cita Atendida");
+        jPanel1.add(btnAgregarCitaAtendida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 250, 30));
 
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/update.png"))); // NOI18N
-        btnActualizar.setText("Actualizar");
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 650, 130, 30));
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/update.png"))); // NOI18N
+        btnCancelar.setText("Cancelar");
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 130, 30));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "TABLA DE CITAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 0, 14))); // NOI18N
 
@@ -264,6 +265,10 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 1000, 80));
 
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/update.png"))); // NOI18N
+        btnActualizar.setText("Actualizar");
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 650, 130, 30));
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -285,9 +290,10 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAgregarCitaAtendida;
     public javax.swing.JButton btnBuscarEnTabla;
+    public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEliminar;
-    public javax.swing.JButton btnMarcarAtendida;
     public javax.swing.JButton btnNuevo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;

@@ -8,7 +8,7 @@ import Modelo.Citas;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class DatosCitasArbol {
+public class DatosArbolCita {
     
     private static boolean isSyncing = false;
 
@@ -18,6 +18,7 @@ public class DatosCitasArbol {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(arbol);
             oos.close();
+            
             if (!isSyncing) {
                 isSyncing = true;
                 sincronizarConCitas(arbol);
@@ -41,21 +42,25 @@ public class DatosCitasArbol {
         return arbol;
     }
     
+    
     public static void actualizarEstadoCitaPorId(String idCita, String nuevoEstado) {
         ArbolCita arbol = recuperarDeArchivo();
-        NodoCita nodo = arbol.buscarPorID(idCita);
+        
+        //Busca un nodo específico en el árbol utilizando el método buscarPorID
+        NodoCita nodo = arbol.buscarPorID(idCita); 
         
         if (nodo != null) {
             Citas cita = nodo.getElemento();
             cita.setEstado(nuevoEstado);
             arbol.actualizarCita(cita);
             guardarEnArchivo(arbol);
-            JOptionPane.showMessageDialog(null, "Estado de la cita actualizado correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cita atendida correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Cita no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
+    //Metodo que sincroniza los datos de ArbolCita con ArregloCitas.
     private static void sincronizarConCitas(ArbolCita arbol) {
         ArregloCitas listaCitas = new ArregloCitas();
         List<NodoCita> nodos = arbol.getInOrder();
