@@ -1,12 +1,8 @@
 
 package Modelo;
-import Busquedas.BusquedaBinaria.BusquedaBinariaCitas;
-import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import java.io.*;
-import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import Persistencia.DatosCitas;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -65,10 +61,39 @@ public class ArregloCitas implements Serializable{
     }
     
     
+    
+    public void MostrarResumen(JTextArea txa) {
+    double suma = 0;
+    int c1 = 0, c2 = 0, c3 = 0;
+    int cantCitas = Lista.size();
+
+    for (Citas cita : Lista.values()) {
+        suma += cita.getPrecio();
+        switch (cita.getUrgencia()) {
+            case "ALTA PRIORIDAD":
+                c1++;
+                break;
+            case "MODERADA PRIORIDAD":
+                c2++;
+                break;
+            case "BAJA PRIORIDAD":
+                c3++;
+                break;
+        }
+    }
+
+    txa.setText("Cantidad de Citas                  : " + cantCitas +
+                "\nSuma de Precios                  : " + suma +
+                "\nCitas con alta prioridad         : " + c1 +
+                "\nCitas con moderada prioridad     : " + c2 +
+                "\nCitas con baja prioridad         : " + c3);
+}
+    
+    
     /*
     
     
-    private Citas[] ListaCitas;*/
+    private Citas[] ListaCitas;
     
     //private static int cantCitas=0;
     /*
@@ -99,7 +124,7 @@ public class ArregloCitas implements Serializable{
     }
     public void Actualizar(Citas nuevo, String codBuscado) {
     ListaCitas= SeleccionOrdenarCitas.ordenarPorIdCitaASC(this.getListaCitas(), this.getCantCitas());    
-    int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(ListaCitas, codBuscado);
+    int posicion = BusquedaBinariaCitasRecursiva.BuscarPorCodigoCita(ListaCitas, codBuscado);
 
         ListaCitas[posicion].setIdCita(nuevo.getIdCita());
         ListaCitas[posicion].setFecha(nuevo.getFecha());
