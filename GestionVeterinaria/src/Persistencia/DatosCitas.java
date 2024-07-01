@@ -11,7 +11,8 @@ import Modelo.*;
 import java.util.List;
 
 public class DatosCitas {
-    private static boolean isSyncing = false;
+    
+    private static boolean isSyncing = false; //si esta sincronizado
     
     public static void GuardarEnArchivo(ArregloCitas listaCitas){
       try{
@@ -19,6 +20,7 @@ public class DatosCitas {
           ObjectOutputStream oos =  new ObjectOutputStream(fos);
           oos.writeObject(listaCitas);
           oos.close();
+          
           if (!isSyncing) {
                 isSyncing = true;
                 sincronizarConArbol(listaCitas);
@@ -42,12 +44,14 @@ public class DatosCitas {
      return listaCitas;
   }//fin recuperar
     
+    
+    //NO TOCAR!! Método que sincroniza los datos del arreglo citas con arbol cita.
     private static void sincronizarConArbol(ArregloCitas listaCitas) {
         ArbolCita arbol = new ArbolCita();
-        List<Citas> citas = listaCitas.getAllCitas(); // Asumiendo que tienes un método getCitas()
+        List<Citas> citas = listaCitas.getAllCitas(); 
         for (Citas cita : citas) {
             arbol.agregarCita(cita);
         }
-        DatosCitasArbol.guardarEnArchivo(arbol);
+        DatosArbolCita.guardarEnArchivo(arbol);
     }
 }

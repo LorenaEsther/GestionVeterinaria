@@ -1,11 +1,12 @@
 package Controlador;
 
 import Modelo.*;
-import Busquedas.BusquedaBinaria.BusquedaBinariaCitas;
+import Busquedas.BusquedaBinaria.BusquedaBinariaCitasRecursiva;
 import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
 import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import Persistencia.DatosCitas;
+import Vista.VistaGestionCitas;
 
 
 import Vista.*;
@@ -29,7 +30,7 @@ public class ControladorCitas implements ActionListener {
         
         
         vista.btnGuardar.addActionListener(this);
-        vista.btnBuscarBinaria.addActionListener(this);//BUSQUEDA DE FORMA BINARIA
+        vista.btnBuscarBinaria.addActionListener(this);//BUSQUEDA DE FORMA BINARIA RECURSIVA
         vista.btnEliminar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
         vista.btnEditar.addActionListener(this);
@@ -45,14 +46,20 @@ public class ControladorCitas implements ActionListener {
         //ListaCitas.MostrarResumen(vista.txtaResumen);
         ProcesosVistaGestion.PresentarGestionDeCitas(vista);
         ActualizarVistaCitas();
+        actualizarResumen();
     }
     private void ActualizarVistaCitas(){
         ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas);
         ProcesosVistaGestion.LimpiarEntradas(vista);
-        vista.lblcantCitas.setText("Cantidad de Citas:"+ListaCitas.CantidadCitas());
-        
-    
+        //vista.lblcantCitas.setText("Cantidad de Citas:"+ListaCitas.CantidadCitas());
     }
+    
+    private void actualizarResumen() {
+        
+        ListaCitas.MostrarResumen(vista.txtaResumen);
+    }
+    
+    
     
     
 
@@ -67,6 +74,7 @@ public class ControladorCitas implements ActionListener {
             //ListaCitas.MostrarResumen(vista.txtaResumen);
             ProcesosVistaGestion.LimpiarEntradas(vista);
             ActualizarVistaCitas();
+            actualizarResumen();
         }
         
         
@@ -99,10 +107,11 @@ public class ControladorCitas implements ActionListener {
             ListaCitas.ActualizarCitas(ct);
             Mensajes.MostrarTexto("Registro actualizado...");
             DatosCitas.GuardarEnArchivo(ListaCitas);
-            ActualizarVistaCitas();
+            //ActualizarVistaCitas();
             //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
             //ListaCitas.MostrarResumen(vista.txtaResumen);
             //ProcesosVistaGestion.LimpiarEntradas(vista);
+            actualizarResumen();
         }
         
         if (e.getSource() == vista.btnEliminar) {
@@ -113,6 +122,7 @@ public class ControladorCitas implements ActionListener {
                 Mensajes.MostrarTexto("Registro eliminado...");
                 DatosCitas.GuardarEnArchivo(ListaCitas);
                 ActualizarVistaCitas();
+                actualizarResumen();
             }
             //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
             //ListaCitas.MostrarResumen(vista.txtaResumen);
@@ -120,13 +130,23 @@ public class ControladorCitas implements ActionListener {
         }
         
         
-        
-        
+        if (e.getSource() == vista.btnBuscarBinaria) {
+            String idBuscar = Mensajes.LeerTexto("Ingrese el ID de la cita a buscar:");
+            Citas citaEncontrada = BusquedaBinariaCitasRecursiva.buscarCita(ListaCitas, idBuscar);
+
+            if (citaEncontrada != null) {
+                Mensajes.MostrarTexto("Cita encontrada:\n" + citaEncontrada.toString());
+
+            } else {
+                Mensajes.MostrarTexto("No se encontró una cita con el ID: " + idBuscar);
+            }
+        }
+        }
         /*
 
         if (e.getSource() == vista.btnEliminar) {
             String elemento = Mensajes.LeerTexto("Ingrese el código a eliminar por favor...");
-            int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(ListaCitas.getListaCitas(), elemento);
+            int posicion = BusquedaBinariaCitasRecursiva.BuscarPorCodigoCita(ListaCitas.getListaCitas(), elemento);
             if (posicion == -1) {
                 Mensajes.MostrarTexto("Código " + elemento + " a eliminar no existe...");
             } else {
@@ -189,12 +209,12 @@ public class ControladorCitas implements ActionListener {
                 
                 
             }
-
+        
         /*if (e.getSource() == vista.btnBuscarBinaria) {
             // Ordenar primero por ID antes de hacer la búsqueda binaria
             Citas[] auxiliar = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
-            int posicion = BusquedaBinariaCitas.BuscarPorCodigoCita(auxiliar, codigoBuscar);
+            int posicion = BusquedaBinariaCitasRecursiva.BuscarPorCodigoCita(auxiliar, codigoBuscar);
             if (posicion == -1) {
                 Mensajes.MostrarTexto("ID " + codigoBuscar + " no existe en la lista...");
             } else {
@@ -217,5 +237,5 @@ public class ControladorCitas implements ActionListener {
         }
         */ 
     }
-}
+
 

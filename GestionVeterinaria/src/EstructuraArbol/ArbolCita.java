@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArbolCita implements Serializable {
+
     private NodoCita raiz;
 
     public ArbolCita() {
@@ -38,7 +39,7 @@ public class ArbolCita implements Serializable {
 
     public void agregarCita(Citas elemento) {
         raiz = agregar(raiz, elemento);
-    }
+    }//fin del método
 
     // Método que muestra los datos del árbol en una tabla
     /*public void listarInOrder(NodoCita nodo, DefaultTableModel modelo) {
@@ -48,19 +49,19 @@ public class ArbolCita implements Serializable {
             listarInOrder(nodo.getDer(), modelo);
         }
     }*/
-    
+    // Método que muestra los datos del árbol en una tabla
     public void listarInOrder(NodoCita nodo, DefaultTableModel modelo) {
         if (nodo != null) {
             listarInOrder(nodo.getIzq(), modelo);
             Citas cita = nodo.getElemento();
             Object[] fila = {
-                cita.getIdCita(), 
-                cita.getFecha(), 
-                cita.getNomEmp(), 
-                cita.getNomMas(), 
-                cita.getNomDue(), 
-                cita.getNomSer(), 
-                cita.getPrecio(), 
+                cita.getIdCita(),
+                cita.getFecha(),
+                cita.getNomEmp(),
+                cita.getNomMas(),
+                cita.getNomDue(),
+                cita.getNomSer(),
+                cita.getPrecio(),
                 cita.getEstado()
             };
             modelo.addRow(fila);
@@ -121,11 +122,8 @@ public class ArbolCita implements Serializable {
         } else {
             auxiliar = (auxiliar.getIzq() != null) ? auxiliar.getIzq() : auxiliar.getDer();
         }
+        System.out.println(auxiliar.getElemento().getIdCita());
         return auxiliar;
-    }
-
-    public void eliminarCita(String id) {
-        raiz = eliminar(raiz, id);
     }
 
     // Método para actualizar los detalles de una cita
