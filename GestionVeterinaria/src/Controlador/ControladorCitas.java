@@ -2,9 +2,6 @@ package Controlador;
 
 import Modelo.*;
 import Busquedas.BusquedaBinaria.BusquedaBinariaCitasRecursiva;
-import Ordenamientos.OrdenamientoBurbuja.BurbujaOrdenarCitas;
-import Ordenamientos.OrdenamientoInsercion.InsercionOrdenamientoCitas;
-import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import Persistencia.DatosCitas;
 import Vista.VistaGestionCitas;
 import Ordenamientos.HashTable.OrdenamientoMergesortCitas;
@@ -171,46 +168,49 @@ public class ControladorCitas implements ActionListener {
         }
         
          */
-
         if (e.getSource() == vista.btnOrdenar) {
-            // Ordenar por ID
-            if (vista.cbxOrdenar.getSelectedIndex() == 0 && vista.rbtnASC.isSelected()) { // Ordenar por ID ascendente
-                Hashtable<String, Citas> citasOrdenadas = OrdenamientoBurbujaCitasHashTable.ordenarPorIdCitaASC(ListaCitas.getLista());
-                ListaCitas.setLista(citasOrdenadas);
-                ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas);
-            }
-            if (vista.cbxOrdenar.getSelectedIndex() == 0 && vista.rbtnDESC.isSelected()) { // Ordenar por ID descendente
-                Hashtable<String, Citas> citasOrdenadas = OrdenamientoBurbujaCitasHashTable.ordenarPorIdCitaDESC(ListaCitas.getLista());
-                ListaCitas.setLista(citasOrdenadas);
-                ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas);
-            }
-            // Ordenar por Dueño
-            if (vista.cbxOrdenar.getSelectedIndex() == 1 && vista.rbtnASC.isSelected()) { // Ordenar por Dueño ascendente
-                List<Citas> listaCitas = new ArrayList<>(ListaCitas.getLista().values());
-                List<Citas> citasOrdenadas = OrdenamientoMergesortCitas.ordenarPorDueñoASC(listaCitas);
-                actualizarListaCitas(citasOrdenadas);
-            }
-            if (vista.cbxOrdenar.getSelectedIndex() == 1 && vista.rbtnDESC.isSelected()) { // Ordenar por Dueño descendente
-                List<Citas> listaCitas = new ArrayList<>(ListaCitas.getLista().values());
-                List<Citas> citasOrdenadas = OrdenamientoMergesortCitas.ordenarPorDueñoDESC(listaCitas);
-                actualizarListaCitas(citasOrdenadas);
-            }
+            System.out.println("Botón de ordenar presionado");
+            System.out.println("Ordenando por: " + (vista.cbxOrdenar.getSelectedIndex() == 0 ? "Fecha" : "Nombre del dueño"));
+            System.out.println("Orden ascendente seleccionado: " + vista.rbtnASC.isSelected());
+            System.out.println("Orden descendente seleccionado: " + vista.rbtnDESC.isSelected());
 
-            /*//NO FUNCIONA
-                if (vista.cbxOrdenar.getSelectedIndex()==2 && vista.rbtnASC.isSelected()) {
-                    
-                    Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaASC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
+            List<Citas> citasOrdenadas = null;
+
+            // Verificar el criterio de ordenamiento seleccionado
+            if (vista.cbxOrdenar.getSelectedIndex() == 0) { // Supongamos que 0 es para ordenar por fecha
+                if (vista.rbtnASC.isSelected()) {
+                    System.out.println("Ordenando por fecha ascendente");
+                    citasOrdenadas = OrdenamientoMergesortCitas.ordenarPorFechaASC(new ArrayList<>(ListaCitas.getLista().values()));
+                } else if (vista.rbtnDESC.isSelected()) {
+                    System.out.println("Ordenando por fecha descendente");
+                    citasOrdenadas = OrdenamientoMergesortCitas.ordenarPorFechaDESC(new ArrayList<>(ListaCitas.getLista().values()));
                 }
-                //NO FUNCIONA
-                if (vista.cbxOrdenar.getSelectedIndex()==2 && vista.rbtnDESC.isSelected()){
-                    Citas[] listaOrdenada = BurbujaOrdenarCitas.OrdenarPorUrgenciaDESC(ListaCitas.getListaCitas(),ListaCitas.getCantCitas());
-                    ProcesosVistaGestion.MostaraEnTabla(vista, listaOrdenada);
-                }*/
+            } else if (vista.cbxOrdenar.getSelectedIndex() == 1) { // Supongamos que 1 es para ordenar por nombre del dueño
+                if (vista.rbtnASC.isSelected()) {
+                    System.out.println("Ordenando por nombre del dueño ascendente");
+                    citasOrdenadas = OrdenamientoBurbujaCitasHashTable.ordenarPorNombreDueASC(ListaCitas.getLista());
+                } else if (vista.rbtnDESC.isSelected()) {
+                    System.out.println("Ordenando por nombre del dueño descendente");
+                    citasOrdenadas = OrdenamientoBurbujaCitasHashTable.ordenarPorNombreDueDESC(ListaCitas.getLista());
+                }
+            }
+
+            // Si hay citas ordenadas, actualizarlas en la vista
+            if (citasOrdenadas != null) {
+                System.out.println("Actualizando la lista de citas en la vista");
+                for (Citas cita : citasOrdenadas) {
+                    System.out.println("Dueño: " + cita.getNomDue() + " Empleado: " + cita.getNomEmp());
+                }
+                ProcesosVistaGestion.MostrarDatosDeLista(vista, citasOrdenadas);
+            } else {
+                System.out.println("No se ordenaron citas");
+            }
         }
+    }
+}
 
 
-        /*if (e.getSource() == vista.btnBuscarBinaria) {
+/*if (e.getSource() == vista.btnBuscarBinaria) {
             // Ordenar primero por ID antes de hacer la búsqueda binaria
             Citas[] auxiliar = SeleccionOrdenarCitas.ordenarPorIdCitaASC(ListaCitas.getListaCitas(), ListaCitas.getCantCitas());
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
@@ -235,15 +235,4 @@ public class ControladorCitas implements ActionListener {
             
             
         }
-         */
-    }
-    private void actualizarListaCitas(List<Citas> citasOrdenadas) {
-        Hashtable<String, Citas> citasHashtable = new Hashtable<>();
-        for (Citas cita : citasOrdenadas) {
-            citasHashtable.put(cita.getIdCita(), cita);
-        }
-        ListaCitas.setLista(citasHashtable);
-        ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas);
-    }
-
-}
+ */

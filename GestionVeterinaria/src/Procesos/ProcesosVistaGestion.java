@@ -2,7 +2,9 @@ package Procesos;
 
 import Modelo.*;
 import Vista.*;
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -55,9 +57,26 @@ public class ProcesosVistaGestion {
         Enumeration<Citas> enumer = ListaCitas.getLista().elements();
         while (enumer.hasMoreElements()) {
             cont++;
+
             mt.addRow(enumer.nextElement().Registro(cont));
         }
-        /*String titulos[] = {"Num", "ID", "Codigo Empl.", "Nombre Empl.", "Nom. Mascota", "Dueño", "Servicio", "Precio", "Urgencia", "Fecha", "Hora"};
+
+    }
+
+    public static void MostrarDatosDeLista(VistaGestionCitas vg, List<Citas> citasOrdenadas) {
+        String titulos[] = {"Num", "ID", "Codigo Empl.", "Nombre Empl.", "Nom. Mascota", "Dueño", "Servicio", "Precio", "Urgencia", "Fecha", "Hora"};
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        vg.tblCitas.setModel(modelo);
+        int cont = 0;
+
+        for (Citas cita : citasOrdenadas) {
+            cont++;
+            System.out.println("Añadiendo cita a la tabla: dueño: " + cita.getNomDue() + " Empleado: " + cita.getNomEmp());
+            modelo.addRow(cita.Registro(cont));
+        }
+    }
+
+    /*String titulos[] = {"Num", "ID", "Codigo Empl.", "Nombre Empl.", "Nom. Mascota", "Dueño", "Servicio", "Precio", "Urgencia", "Fecha", "Hora"};
         DefaultTableModel mt = new DefaultTableModel(null, titulos);
         vg.tblCitas.setModel(mt);
         int cont = 0;
@@ -69,6 +88,4 @@ public class ProcesosVistaGestion {
  /*for (int i=0; i<ArregloCitas.getCantCitas();i++){
             mt.addRow(a[i].Registro(i+1));                          
         }*/
-    }
-
 }//FIN DE LA CLASEISHON

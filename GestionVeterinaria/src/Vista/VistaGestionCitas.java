@@ -14,6 +14,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         JdateChooser = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -94,7 +95,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblCitas);
 
-        JdateChooser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 640, 190));
+        JdateChooser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 690, 190));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Empleado"));
 
@@ -299,7 +300,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         JdateChooser.add(btnBuscarBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 240, 50));
 
         cbxOrdenar.setBackground(new java.awt.Color(153, 204, 255));
-        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Cita", "Dueño", "Tipo de Urgencia" }));
+        cbxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fecha", "Dueño" }));
         cbxOrdenar.setBorder(javax.swing.BorderFactory.createTitledBorder("Ordenar por"));
         JdateChooser.add(cbxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 150, 50));
 
@@ -326,7 +327,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         txtaResumen.setRows(5);
         jScrollPane2.setViewportView(txtaResumen);
 
-        JdateChooser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, 300, 110));
+        JdateChooser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 240, 110));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ositogay.gif"))); // NOI18N
         JdateChooser.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, 310, 360));
@@ -359,7 +360,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 204), null, null));
         btnConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JdateChooser.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, 240, 50));
+        JdateChooser.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 200, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -398,6 +399,7 @@ public class VistaGestionCitas extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnOrdenar;
+    private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JComboBox<String> cbxOrdenar;
     public javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JButton jButton5;

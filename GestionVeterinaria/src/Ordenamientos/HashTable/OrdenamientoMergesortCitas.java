@@ -6,55 +6,53 @@ import java.util.ArrayList;
 
 public class OrdenamientoMergesortCitas {
 
-    public static List<Citas> ordenarPorDueñoASC(List<Citas> lista) {
-        if (lista.size() <= 1) {
-            return lista;
+    private static void mergeSort(List<Citas> citas, int izq, int der, boolean ascendente) {
+        if (izq < der) {
+            int m = (izq + der) / 2;
+            mergeSort(citas, izq, m, ascendente);
+            mergeSort(citas, m + 1, der, ascendente);
+            merge(citas, izq, m, der, ascendente);
         }
-
-        int mitad = lista.size() / 2;
-        List<Citas> izquierda = new ArrayList<>(lista.subList(0, mitad));
-        List<Citas> derecha = new ArrayList<>(lista.subList(mitad, lista.size()));
-
-        return merge(ordenarPorDueñoASC(izquierda), ordenarPorDueñoASC(derecha), true);
     }
 
-    public static List<Citas> ordenarPorDueñoDESC(List<Citas> lista) {
-        if (lista.size() <= 1) {
-            return lista;
-        }
+    private static void merge(List<Citas> citas, int izq, int m, int der, boolean ascendente) {
+        List<Citas> temp = new ArrayList<>(citas.subList(izq, der + 1));
+        int i = 0, j = m - izq + 1, k = izq;
 
-        int mitad = lista.size() / 2;
-        List<Citas> izquierda = new ArrayList<>(lista.subList(0, mitad));
-        List<Citas> derecha = new ArrayList<>(lista.subList(mitad, lista.size()));
-
-        return merge(ordenarPorDueñoDESC(izquierda), ordenarPorDueñoDESC(derecha), false);
-    }
-
-    private static List<Citas> merge(List<Citas> izquierda, List<Citas> derecha, boolean ascendente) {
-        List<Citas> result = new ArrayList<>();
-        int i = 0, j = 0;
-
-        while (i < izquierda.size() && j < derecha.size()) {
-            if ((ascendente && izquierda.get(i).getNomDue().compareTo(derecha.get(j).getNomDue()) <= 0) ||
-                (!ascendente && izquierda.get(i).getNomDue().compareTo(derecha.get(j).getNomDue()) >= 0)) {
-                result.add(izquierda.get(i));
-                i++;
+        while (i <= m - izq && j < temp.size()) {
+            if (ascendente ? temp.get(i).getFecha().compareTo(temp.get(j).getFecha()) <= 0 : temp.get(i).getFecha().compareTo(temp.get(j).getFecha()) >= 0) {
+                citas.set(k++, temp.get(i++));
             } else {
-                result.add(derecha.get(j));
-                j++;
+                citas.set(k++, temp.get(j++));
             }
         }
 
-        while (i < izquierda.size()) {
-            result.add(izquierda.get(i));
-            i++;
+        while (i <= m - izq) {
+            citas.set(k++, temp.get(i++));
         }
 
-        while (j < derecha.size()) {
-            result.add(derecha.get(j));
-            j++;
+        while (j < temp.size()) {
+            citas.set(k++, temp.get(j++));
         }
+    }
 
-        return result;
+    public static List<Citas> ordenarPorFechaASC(List<Citas> citas) {
+        System.out.println("Ordenando por fecha ascendente...");
+        List<Citas> copia = new ArrayList<>(citas);
+        mergeSort(copia, 0, copia.size() - 1, true);
+        for (Citas c : copia) {
+            System.out.println("Fecha: " + c.getFecha());
+        }
+        return copia;
+    }
+
+    public static List<Citas> ordenarPorFechaDESC(List<Citas> citas) {
+        System.out.println("Ordenando por fecha descendente...");
+        List<Citas> copia = new ArrayList<>(citas);
+        mergeSort(copia, 0, copia.size() - 1, false);
+        for (Citas c : copia) {
+            System.out.println("Fecha: " + c.getFecha());
+        }
+        return copia;
     }
 }
