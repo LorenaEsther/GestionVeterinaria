@@ -2,8 +2,8 @@
 package Ordenamientos.OrdenamientoBurbuja;
 
 import Modelo.Citas;
-/*java.util.list;*/
-
+import java.util.*;
+/*
 public class BurbujaOrdenarCitas {
     
     
@@ -34,13 +34,13 @@ public class BurbujaOrdenarCitas {
         }
         return ListaCitas;
     }
-}
+}*/
     
 /*
 package Ordenamientos.OrdenamientoBurbuja;
 
 import Modelo.Citas;
-import java.util.List;
+import java.util.List;*/
 
 public class BurbujaOrdenarCitas {
     
@@ -70,5 +70,5 @@ public class BurbujaOrdenarCitas {
         }
     }
 }
-*/
+
 

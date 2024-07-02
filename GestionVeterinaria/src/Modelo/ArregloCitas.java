@@ -7,6 +7,7 @@ import Persistencia.DatosCitas;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+
 public class ArregloCitas implements Serializable{
     private Hashtable<String,Citas> Lista;
     public ArregloCitas() {
@@ -88,6 +89,9 @@ public class ArregloCitas implements Serializable{
                 "\nCitas con moderada prioridad     : " + c2 +
                 "\nCitas con baja prioridad         : " + c3);
 }
+   
+
+
     
     
     /*

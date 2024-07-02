@@ -19,8 +19,7 @@ package Principal;
 import Modelo.Citas;
 import Ordenamientos.OrdenamientoSeleccion.SeleccionOrdenarCitas;
 import Ordenamientos.HashTable.OrdenamientoSeleccionCitasHashTable;
-import java.util.List;
-import java.util.Date;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {

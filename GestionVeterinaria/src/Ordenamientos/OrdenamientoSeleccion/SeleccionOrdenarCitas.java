@@ -3,10 +3,10 @@ package Ordenamientos.OrdenamientoSeleccion;
 
 import Modelo.ArregloCitas;
 import Modelo.Citas;
-/*import java.util.List;*/
+import java.util.List;
 
 
-public class SeleccionOrdenarCitas {
+/*public class SeleccionOrdenarCitas {
     public static Citas[] ordenarPorIdCitaASC(Citas[] ListaCitas, int cantCitas) {
         for (int i = 0; i < cantCitas - 1; i++) {
             int minIndex = i;
@@ -35,9 +35,9 @@ public class SeleccionOrdenarCitas {
         }
         return ListaCitas;
     }
-}
+}*/
 
-/*public class SeleccionOrdenarCitas {
+public class SeleccionOrdenarCitas {
     public static void ordenarPorIdCitaASC(List<Citas> ListaCitas) {
         int cantCitas = ListaCitas.size();
         for (int i = 0; i < cantCitas - 1; i++) {
@@ -68,4 +68,3 @@ public class SeleccionOrdenarCitas {
         }
     }
 }
-*/

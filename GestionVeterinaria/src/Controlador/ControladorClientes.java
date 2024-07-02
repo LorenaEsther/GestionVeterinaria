@@ -10,8 +10,10 @@ import Procesos.*;
 import Persistencia.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Busquedas.BusquedaLineal.BusquedaLinealClientesRecursiva;
 
 public class ControladorClientes implements ActionListener {
+
     VistaClientes vista;
     ArregloClientes listaClientes;
     Cliente cliente;
@@ -51,8 +53,8 @@ public class ControladorClientes implements ActionListener {
                 Mensajes.MostrarTexto("Código " + elemento + " a eliminar no existe...");
             } else {
                 int resp = Mensajes.Respuesta("Confirmar eliminación",
-                        "¿Deseas eliminar el código " + elemento + " de " +
-                                listaClientes.RecuperarCliente(elemento).getNombre() + "?");
+                        "¿Deseas eliminar el código " + elemento + " de "
+                        + listaClientes.RecuperarCliente(elemento).getNombre() + "?");
                 if (resp == 0) {
                     listaClientes.EliminarClientes(posicion);
                     DatosClientes.GuardarEnArchivo(listaClientes);
@@ -75,7 +77,7 @@ public class ControladorClientes implements ActionListener {
                 Cliente[] listaOrdenada = BurbujaOrdenarClientes.ordenarCodDESC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
                 ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
             }
-            
+
             if (vista.cbxOrdenar.getSelectedIndex() == 1 && vista.rbtnASC.isSelected()) { // Ordenar por ID
                 Cliente[] listaOrdenada = SeleccionOrdenarClientes.ordenarNombASC(listaClientes.getListaClientes(), listaClientes.getCantClientes());
                 ProcesosVistaClientes.MostaraEnTabla(vista, listaOrdenada);
@@ -95,14 +97,14 @@ public class ControladorClientes implements ActionListener {
         }
 
         if (e.getSource() == vista.btnBuscar) {
-            
             String codigoBuscar = Mensajes.LeerTexto("Ingrese el código a buscar por favor");
-            int posicion = BusquedaLinealClientes.Secuencial(codigoBuscar, listaClientes);
-            if (posicion == -1) {
+            Cliente clienteEncontrado = BusquedaLinealClientesRecursiva.buscarCliente(listaClientes, codigoBuscar);
+            if (clienteEncontrado == null) {
                 Mensajes.MostrarTexto("ID " + codigoBuscar + " no existe en la lista...");
             } else {
-                Mensajes.MostrarTexto(listaClientes.getListaClientes()[posicion].toString());
+                Mensajes.MostrarTexto(clienteEncontrado.toString());
             }
         }
+
     }
 }
