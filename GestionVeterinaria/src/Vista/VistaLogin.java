@@ -16,7 +16,7 @@ public class VistaLogin extends javax.swing.JFrame {
     
     private void initFlat() {
         FlatMacLightLaf.setup();
-        UIManager.put("Button.arc", 5);
+        UIManager.put("Button.arc", 20);
     }
 
     

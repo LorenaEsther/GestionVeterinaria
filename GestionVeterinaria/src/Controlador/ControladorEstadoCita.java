@@ -62,6 +62,7 @@ public class ControladorEstadoCita implements ActionListener {
         
         if (e.getSource() == vista.btnActualizar) {
             actualizarCita();
+            ProcesosEstadoCita.limpiarEntradas(vista);
         }
 
         if (e.getSource() == vista.btnEliminar) {

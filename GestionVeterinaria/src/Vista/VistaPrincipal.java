@@ -1,25 +1,38 @@
-
 package Vista;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import com.formdev.flatlaf.ui.FlatButtonUI;
+
 import javax.swing.UIManager;
 
 public class VistaPrincipal extends javax.swing.JFrame {
-
 
     public VistaPrincipal() {
         initComponents();
         initFlat();
 
     }
-    
+
     private void initFlat() {
         FlatMacLightLaf.setup();
-        UIManager.put("Button.arc", 5);
+        UIManager.put("Button.arc", 20);
+        
+        //applyFlatStyle(this.getContentPane());
     }
 
-   
+    /*private void applyFlatStyle(Container container) {
+        for (Component component : container.getComponents()) {
+            if (component instanceof JButton) {
+                // Aplicar configuración de UIManager al botón
+                ((JButton) component).updateUI();
+            } else if (component instanceof Container) {
+                // Recursivamente aplicar estilo a los componentes hijos
+                applyFlatStyle((Container) component);
+            }
+        }
+    }*/
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
