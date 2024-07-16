@@ -106,7 +106,7 @@ public class ControladorCitas implements ActionListener {
             ListaCitas.ActualizarCitas(ct);
             Mensajes.MostrarTexto("Registro actualizado...");
             DatosCitas.GuardarEnArchivo(ListaCitas);
-            //ActualizarVistaCitas();
+            ActualizarVistaCitas();
             //ProcesosVistaGestion.MostaraEnTabla(vista, ListaCitas.getListaCitas());
             //ListaCitas.MostrarResumen(vista.txtaResumen);
             //ProcesosVistaGestion.LimpiarEntradas(vista);
