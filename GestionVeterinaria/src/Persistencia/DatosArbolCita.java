@@ -61,7 +61,7 @@ public class DatosArbolCita {
     }
     
     //Metodo que sincroniza los datos de ArbolCita con ArregloCitas.
-    private static void sincronizarConCitas(ArbolCita arbol) {
+    public static void sincronizarConCitas(ArbolCita arbol) {
         ArregloCitas listaCitas = new ArregloCitas();
         List<NodoCita> nodos = arbol.getInOrder();
         for (NodoCita nodo : nodos) {

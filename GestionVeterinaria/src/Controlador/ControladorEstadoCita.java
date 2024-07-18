@@ -26,7 +26,10 @@ public class ControladorEstadoCita implements ActionListener {
         vista.btnBuscarEnTabla.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
         vista.btnCancelar.addActionListener(this);
+        vista.btnCancelarCita.addActionListener(this);
         vista.btnActualizar.addActionListener(this);
+        vista.btnPendientes.addActionListener(this);
+        vista.btnTodas.addActionListener(this);
         vista.setVisible(true);
         vista.setTitle("Gestión del Estado de las Citas");
         ProcesosEstadoCita.estadoBotones(false, vista);
@@ -43,6 +46,7 @@ public class ControladorEstadoCita implements ActionListener {
             //ProcesosEstadoCita.limpiarEntradas(vista);
             buscarCitaPorID(false);
             vista.btnAgregarCitaAtendida.setEnabled(true);
+            vista.btnCancelarCita.setEnabled(true);
             vista.btnCancelar.setEnabled(true);
             vista.btnEliminar.setEnabled(false);
             vista.txtBuscarTabla.setEnabled(false);
@@ -50,7 +54,7 @@ public class ControladorEstadoCita implements ActionListener {
         }
 
         if (e.getSource() == vista.btnAgregarCitaAtendida) {
-            actualizarEstadoCita();
+            actualizarEstadoCita("Atendida");
             ProcesosEstadoCita.estadoBotones(false, vista);
             ProcesosEstadoCita.limpiarEntradas(vista);
         }
@@ -73,7 +77,21 @@ public class ControladorEstadoCita implements ActionListener {
             ProcesosEstadoCita.limpiarEntradas(vista);
             ProcesosEstadoCita.estadoBotones(false, vista);
         }
-
+        if (e.getSource() == vista.btnPendientes) {
+            modTabla.setRowCount(0);
+            listaCitas.filtrarPendientes(listaCitas.getRaiz(), modTabla);
+        }
+        if (e.getSource() == vista.btnTodas) {
+            modTabla.setRowCount(0);
+            listaCitas.listarInOrder(listaCitas.getRaiz(), modTabla);
+        }
+        if(e.getSource() == vista.btnCancelarCita) {
+            actualizarEstadoCita("Cancelada");
+            ProcesosEstadoCita.estadoBotones(false, vista);
+            ProcesosEstadoCita.limpiarEntradas(vista);
+        }
+        
+        
     }
 
     /*private void estadoBotones(boolean estado) {
@@ -135,17 +153,17 @@ public class ControladorEstadoCita implements ActionListener {
         }
     }
 
-    private void actualizarEstadoCita() {
+    private void actualizarEstadoCita(String estado) {
         String idCita = vista.txtBuscarID.getText().trim();
         NodoCita citaNodo = listaCitas.buscarPorID(idCita);
         Citas cita = citaNodo.getElemento();
 
         if (cita != null) {
-            cita.setEstado("Atendida");
+            cita.setEstado(estado);
             listaCitas.actualizarCita(cita);
             DatosArbolCita.guardarEnArchivo(listaCitas);
-            vista.txtEstado.setText("Atendida");
-            JOptionPane.showMessageDialog(vista, "Cita atendida correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+            vista.txtEstado.setText(estado);
+            JOptionPane.showMessageDialog(vista, "Cita " + estado + " correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             modTabla.setRowCount(0);
             listaCitas.listarInOrder(listaCitas.getRaiz(), modTabla);
         } else {

@@ -28,6 +28,7 @@ public class ProcesosEstadoCita {
         f.tblEstadoCita.setEnabled(!estado);
         f.btnCancelar.setEnabled(estado);
         f.btnNuevo.setEnabled(!estado);
+        f.btnCancelarCita.setEnabled(false);
         
     }
 

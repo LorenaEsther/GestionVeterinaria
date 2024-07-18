@@ -63,7 +63,10 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         btnBuscarEnTabla = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnPendientes = new javax.swing.JButton();
+        btnTodas = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
+        btnCancelarCita = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setClosable(true);
@@ -71,7 +74,7 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(135, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Gestión del Estado de las Citas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 0, 14))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gestión del Estado de las Citas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 0, 14))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Resultados: ");
@@ -220,10 +223,15 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         jPanel1.add(btnAgregarCitaAtendida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, 210, 30));
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cancel.png"))); // NOI18N
-        btnCancelar.setText("Cancelar");
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 740, 130, 30));
+        btnCancelar.setText("Limpiar Entradas");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 740, 160, 30));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "TABLA DE CITAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 0, 14))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TABLA DE CITAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 0, 14))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Resultados: ");
@@ -236,6 +244,15 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setText("TABLA DE CITAS");
+
+        btnPendientes.setText("Filtrar Pendientes");
+        btnPendientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendientesActionPerformed(evt);
+            }
+        });
+
+        btnTodas.setText("Mostrar Citas");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -250,7 +267,11 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
                         .addComponent(txtBuscarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(btnBuscarEnTabla)
-                        .addContainerGap(612, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addComponent(btnPendientes)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnTodas)
+                        .addContainerGap(300, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -264,7 +285,9 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtBuscarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarEnTabla))
+                    .addComponent(btnBuscarEnTabla)
+                    .addComponent(btnPendientes)
+                    .addComponent(btnTodas))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -279,6 +302,14 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/update.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 750, 130, 30));
+
+        btnCancelarCita.setText("Cancelar Cita");
+        btnCancelarCita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarCitaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 740, 110, 30));
 
         setJMenuBar(jMenuBar1);
 
@@ -298,14 +329,29 @@ public class VistaEstadoCita extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPendientesActionPerformed
+
+    private void btnCancelarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarCitaActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnAgregarCitaAtendida;
     public javax.swing.JButton btnBuscarEnTabla;
     public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnCancelarCita;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnNuevo;
+    public javax.swing.JButton btnPendientes;
+    public javax.swing.JButton btnTodas;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

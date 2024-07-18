@@ -4,6 +4,7 @@ import Modelo.Citas;
 import java.io.Serializable;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ArbolCita implements Serializable {
@@ -37,6 +38,7 @@ public class ArbolCita implements Serializable {
         return nodo;
     }
 
+    
     public void agregarCita(Citas elemento) {
         raiz = agregar(raiz, elemento);
     }//fin del método
@@ -69,6 +71,30 @@ public class ArbolCita implements Serializable {
         }
     }
 
+    public void filtrarPendientes(NodoCita nodo, DefaultTableModel modelo) {
+        if (nodo != null) {
+            filtrarPendientes(nodo.getIzq(), modelo);
+            Citas cita = nodo.getElemento();
+            Date fechaActual = new Date();
+
+            // Solo agregar filas con fecha posterior a la fecha actual
+            if (cita.getFecha().compareTo(fechaActual) > 0) {
+                Object[] fila = {
+                    cita.getIdCita(),
+                    cita.getFecha(),
+                    cita.getNomEmp(),
+                    cita.getNomMas(),
+                    cita.getNomDue(),
+                    cita.getNomSer(),
+                    cita.getPrecio(),
+                    cita.getEstado()
+                };
+                modelo.addRow(fila);
+            }
+            filtrarPendientes(nodo.getDer(), modelo);
+        }
+    }
+    
     // Método que busca una cita por ID
     public NodoCita buscarPorID(String id) {
         NodoCita aux = raiz;
