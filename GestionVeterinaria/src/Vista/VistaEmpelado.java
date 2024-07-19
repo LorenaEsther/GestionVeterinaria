@@ -212,15 +212,15 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 810, 250));
 
-<<<<<<< HEAD
+
         jTextField10.setBackground(new java.awt.Color(255, 231, 160));
         jTextField10.setBorder(javax.swing.BorderFactory.createTitledBorder("DNI"));
         jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, 50));
-=======
+
         jTextField10.setBackground(new java.awt.Color(255, 204, 51));
         jTextField10.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar por DNI"));
         jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 260, 180, -1));
->>>>>>> aa1c7e8c135c06f1766cd278bf399af0c3a1aaf8
+
 
         jButton1.setBackground(new java.awt.Color(135, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar-archivo (2).png"))); // NOI18N
@@ -274,31 +274,31 @@ public class VistaEmpelado extends javax.swing.JInternalFrame {
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("ORDENAR");
-<<<<<<< HEAD
+
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 90, 50));
-=======
+
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 260, -1, 40));
->>>>>>> aa1c7e8c135c06f1766cd278bf399af0c3a1aaf8
+
 
         jComboBox1.setBackground(new java.awt.Color(153, 204, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellido", "Fecha Ini.", "Salario" }));
-<<<<<<< HEAD
+
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 140, 50));
-=======
+
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 260, 140, 40));
->>>>>>> aa1c7e8c135c06f1766cd278bf399af0c3a1aaf8
+
 
         jButton6.setBackground(new java.awt.Color(255, 204, 51));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("BUSCAR");
-<<<<<<< HEAD
+
         jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 80, 50));
-=======
+
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, -1, 40));
->>>>>>> aa1c7e8c135c06f1766cd278bf399af0c3a1aaf8
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
